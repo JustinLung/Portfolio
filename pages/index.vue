@@ -7,8 +7,8 @@
           & developer.
         </h2>
         <p>
-          Hi, i’m Justin Lung. A passionate Front End Developer <br> based in the
-          Netherlands.
+          Hi, i’m Justin Lung. A passionate Front End Developer <br />
+          based in the Netherlands.
         </p>
         <nuxt-link to="/#works" class="cta-purple">See my works</nuxt-link>
         <nuxt-link to="/#works" class="cta-white">Message me</nuxt-link>
@@ -24,19 +24,17 @@
 export default {};
 </script>
 <style>
-
-main {
-  padding: 0 3em;
-}
-
 #home {
   display: flex;
   align-items: center;
-  background: red;
+  justify-content: center;
+
+  margin-top: 2em;
 }
 
-h2 {
-  font-size: 3rem;
+#home h2 {
+  font-size: 3.2rem;
+  margin-bottom: 0;
 }
 p {
   font-size: 1rem;
@@ -52,11 +50,40 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 30em;
   height: 30em;
+
+  margin-left: 10em;
 }
 .circle > img {
   max-width: 70%;
   max-height: 70%;
+}
+
+@media (max-width: 768px) {
+
+  #home h2 {
+    font-size: 2rem;
+  }
+
+  br {
+    display: none;
+  }
+
+  #home .circle {
+    width: 15em;
+    height: 15em;
+  }
+}
+
+@media (max-width: 992px) {
+  #home {
+    flex-direction: column;
+  }
+
+  #home .circle {
+    margin: 2em 0;
+  }
 }
 </style>

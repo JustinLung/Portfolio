@@ -26,7 +26,9 @@ a {
 }
 .cta-purple {
   background-color: #7353ba;
+  color: #fff;
   border-radius: 1.2em;
+  border: none;
 }
 .cta-white {
   background-color: #fff;

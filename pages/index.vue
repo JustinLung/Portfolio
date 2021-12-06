@@ -10,8 +10,8 @@
           Hi, i’m Justin Lung. A passionate Front End Developer <br />
           based in the Netherlands.
         </p>
-        <nuxt-link to="/#works" class="cta-purple">See my works</nuxt-link>
-        <nuxt-link to="/#works" class="cta-white">Message me</nuxt-link>
+        <NuxtLink to="/#works" class="cta-purple">See my works</NuxtLink>
+        <NuxtLink to="/#works" class="cta-white">Message me</NuxtLink>
       </div>
       <div class="circle">
         <img src="../static/assets/hero-img.png" al4t="hero-img" />
@@ -21,9 +21,24 @@
 </template>
 
 <script>
-export default {};
+export default {
+  transition: {
+    name: 'layout',
+    mode: 'out-in'
+  }
+};
 </script>
 <style>
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
 #home {
   display: flex;
   align-items: center;

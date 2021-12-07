@@ -1,28 +1,32 @@
 <template>
   <div>
     <section id="home">
-      <div>
+      <div class="text-container">
         <h2>
           creative designer <br />
           & developer.
         </h2>
         <p>
-          Hi, i’m Justin Lung. A passionate Front End Developer <br />
-          based in the Netherlands.
+          Hi, i’m Justin Lung. A passionate Front End Developer based in the
+          Netherlands.
         </p>
         <NuxtLink to="/#works" class="cta-purple">See my works</NuxtLink>
         <NuxtLink to="/#works" class="cta-white">Message me</NuxtLink>
       </div>
-      <div class="circle">
-        <img src="../static/assets/hero-img.png" al4t="hero-img" />
+      <div class="circle-container">
+        <div class="circle">
+          <img src="../static/assets/hero-img.png" alt="hero-img" />
+        </div>
       </div>
     </section>
-    <!-- <section id="work">
-      <div class="circle">
-        <img src="../static/assets/hero-img.png" al4t="hero-img" />
+    <section id="about">
+      <div class="circle-container">
+        <div class="circle">
+          <img src="../static/assets/about-img.png" alt="about-img" />
+        </div>
       </div>
-      <div>
-        <h2>About Me</h2>
+      <div class="text-container">
+        <h2>About me</h2>
         <p>
           My name is Justin Lung I am 19 years old, born and raised in a small
           country called The Netherlands. Currently studying at Amsterdam
@@ -34,9 +38,9 @@
           Vue.js and Svelte. I’m never done with learning new things and hope to
           learn more along the road.
         </p>
-        <button class="cta-purple">Resume</button>
+        <NuxtLink to="/" class="cta-purple">Resume</NuxtLink>
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -58,21 +62,48 @@ export default {
   opacity: 0;
 }
 
+/* HOME SECTION */
+
 #home {
+  /* Positioning */
+
+  /* Box-model */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 
-  margin-top: 2em;
+  margin: 2em 0;
+  padding: 0 0.5em;
+  /* Typography */
+
+  /* Visual */
+
+  /* Misc */
+  
 }
 
-#home h2 {
-  font-size: 3.2rem;
+#home .text-container,
+#home .circle-container {
+  flex: 1;
+}
+
+#home .text-container {
+  margin: auto;
+}
+
+#home .circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home div > h2 {
+  font-size: 2rem;
   margin-bottom: 0;
 }
 
-#home p {
-  font-size: 1.3rem;
+#home div > p {
+  font-size: 1rem;
 }
 
 #home .cta-purple,
@@ -82,14 +113,16 @@ export default {
 }
 
 #home .circle {
-  width: 30vw;
-  height: 30vw;
-  border-radius: 50%;
   background: #7353ba;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+
+  margin-top: 2em;
 }
 
 #home .circle > img {
@@ -97,24 +130,38 @@ export default {
   max-height: 70%;
 }
 
-@media(max-width: 1000px) {
-  #home {
-    flex-direction: column;
-  }
-
-  #home h2 {
+@media (min-width: 30em) {
+  #home div > h2 {
     font-size: 2.5rem;
   }
-
-  #home .circle {
-    margin: 2em 0;
+  #home div > p {
+    font-size: 1.3rem;
   }
 }
 
-@media(max-width: 130§0px) {
-    #home .circle {
-      width: 25em;
-      height: 25em;
-    }
+@media (min-width: 50em) {
+  #home div > h2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 60em) {
+  #home {
+    max-width: 1440px;
+    margin: 0 auto;
+    flex-direction: row;
+  }
+
+  #about {
+    flex-direction: row;
+  }
+
+  #home .text-container {
+    margin-left: 3em;
+  }
+
+  #home .circle {
+    display: flex;
+  }
 }
 </style>

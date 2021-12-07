@@ -16,6 +16,8 @@ html {
   box-sizing: border-box;
 }
 body {
+  padding: 0;
+  margin: 0;
   background-color: #161618;
   color: #fff;
   font-family: "Poppins", sans-serif;

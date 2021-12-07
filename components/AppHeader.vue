@@ -1,22 +1,20 @@
 <template>
-  <div>
-    <header>
-      <h1>Portfolio</h1>
-      <nav>
-        <ul>
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/#works">Works</nuxt-link></li>
-          <li><nuxt-link to="/#about">About</nuxt-link></li>
-          <li>
-            <nuxt-link to="/#contact" class="cta-purple">Contact</nuxt-link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </div>
+  <header>
+    <h1>Portfolio</h1>
+    <nav>
+      <ul>
+        <li><nuxt-link to="/">Home</nuxt-link></li>
+        <li><nuxt-link to="/#works">Works</nuxt-link></li>
+        <li><nuxt-link to="/#about">About</nuxt-link></li>
+        <li>
+          <nuxt-link to="/#contact" class="cta-purple">Contact</nuxt-link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 <script>
-    export default {}
+export default {};
 </script>
 <style scoped>
 header {
@@ -77,8 +75,9 @@ ul li:nth-of-type(4) {
 }
 @media (max-width: 50em) {
   header {
-    padding: 0.2em;
+    padding: 0 0.5em;
   }
+
   h1 {
     font-size: 1.8rem;
   }

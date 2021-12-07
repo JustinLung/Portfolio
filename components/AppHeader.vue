@@ -4,7 +4,7 @@
     <nav>
       <ul>
         <li><nuxt-link to="/">Home</nuxt-link></li>
-        <li><nuxt-link to="/#works">Works</nuxt-link></li>
+        <li><nuxt-link to="/#work">Works</nuxt-link></li>
         <li><nuxt-link to="/#about">About</nuxt-link></li>
         <li>
           <nuxt-link to="/#contact" class="cta-purple">Contact</nuxt-link>
@@ -18,7 +18,7 @@ export default {};
 </script>
 <style scoped>
 header {
-  padding: 0em 3em;
+  padding: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ ul li:nth-of-type(4) {
 }
 @media (max-width: 50em) {
   header {
-    padding: 0 0.5em;
+    padding: 1.5em .5em;
   }
 
   h1 {

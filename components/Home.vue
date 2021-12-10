@@ -85,7 +85,7 @@ section .circle > img {
   }
 
   section .cta-white {
-    margin-left: 1em;
+    margin-left: .5em;
   }
 
   section .text-container {

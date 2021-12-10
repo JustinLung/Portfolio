@@ -99,7 +99,7 @@ h3 {
 
   #work .work-container {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3em;
+    gap: 2em;
   }
 
   .work-container > section:nth-child(2),
@@ -109,7 +109,7 @@ h3 {
 
   .thumbnail {
     width: 100%;
-    height: 30em;
+    height: 25em;
   }
 }
 

@@ -1,39 +1,53 @@
 <template>
   <section id="work">
     <h2 class="work-title">Latest projects</h2>
-    <section>
-      <div class="thumbnail"></div>
-      <h3>Icy Penguins</h3>
-      <p>Buying an NFT has never been this easy. Be quick, be cool, be icy.</p>
-      <button class="cta-white">See More</button>
-    </section>
+    <div class="work-container">
+      <section v-for="(project, index) in this.works" :key="index">
+        <div class="thumbnail"></div>
+        <h3>{{project.homeTitle}}</h3>
+        <p>
+          {{project.homeDescription}}
+        </p>
+        <NuxtLink :to="project.path" class="cta-white">🚀 See More</NuxtLink>
+      </section>
+    </div>
 
-    <section>
-      <div class="thumbnail"></div>
-      <h3>Crypto Checker</h3>
-      <p>Checking your Cryptocurrency is very important. Never miss a top crypto ever again!</p>
-      <button class="cta-white">See More</button>
-    </section>
-
-    <section>
-      <div class="thumbnail"></div>
-      <h3>Terminator</h3>
-      <p>A Terminator: Dark Fate Mobile Skin for the. "Hasta la vista baby."</p>
-      <button class="cta-white">See More</button>
-    </section>
-
-    <h3 class="github-text">And Many more projects can be found on my <a href="https://github.com/JustinLung" target="_blank" class="github-link">Github!</a></h3>
+    <h3 class="github-text">
+      And Many more projects can be found on my
+      <a
+        href="https://github.com/JustinLung"
+        target="_blank"
+        class="github-link"
+        >Github!</a
+      >
+    </h3>
   </section>
 </template>
-<script></script>
-<style>
+<script>
+export default {
+  data: ()=>({
+    works: []
+  }),
+  async fetch() {
+    this.works = await this.$content('projects').fetch();
+    this.works.reverse();
+  },
+  fetchOnServer: false
+}
+</script>
+<style scoped>
 #work {
   padding: 0 0.5em;
   margin-top: 5em;
 }
 
 #work > section {
-    margin-top: 2em;
+  margin-top: 2em;
+}
+
+#work .work-container {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .work-title {
@@ -44,14 +58,19 @@ h3 {
   font-size: 1.3em;
 }
 
+.work-container section > p {
+  font-size: 1.2rem;
+  margin-bottom: .3em;
+}
+
 .github-text {
-    margin: 4em 0;
-    font-size: 1.5em;
-    text-align: center;
+  margin: 4em 0;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .github-link {
-    color: #7353ba;
+  color: #7353ba;
 }
 
 .thumbnail {
@@ -66,5 +85,37 @@ h3 {
 .cta-white {
   margin-top: 0.7em;
   padding: 0.3em 2em;
+}
+
+@media (min-width: 45em) {
+  #work {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .work-title {
+    text-align: left;
+    font-size: 1.7rem;
+  }
+
+  #work .work-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3em;
+  }
+
+  .work-container > section:nth-child(2),
+  .work-container > section:nth-child(4) {
+    margin-top: 3em;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 30em;
+  }
+}
+
+@media (min-width: 60em) {
+  #work {
+    padding: 3em 3em;
+  }
 }
 </style>

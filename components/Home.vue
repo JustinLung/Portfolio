@@ -2,7 +2,7 @@
   <section id="home">
     <div class="circle-container">
       <div class="circle">
-        <img src="../static/assets/hero-img.png" alt="hero-img" />
+        <img src="~assets/hero-img.png" alt="hero-img" />
       </div>
     </div>
     <div class="text-container">
@@ -55,40 +55,20 @@ section .circle-container {
 }
 
 section .circle {
-  background: #7353ba;
-  width: 85vw;
-  height: 85vw;
-  border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 section .circle > img {
-  max-width: 70%;
-  max-height: 70%;
-  animation: up-and-down infinite alternate ease 2s;
-}
-
-@keyframes up-and-down {
-  from {
-    transform: translateY(-2em);
-  }
-
-  to {
-    transform: translateY(2em);
-  }
+  max-width: 100%;
+  max-height: 100%;
 }
 
 @media (min-width: 48em) {
   section {
     max-width: 1440px;
     margin: 0 auto;
-  }
-  section .circle {
-    width: 60vw;
-    height: 60vw;
   }
 }
 
@@ -126,18 +106,9 @@ section .circle > img {
     justify-content: center;
     align-items: center;
   }
-
-  section .circle {
-    width: 40vw;
-    height: 40vw;
-  }
 }
 
 @media (min-width: 80em) {
-  section .circle {
-    width: 29vw;
-    height: 29vw;
-  }
 
   section .circle > img {
     max-width: 100%;

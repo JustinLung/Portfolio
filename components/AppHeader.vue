@@ -85,7 +85,6 @@ nav {
 .nav-list {
   padding: 0;
   margin: 0;
-  list-style: none;
   display: flex;
 }
 .nav-list li {
@@ -178,7 +177,6 @@ header nav > .hamburger-menu {
 .overlay__list {
   position: relative;
   z-index: 1001;
-  list-style: none;
 }
 
 .overlay__list > li {
@@ -194,7 +192,6 @@ header nav > .hamburger-menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  list-style: none;
   border-top: solid 1px var(--color-white);
   margin-top: 1em;
 }

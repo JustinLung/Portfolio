@@ -15,6 +15,31 @@
     <figure>
       <img src="~assets/hero-img.png" alt="" />
     </figure>
+    <div class="socials-container">
+      <ul>
+        <li>
+          <a href="https://instagram.com/justinlung_" target="_blank"
+            ><img src="~assets/instagram-logo.svg" alt="Instagram"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
+            target="_blank"
+            ><img src="~assets/linkedin-logo.svg" alt="Linkedin"
+          /></a>
+        </li>
+        <li>
+          <a href="https://instagram.com/justinlung_" target="_blank"
+            ><img src="~assets/github-logo.svg" alt="github"
+          /></a>
+        </li>
+      </ul>
+      <div class="arrow-container">
+        <p>SCROLL DOWN</p>
+        <a href="#work"><img src="~assets/arrow.svg" alt="arrow" /></a>
+      </div>
+    </div>
   </div>
 </template>
 <script></script>
@@ -23,7 +48,14 @@ div {
   display: flex;
   flex-direction: column-reverse;
 }
+
+.socials-container {
+  position: absolute;
+  display: none;
+}
+
 #home {
+  position: relative;
   padding: 0 1em;
 }
 
@@ -47,7 +79,7 @@ figure {
   align-items: center;
 }
 
-img {
+figure > img {
   margin: 2em auto;
   max-width: 75%;
   max-height: 75%;
@@ -91,7 +123,38 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+  }
+
+  #home {
+    margin: 10em 0;
+  }
+
+  .socials-container {
+    display: block;
+    right: 2.5em;
+  }
+  .socials-container ul > li {
+    margin: 1em 0;
+  }
+
+  .arrow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    cursor: pointer;
+  }
+
+  .arrow-container > p {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .arrow-container a > img {
+    transition: 0.3s ease;
+  }
+
+  .arrow-container a > img:hover {
+    transform: translateY(10px);
   }
 }
 </style>

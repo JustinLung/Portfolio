@@ -1,81 +1,77 @@
 <template>
-  <section id="home">
-    <div class="circle-container">
-      <div class="circle">
-        <img src="~assets/hero-img.png" alt="hero-img" />
-      </div>
-    </div>
-    <div class="text-container">
+  <div>
+    <section id="home">
       <h2>
-        creative designer <br />
-        & developer.
+        Creative Designer <br />
+        & Developer.
       </h2>
       <p>
-        Hi, i’m Justin Lung. A passionate Front End Developer based in the
-        Netherlands.
+        Hi, i’m Justin Lung. A passionate Front End Developer <br />
+        based in the Netherlands.
       </p>
-      <NuxtLink to="/#works" class="cta-purple">See my works</NuxtLink>
-      <NuxtLink to="/#works" class="cta-white">Message me</NuxtLink>
-    </div>
-  </section>
+      <nuxt-link to="/#work" class="cta-purple">See my works</nuxt-link>
+      <nuxt-link to="/#contact" class="cta-white">Message me</nuxt-link>
+    </section>
+    <figure>
+      <img src="~assets/hero-img.png" alt="" />
+    </figure>
+  </div>
 </template>
 <script></script>
 <style scoped>
-/* HOME SECTION */
-
-section {
-  width: 100%;
-  height: auto;
-
+div {
   display: flex;
-  flex-direction: column;
-  padding: 2em 0;
+  flex-direction: column-reverse;
+}
+#home {
+  padding: 0 1em;
 }
 
-section .text-container {
-  padding: 0 0.5em;
+section > p {
+  font-size: 1.1rem;
+  margin: 1em 0;
 }
 
-section .text-container > h2 {
-  font-size: 2rem;
+.cta-purple,
+.cta-white {
+  padding: 0.3em 1em;
 }
 
-section .text-container > p {
-  font-size: 1rem;
-  margin-bottom: 1.5em;
+.cta-purple {
+  margin-right: 0.5em;
 }
 
-section .cta-purple,
-section .cta-white {
-  padding: 0.5em 1em;
-}
-
-section .circle-container {
-  margin: 2em auto;
-}
-
-section .circle {
+figure {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-section .circle > img {
-  max-width: 100%;
-  max-height: 100%;
+img {
+  margin: 2em auto;
+  max-width: 75%;
+  max-height: 75%;
+  animation: up-and-down infinite alternate ease 2s;
+  pointer-events: none;
 }
 
-@media (min-width: 48em) {
-  section {
-    max-width: 1440px;
-    margin: 0 auto;
+@keyframes up-and-down {
+  from {
+    transform: translateY(-2em);
+  }
+
+  to {
+    transform: translateY(2em);
   }
 }
 
-@media (min-width: 62em) {
-  section {
-    padding: 0 3em;
-    flex-direction: row-reverse;
+@media (min-width: 48em) {
+  section > h2 {
+    font-size: 3rem;
+  }
+
+  section > p {
+    font-size: 1.5rem;
   }
 
   section .cta-purple,
@@ -84,35 +80,18 @@ section .circle > img {
     font-size: 1.2rem;
   }
 
-  section .cta-white {
-    margin-left: .5em;
-  }
-
-  section .text-container {
-    flex: 1;
-    margin: auto;
-  }
-
-  section .text-container > h2 {
-    font-size: 3rem;
-  }
-
-  section .text-container > p {
-    font-size: 1.5rem;
-  }
-  section .circle-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  img {
+    max-width: 90%;
+    max-height: 90%;
   }
 }
 
-@media (min-width: 80em) {
-
-  section .circle > img {
-    max-width: 100%;
-    max-height: 100%;
+@media (min-width: 62em) {
+  div {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
   }
 }
 </style>

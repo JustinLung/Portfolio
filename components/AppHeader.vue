@@ -23,13 +23,39 @@
       <div class="overlay" v-bind:class="{ overlay__open: hamburgerOpen }">
         <ul class="overlay__list">
           <li>
+            <a href="#" @click="hamburgerOpen = !hamburgerOpen">Home</a>
+          </li>
+          <li>
             <a href="#work" @click="hamburgerOpen = !hamburgerOpen">Works</a>
           </li>
           <li>
             <a href="#about" @click="hamburgerOpen = !hamburgerOpen">About</a>
           </li>
           <li>
-            <a href="#contact" @click="hamburgerOpen = !hamburgerOpen">Contact</a>
+            <a href="#contact" @click="hamburgerOpen = !hamburgerOpen"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <ul class="inside">
+              <li>
+                <a href="https://instagram.com/justinlung_" target="_blank"
+                  ><img src="~assets/instagram-logo.svg" alt="Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
+                  target="_blank"
+                  ><img src="~assets/linkedin-logo.svg" alt="Linkedin"
+                /></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/justinlung_" target="_blank"
+                  ><img src="~assets/github-logo.svg" alt="github"
+                /></a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -52,6 +78,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 nav {
   flex-grow: 1;
 }
@@ -92,7 +119,7 @@ header nav > .hamburger-menu {
 .hamburger-menu .hamburger-line {
   width: 30px;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--color-white);
   position: absolute;
 }
 
@@ -140,12 +167,12 @@ header nav > .hamburger-menu {
   z-index: 999;
   width: 100%;
   height: 100vh;
-  background: #161616;
+  background: var(--dark-purple);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(-100%);
-  transition: 0.3s ease-in-out;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.4s ease-out;
 }
 
 .overlay__list {
@@ -156,19 +183,31 @@ header nav > .hamburger-menu {
 
 .overlay__list > li {
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .overlay__open {
-  transform: translateX(0%);
+  clip-path: inset(0);
+}
+
+.inside {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  border-top: solid 1px var(--color-white);
+  margin-top: 1em;
 }
 
 @media (max-width: 48em) {
   header {
+    width: 100%;
     padding: 1.5em;
   }
 
   header nav > .hamburger-menu {
     display: block;
+    margin-right: 0;
   }
 
   h1 {

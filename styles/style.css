@@ -1,0 +1,85 @@
+:root {
+  --dark-purple: #383343;
+  --purple: #7353ba;
+  --light-purple: #956eec;
+  --color-black: #161618;
+  --color-white: #ffffff;
+}
+
+*,
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--dark-purple);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--purple);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-purple);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.cta-purple {
+  all: unset;
+
+  background-color: var(--purple);
+  color: var(--color-white);
+  border-radius: 1.2em;
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-white {
+  all: unset;
+
+  color: var(--purple);
+  background-color: var(--color-white);
+  border-radius: 1.2em;
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-white:hover,
+.cta-purple:hover {
+  transform: scale(1.1);
+}

@@ -3,10 +3,13 @@
     <h2 class="work-title">Latest projects</h2>
     <div class="work-container">
       <section v-for="(project, index) in this.works" :key="index">
-        <div class="thumbnail"></div>
-        <h3>{{project.homeTitle}}</h3>
+        <figure class="thumbnail">
+          <!-- <nuxt-img src="project.image }}" alt="project image" class="work-image"/> -->
+          <img :src="projectImage(project.image)" alt="project image" class="work-image">
+        </figure>
+        <h3>{{ project.homeTitle }}</h3>
         <p>
-          {{project.homeDescription}}
+          {{ project.homeDescription }}
         </p>
         <NuxtLink :to="project.path" class="cta-white">🚀 See More</NuxtLink>
       </section>
@@ -25,19 +28,24 @@
 </template>
 <script>
 export default {
-  data: ()=>({
-    works: []
+  data: () => ({
+    works: [],
   }),
   async fetch() {
-    this.works = await this.$content('projects').fetch();
+    this.works = await this.$content("projects").fetch();
     this.works.reverse();
   },
-  fetchOnServer: false
-}
+  fetchOnServer: false,
+  methods: {
+    projectImage(image) {
+      return require(`~/assets/${image}`);
+    },
+  },
+};
 </script>
 <style scoped>
 #work {
-  padding: 0 0.5em;
+  padding: 0 1em;
   margin-top: 5em;
 }
 
@@ -60,7 +68,7 @@ h3 {
 
 .work-container section > p {
   font-size: 1.2rem;
-  margin-bottom: .3em;
+  margin-bottom: 0.3em;
 }
 
 .github-text {
@@ -70,16 +78,24 @@ h3 {
 }
 
 .github-link {
-  color: #7353ba;
+  color: var(--purple);
 }
 
 .thumbnail {
-  background-color: #7353ba;
+  background-color: var(--purple);
   width: 100%;
   height: 25em;
   border-radius: 0.5em;
 
   margin: 1em 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-image {
+  width: 90%;
 }
 
 .cta-white {
@@ -110,6 +126,14 @@ h3 {
   .thumbnail {
     width: 100%;
     height: 25em;
+  }
+
+  .work-container section > p {
+    margin-bottom: 1em;
+  }
+
+  .cta-white {
+    padding: 0.5em 2.3em;
   }
 }
 

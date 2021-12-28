@@ -20,7 +20,7 @@
           Vue.js and Svelte. I’m never done with learning new things and hope to
           learn more along the road.
         </p>
-        <button class="cta-purple">Resume</button>
+        <button class="cta-purple">📄 Resume</button>
       </div>
     </div>
   </section>
@@ -28,7 +28,7 @@
 <script></script>
 <style scoped>
 section {
-  background-color: #383343;
+  background-color: var(--dark-purple);
 
   width: 100%;
   height: auto;
@@ -56,7 +56,7 @@ section {
 }
 
 .about-wrapper .circle {
-  background: #7353ba;
+  background: var(--purple);
   width: 85vw;
   height: 85vw;
   border-radius: 50%;

@@ -51,7 +51,7 @@ ul > li:first-child {
 .footer-copyright-wrapper {
   max-width: 750px;
   margin: 0 auto;
-  color: #fff;
+  color: var(--color-white);
   border: 0;
   border-top: 0.1em;
   border-style: solid;

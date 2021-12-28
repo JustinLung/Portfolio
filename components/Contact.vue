@@ -20,7 +20,7 @@ section > h2 {
 ul {
   list-style: none;
   padding: 0;
-  margin-top: 1em;
+  margin: 1.5em 0;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -36,7 +36,7 @@ li > a {
 }
 
 li > a:hover {
-  color: #7353ba;
+  color: var(--purple);
 }
 
 .cta-purple {

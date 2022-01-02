@@ -18,13 +18,3 @@ export default {
   components: { Home, Works },
 };
 </script>
-<style>
-.layout-enter-active,
-.layout-leave-active {
-  transition: opacity 0.5s;
-}
-.layout-enter,
-.layout-leave-active {
-  opacity: 0;
-}
-</style>

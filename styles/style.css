@@ -10,24 +10,23 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: var(--dark-purple);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--purple);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--light-purple);
 }
@@ -38,19 +37,6 @@ body {
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: "Poppins", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 a {
@@ -83,4 +69,13 @@ a {
 .cta-white:hover,
 .cta-purple:hover {
   transform: scale(1.1);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
 }

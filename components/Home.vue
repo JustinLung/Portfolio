@@ -112,7 +112,7 @@ figure > img {
     font-size: 1.2rem;
   }
 
-  img {
+  figure > img {
     max-width: 90%;
     max-height: 90%;
   }

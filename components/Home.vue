@@ -6,7 +6,7 @@
         & Developer.
       </h2>
       <p>
-        Hi, i’m Justin Lung. A passionate Front End Developer <br />
+        Hi, i'm Justin Lung. A passionate Front End Developer <br />
         based in the Netherlands.
       </p>
       <nuxt-link to="/#work" class="cta-purple">See my works</nuxt-link>
@@ -35,10 +35,10 @@
           /></a>
         </li>
       </ul>
-      <div class="arrow-container">
+      <a href="#work" class="arrow-container">
         <p>SCROLL DOWN</p>
-        <a href="#work"><img src="~assets/arrow.svg" alt="arrow" /></a>
-      </div>
+        <img src="~assets/arrow.svg" alt="arrow" />
+      </a>
     </div>
   </div>
 </template>
@@ -149,11 +149,13 @@ figure > img {
     text-orientation: mixed;
   }
 
-  .arrow-container a > img {
+  .arrow-container > img {
     transition: 0.3s ease;
+    align-self: center;
+    width: 70%;
   }
 
-  .arrow-container a > img:hover {
+  .arrow-container > img:hover {
     transform: translateY(10px);
   }
 }

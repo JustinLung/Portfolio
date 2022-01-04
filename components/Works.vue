@@ -5,7 +5,11 @@
       <section v-for="(project, index) in this.works" :key="index">
         <figure class="thumbnail">
           <!-- <nuxt-img src="project.image }}" alt="project image" class="work-image"/> -->
-          <img :src="projectImage(project.image)" alt="project image" class="work-image">
+          <img
+            :src="projectImage(project.image)"
+            alt="project image"
+            class="work-image"
+          />
         </figure>
         <h3>{{ project.homeTitle }}</h3>
         <p>

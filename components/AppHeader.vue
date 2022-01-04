@@ -73,7 +73,7 @@ export default {
 </script>
 <style scoped>
 header {
-  padding: 3em;
+  padding: 2em 3em;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -66,11 +66,6 @@ a {
   cursor: pointer;
 }
 
-.cta-white:hover,
-.cta-purple:hover {
-  transform: scale(1.1);
-}
-
 .layout-enter-active,
 .layout-leave-active {
   transition: opacity 0.5s;

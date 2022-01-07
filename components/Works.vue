@@ -1,6 +1,6 @@
 <template>
   <section id="work">
-    <h2 class="work-title">Latest projects</h2>
+    <h2 class="work-title animate">Latest projects</h2>
     <div class="work-container">
       <section v-for="(project, index) in this.works" :key="index">
         <figure class="thumbnail">
@@ -110,7 +110,7 @@ h3 {
 @media (min-width: 45em) {
   #work {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 3em auto;
   }
   .work-title {
     text-align: left;

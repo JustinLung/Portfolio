@@ -16,6 +16,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js'}
     ]
   },
 
@@ -26,7 +30,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~/plugins/vue-intersect.js', mode: 'client'}
+    { src: '~/plugins/vue-intersect.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

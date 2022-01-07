@@ -1,48 +1,82 @@
 <template>
   <div>
     <section id="home">
-      <h2>
-        Creative Designer <br />
+      <h2 class="skew-animation">
+        <span>Creative</span> Designer <br />
         & Developer.
       </h2>
-      <p>
+      <p class="skew-animation">
         Hi, i'm Justin Lung. A passionate Front End Developer <br />
         based in the Netherlands.
       </p>
-      <nuxt-link to="/#work" class="cta-purple">See my works</nuxt-link>
-      <nuxt-link to="/#contact" class="cta-white">Message me</nuxt-link>
+      <nuxt-link to="/#work" class="cta-purple opacity">See my works</nuxt-link>
+      <nuxt-link to="/#contact" class="cta-white opacity">Message me</nuxt-link>
     </section>
     <figure>
-      <img src="~assets/hero-img.png" alt="" />
+      <img src="~assets/hero-img.png" />
     </figure>
     <div class="socials-container">
       <ul>
         <li>
           <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img src="~assets/instagram-logo.svg" alt="Instagram"
+            ><img
+              src="~assets/instagram-logo.svg"
+              alt="Instagram"
+              class="skew-animation"
           /></a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
             target="_blank"
-            ><img src="~assets/linkedin-logo.svg" alt="Linkedin"
+            ><img
+              src="~assets/linkedin-logo.svg"
+              alt="Linkedin"
+              class="skew-animation"
           /></a>
         </li>
         <li>
-          <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img src="~assets/github-logo.svg" alt="github"
+          <a href="https://github.com/JustinLung" target="_blank"
+            ><img
+              src="~assets/github-logo.svg"
+              alt="github"
+              class="skew-animation"
           /></a>
         </li>
       </ul>
       <a href="#work" class="arrow-container">
-        <p>SCROLL DOWN</p>
-        <img src="~assets/arrow.svg" alt="arrow" />
+        <p class="skew-animation">SCROLL DOWN</p>
+        <img src="~assets/arrow.svg" alt="arrow" class="skew-animation" />
       </a>
     </div>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+  mounted() {
+    const tl = gsap.timeline();
+    tl.from(".skew-animation", {
+      duration: 1.8,
+      delay: 0.5,
+      y: 200,
+      skewY: 10,
+      stagger: {
+        amount: 0.4,
+      },
+      opacity: 0,
+      ease: "power4.out",
+    });
+
+    tl.from(".opacity", {
+      opacity: 0,
+      stagger: {
+        amount: 0.5,
+      },
+      ease: "power4.out",
+    });
+  },
+};
+</script>
 <style scoped>
 div {
   display: flex;
@@ -57,16 +91,40 @@ div {
 #home {
   position: relative;
   padding: 0 1em;
+  margin-inline: auto;
+  text-align: center;
+}
+
+section > h2 {
+  font-size: 1.7rem;
+  cursor: default;
+}
+
+h2 > span:hover {
+  color: var(--purple);
+}
+
+.skew-animation {
+  opacity: 1;
+}
+
+.opacity {
+  opacity: 1;
 }
 
 section > p {
-  font-size: 1.1rem;
-  margin: 1em 0;
+  font-size: 1.3rem;
+  margin: 0.7em 0;
+  cursor: default;
+}
+
+br {
+  display: none;
 }
 
 .cta-purple,
 .cta-white {
-  padding: 0.3em 1em;
+  padding: 0.5em 1em;
 }
 
 .cta-purple {
@@ -119,6 +177,14 @@ figure > img {
 }
 
 @media (min-width: 62em) {
+  br {
+    display: block;
+  }
+
+  #home {
+    text-align: left;
+  }
+
   div {
     flex-direction: row;
     justify-content: center;

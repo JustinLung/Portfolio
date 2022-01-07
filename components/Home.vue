@@ -2,7 +2,7 @@
   <div>
     <section id="home">
       <h2>
-        Creative Designer <br />
+        <span>Creative</span> Designer <br />
         & Developer.
       </h2>
       <p>
@@ -66,11 +66,18 @@ br {
 
 section > h2 {
   font-size: 1.7rem;
+  cursor: default;
+}
+
+h2 span:hover {
+  cursor: pointer;
+  color: var(--purple);
 }
 
 section > p {
   font-size: 1.1rem;
   margin: 1em 0;
+  cursor: default;
 }
 
 .cta-purple,

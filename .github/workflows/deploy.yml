@@ -17,6 +17,7 @@ jobs:
       run: |
         npm install
         npm run build
+        npm run generate
     
     - name: 📂 Sync files to .nl
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -25,4 +26,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ${{ secrets.FTP_DIR }}
-        local-dir: ./public/
+        local-dir: ./dist/

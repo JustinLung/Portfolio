@@ -65,7 +65,7 @@ br {
 }
 
 section > h2 {
-  font-size: 1.1rem;
+  font-size: 1.7rem;
 }
 
 section > p {

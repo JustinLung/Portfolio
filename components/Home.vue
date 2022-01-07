@@ -49,6 +49,10 @@ div {
   flex-direction: column-reverse;
 }
 
+br {
+  display: none;
+}
+
 .socials-container {
   position: absolute;
   display: none;
@@ -57,6 +61,11 @@ div {
 #home {
   position: relative;
   padding: 0 1em;
+  text-align: center;
+}
+
+section > h2 {
+  font-size: 1.7rem;
 }
 
 section > p {
@@ -66,7 +75,7 @@ section > p {
 
 .cta-purple,
 .cta-white {
-  padding: 0.3em 1em;
+  padding: 0.5em 1em;
 }
 
 .cta-purple {
@@ -127,6 +136,11 @@ figure > img {
 
   #home {
     margin: 10em 0;
+    text-align: left;
+  }
+
+  br {
+    display: block;
   }
 
   .socials-container {

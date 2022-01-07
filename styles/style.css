@@ -6,17 +6,8 @@
   --color-white: #ffffff;
 }
 
-*,
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
 ::-webkit-scrollbar {
-  width: .5em;
+  width: 0.5em;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,6 +20,15 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--light-purple);
+}
+
+*,
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 body {

@@ -18,7 +18,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      
+
     ]
   },
 
@@ -29,7 +29,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,6 +39,7 @@ export default {
   target: 'static',
   buildModules: [
     '@nuxt/image',
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,5 +49,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // Adding fonts from: https://fonts.google.com/ 
+  googleFonts: {
+    families: {
+      Poppins: [100, 400, 500, 700, 900],
+    }
+  },
 }

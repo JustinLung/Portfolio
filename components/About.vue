@@ -100,6 +100,7 @@ section {
 
   .about-wrapper .cta-purple {
     margin: 1em 0;
+    padding: .5em 3em;
   }
 
   .about-wrapper .text-container {

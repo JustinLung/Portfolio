@@ -35,10 +35,10 @@
           /></a>
         </li>
       </ul>
-      <div class="arrow-container">
+      <a href="#work" class="arrow-container">
         <p>SCROLL DOWN</p>
         <a href="#work"><img src="~assets/arrow.svg" alt="arrow" /></a>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -140,6 +140,8 @@ figure > img {
   .arrow-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1em;
     cursor: pointer;
   }

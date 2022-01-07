@@ -20,7 +20,7 @@
     </div>
 
     <h3 class="github-text">
-      And Many more projects can be found on my
+      And many more projects can be found on my
       <a
         href="https://github.com/JustinLung"
         target="_blank"

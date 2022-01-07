@@ -1,82 +1,48 @@
 <template>
   <div>
     <section id="home">
-      <h2 class="skew-animation">
-        <span>Creative</span> Designer <br />
+      <h2>
+        Creative Designer <br />
         & Developer.
       </h2>
-      <p class="skew-animation">
-        Hi, i'm Justin Lung. A passionate Front End Developer <br />
+      <p>
+        Hi, i’m Justin Lung. A passionate Front End Developer <br />
         based in the Netherlands.
       </p>
-      <nuxt-link to="/#work" class="cta-purple opacity">See my works</nuxt-link>
-      <nuxt-link to="/#contact" class="cta-white opacity">Message me</nuxt-link>
+      <nuxt-link to="/#work" class="cta-purple">See my works</nuxt-link>
+      <nuxt-link to="/#contact" class="cta-white">Message me</nuxt-link>
     </section>
     <figure>
-      <img src="~assets/hero-img.png" />
+      <img src="~assets/hero-img.png" alt="" />
     </figure>
     <div class="socials-container">
       <ul>
         <li>
           <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img
-              src="~assets/instagram-logo.svg"
-              alt="Instagram"
-              class="skew-animation"
+            ><img src="~assets/instagram-logo.svg" alt="Instagram"
           /></a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
             target="_blank"
-            ><img
-              src="~assets/linkedin-logo.svg"
-              alt="Linkedin"
-              class="skew-animation"
+            ><img src="~assets/linkedin-logo.svg" alt="Linkedin"
           /></a>
         </li>
         <li>
-          <a href="https://github.com/JustinLung" target="_blank"
-            ><img
-              src="~assets/github-logo.svg"
-              alt="github"
-              class="skew-animation"
+          <a href="https://instagram.com/justinlung_" target="_blank"
+            ><img src="~assets/github-logo.svg" alt="github"
           /></a>
         </li>
       </ul>
       <a href="#work" class="arrow-container">
-        <p class="skew-animation">SCROLL DOWN</p>
-        <img src="~assets/arrow.svg" alt="arrow" class="skew-animation" />
+        <p>SCROLL DOWN</p>
+        <a href="#work"><img src="~assets/arrow.svg" alt="arrow" /></a>
       </a>
     </div>
   </div>
 </template>
-<script>
-export default {
-  mounted() {
-    const tl = gsap.timeline();
-    tl.from(".skew-animation", {
-      duration: 1.8,
-      delay: 0.5,
-      y: 200,
-      skewY: 10,
-      stagger: {
-        amount: 0.4,
-      },
-      opacity: 0,
-      ease: "power4.out",
-    });
-
-    tl.from(".opacity", {
-      opacity: 0,
-      stagger: {
-        amount: 0.5,
-      },
-      ease: "power4.out",
-    });
-  },
-};
-</script>
+<script></script>
 <style scoped>
 div {
   display: flex;
@@ -91,40 +57,16 @@ div {
 #home {
   position: relative;
   padding: 0 1em;
-  margin-inline: auto;
-  text-align: center;
-}
-
-section > h2 {
-  font-size: 1.7rem;
-  cursor: default;
-}
-
-h2 > span:hover {
-  color: var(--purple);
-}
-
-.skew-animation {
-  opacity: 1;
-}
-
-.opacity {
-  opacity: 1;
 }
 
 section > p {
-  font-size: 1.3rem;
-  margin: 0.7em 0;
-  cursor: default;
-}
-
-br {
-  display: none;
+  font-size: 1.1rem;
+  margin: 1em 0;
 }
 
 .cta-purple,
 .cta-white {
-  padding: 0.5em 1em;
+  padding: 0.3em 1em;
 }
 
 .cta-purple {
@@ -170,21 +112,13 @@ figure > img {
     font-size: 1.2rem;
   }
 
-  figure > img {
-    max-width: 90%;
-    max-height: 90%;
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
 @media (min-width: 62em) {
-  br {
-    display: block;
-  }
-
-  #home {
-    text-align: left;
-  }
-
   div {
     flex-direction: row;
     justify-content: center;
@@ -206,6 +140,8 @@ figure > img {
   .arrow-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1em;
     cursor: pointer;
   }
@@ -215,13 +151,11 @@ figure > img {
     text-orientation: mixed;
   }
 
-  .arrow-container > img {
+  .arrow-container a > img {
     transition: 0.3s ease;
-    align-self: center;
-    width: 70%;
   }
 
-  .arrow-container > img:hover {
+  .arrow-container a > img:hover {
     transform: translateY(10px);
   }
 }

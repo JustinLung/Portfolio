@@ -9,7 +9,7 @@ The repository for my portfolio made in Nuxtjs.
 * 🕹 JavaScript
 * 🧶 Nuxt.js
 
-## 🎬 Installatie & 🔋 Gebruik
+## 🎬 Installation & 🔋 Usage
 
 ```bash
 # install dependencies

@@ -20,7 +20,7 @@
           Vue.js and Svelte. I’m never done with learning new things and hope to
           learn more along the road.
         </p>
-        <button class="cta-purple">📄 Resume</button>
+        <a href="~assets/cv.pdf" class="cta-purple" download>📄 Resume</a>
       </div>
     </div>
   </section>
@@ -45,10 +45,13 @@ section {
 }
 
 .about-wrapper .cta-purple {
-  display: block;
+  display: inline-block;
   font-size: 1.2rem;
   padding: 0.5em 3em;
   margin: 1em auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .about-wrapper .circle-container {
@@ -100,7 +103,9 @@ section {
 
   .about-wrapper .cta-purple {
     margin: 1em 0;
-    padding: .5em 3em;
+    padding: 0.5em 3em;
+    left: 0;
+    transform: translateX(0);
   }
 
   .about-wrapper .text-container {

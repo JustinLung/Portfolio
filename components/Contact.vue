@@ -6,7 +6,7 @@
       <li><a href="https://www.linkedin.com/in/justin-lung-1a0753127/" target="_blank">Linkedin</a></li>
       <li><a href="https://github.com/JustinLung" target="_blank">Github</a></li>
     </ul>
-    <button class="cta-purple">Send me a message</button>
+    <a href="mailto:justinlung77@gmail.com" class="cta-purple">Send me a message</a>
   </section>
 </template>
 <script></script>
@@ -40,7 +40,10 @@ li > a:hover {
 }
 
 .cta-purple {
-  display: block;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0.5em 2em;
   margin: 0 auto;
 }

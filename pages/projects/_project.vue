@@ -216,6 +216,7 @@ figure > img {
 
   figure {
     height: 35em;
+    margin-bottom: 5em;
   }
 
   .header img {

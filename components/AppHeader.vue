@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Portfolio</h1>
+    <NuxtLink to="/" class="logo">Portfolio</NuxtLink>
     <nav>
       <ul class="nav-list">
         <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -117,10 +117,13 @@ nav {
   border: 2px solid var(--color-white);
 }
 
-h1 {
+.logo {
   position: relative;
   z-index: 1001;
+  font-weight: bold;
+  font-size: 2rem;
 }
+
 header nav > .hamburger-menu {
   position: relative;
   margin-left: auto;
@@ -219,7 +222,7 @@ header nav > .hamburger-menu {
   align-items: center;
   border-top: solid 1px var(--color-white);
   margin-top: 1em;
-  gap: .7em;
+  gap: 0.7em;
 }
 
 @media (max-width: 48em) {
@@ -238,7 +241,7 @@ header nav > .hamburger-menu {
     margin-right: 0;
   }
 
-  h1 {
+  .logo {
     font-size: 1.8rem;
   }
   .nav-list {

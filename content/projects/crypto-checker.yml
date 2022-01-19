@@ -1,6 +1,6 @@
 title: Crypto Checker
 image: cryptochecker-mockup.png
-description: hello this is the Crypto Checker project
-
+description: Togheter with a friend, we were intressted in cryptocurrencies. We wanted to build an application where you can look at prices the easy way.
+skills: [Vue.js, HTML5, SCSS, JavaScript, CryptoCompare Api]
 homeTitle: 💰 Crypto Checker
-homeDescription: Buying an NFT has never been this easy. Be quick, be cool, be icy.
+homeDescription: Looking at Crypto prices has never been so easy before. 

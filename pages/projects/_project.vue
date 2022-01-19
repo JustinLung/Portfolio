@@ -1,16 +1,25 @@
 <template>
   <div>
-    <section>
+    <section class="header">
+      <div></div>
       <h2>{{ this.title }}</h2>
+      <img
+        :src="projectImage(this.image)"
+        alt="project image"
+        class="work-image"
+      />
     </section>
+    <ul>
+      <li class="cta-purple" v-for="skill in this.skills" :key="skill">
+        {{ skill }}
+      </li>
+    </ul>
     <main>
       <p>{{ this.description }}</p>
-      <section>
-        <h3>Skills Used</h3>
-        <div class="tag-container"></div>
-      </section>
-      <figure>
-      </figure>
+      <a :href="this.githubLink" target="_blank" rel="noreferrer"
+        >View Github Repository</a
+      >
+      <figure></figure>
     </main>
   </div>
 </template>
@@ -20,8 +29,24 @@ export default {
   async asyncData({ params, $content }) {
     const projectParam = params.project; // When calling /abc the slug will be "abc"
     const project = await $content("projects").search(projectParam).fetch();
-    const { title, description, createdAt, updatedAt } = project[0];
-    return { title, description, createdAt, updatedAt };
+    const {
+      title,
+      description,
+      githubLink,
+      image,
+      createdAt,
+      updatedAt,
+      skills,
+    } = project[0];
+    return {
+      title,
+      description,
+      githubLink,
+      image,
+      createdAt,
+      updatedAt,
+      skills,
+    };
   },
   methods: {
     projectImage(image) {
@@ -31,19 +56,37 @@ export default {
 };
 </script>
 <style scoped>
+.header {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-div {
-  padding: 1.5em;
+.header div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 90%;
+  background-color: var(--light-purple);
+  /* clip-path: circle(60em at 50% -80%); */
+  transform: scaleX(1.3);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  z-index: -1;
+}
+
+.header img {
+  width: 22em;
 }
 
 h2 {
   font-size: 2rem;
-  padding-bottom: .5em;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-top: 1em;
+  padding-bottom: 0.5em;
 }
 
 figure {
@@ -53,13 +96,79 @@ figure {
   border-radius: 0.5em;
 }
 
-@media(min-width: 48em) {
-  div {
-    padding: 3em;
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5em;
+  gap: 0.5em;
+}
+
+li {
+  padding: 0.5em 1em;
+}
+
+li:nth-child(even) {
+  background-color: var(--color-white);
+  color: var(--purple);
+}
+
+main {
+  padding: 0 1em;
+}
+
+p {
+  padding: 2rem 0;
+  max-width: 35em;
+  margin-inline: auto;
+  text-align: center;
+}
+
+a {
+  font-size: 1.5rem;
+  display: flex;
+  width: max-content;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--light-purple);
+}
+
+a::before {
+  content: '';
+  background-image: url('~assets/github-logo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: .5em;
+}
+
+a:hover {
+  color: var(--purple);
+}
+
+a:hover::before {
+  filter: brightness(70%);
+}
+
+@media (min-width: 48em) {
+  .header {
+    height: 70vh;
+  }
+
+  main {
+    padding: 0 3em;
   }
 
   h2 {
     font-size: 2.5rem;
+  }
+
+  h3 {
+    text-align: left;
   }
 
   p {
@@ -69,6 +178,13 @@ figure {
   figure {
     height: 35em;
   }
-}
 
+  .header img {
+    width: 35em;
+  }
+
+  ul {
+    gap: 1em;
+  }
+}
 </style>

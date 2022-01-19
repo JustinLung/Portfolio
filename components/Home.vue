@@ -93,6 +93,7 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5em;
 }
 
 figure > img {
@@ -131,6 +132,10 @@ figure > img {
   img {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  figure {
+    margin: 0;
   }
 }
 

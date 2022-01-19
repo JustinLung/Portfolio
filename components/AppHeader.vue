@@ -77,6 +77,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
 }
 
 nav {
@@ -97,6 +100,10 @@ nav {
 }
 .nav-list li:nth-of-type(4) {
   margin: 0;
+}
+
+.nav-list li:nth-of-type(4) a:focus {
+  border: 2px solid var(--color-white);
 }
 
 h1 {
@@ -172,6 +179,8 @@ header nav > .hamburger-menu {
   align-items: center;
   clip-path: inset(0 0 100% 0);
   transition: clip-path 0.4s ease-out;
+  visibility: hidden;
+  display: none;
 }
 
 .overlay__list {
@@ -200,6 +209,11 @@ header nav > .hamburger-menu {
   header {
     width: 100%;
     padding: 1.5em;
+  }
+
+  .overlay {
+    display: block;
+    visibility: visible;
   }
 
   header nav > .hamburger-menu {

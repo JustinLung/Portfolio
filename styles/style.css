@@ -71,6 +71,14 @@ a {
   transform: scale(1.1);
 }
 
+.cta-purple:focus {
+  border: 2px solid var(--color-white);
+}
+
+.cta-white:focus {
+  border: 2px solid var(--purple);
+}
+
 .layout-enter-active,
 .layout-leave-active {
   transition: opacity 0.5s;

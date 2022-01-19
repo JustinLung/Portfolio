@@ -27,7 +27,7 @@ $ npm run start
 $ npm run generate
 ```
 
-For a more detailed explenation [documentatie](https://nuxtjs.org).
+For a more detailed explenation [documentation](https://nuxtjs.org).
 
 ## 📺 Sources
 [Tablericons](https://tablericons.com/)

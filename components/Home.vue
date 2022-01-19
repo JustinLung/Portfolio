@@ -42,7 +42,15 @@
     </div>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      ctaHover: false,
+    };
+  },
+};
+</script>
 <style scoped>
 div {
   display: flex;

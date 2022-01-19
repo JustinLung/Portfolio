@@ -51,7 +51,15 @@ a {
   color: var(--color-white);
   border-radius: 1.2em;
 
+  border: 3px solid transparent;
+
   transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-purple:hover {
+  background: transparent;
+  border: 3px solid var(--purple);
 }
 
 .cta-white {
@@ -61,13 +69,16 @@ a {
   background-color: var(--color-white);
   border-radius: 1.2em;
 
+  border: 3px solid transparent;
+
   transition: 0.3s ease;
   cursor: pointer;
 }
 
-.cta-purple:hover,
 .cta-white:hover {
-  transform: scale(1.1);
+  background: transparent;
+  border: 3px solid var(--color-white);
+  color: var(--color-white);
 }
 
 .cta-purple:focus {

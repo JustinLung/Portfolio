@@ -2,6 +2,7 @@
 ![Portfolio Website](https://github.com/JustinLung/Portfolio/blob/master/docs/hero-image.png?raw=true)
 ## 💾 Project Description
 The repository for my portfolio made in Nuxtjs.
+[🌐 Live](http://justinlung.nl/)
 ## 🍕 Skills used
 * 🔖 HTML
 * 🧵 CSS

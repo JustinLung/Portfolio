@@ -32,7 +32,9 @@
           >
         </li>
       </ul>
-      <figure></figure>
+      <figure>
+        <img :src="projectImage(this.gif)" alt="project image" class="gif" />
+      </figure>
     </main>
   </div>
 </template>
@@ -51,6 +53,7 @@ export default {
       createdAt,
       updatedAt,
       skills,
+      gif,
     } = project[0];
     return {
       title,
@@ -61,6 +64,7 @@ export default {
       createdAt,
       updatedAt,
       skills,
+      gif,
     };
   },
   methods: {
@@ -104,13 +108,6 @@ h2 {
   padding-bottom: 0.5em;
 }
 
-figure {
-  width: 100%;
-  height: 20em;
-  background-color: var(--purple);
-  border-radius: 0.5em;
-}
-
 .tags-container {
   display: flex;
   flex-wrap: wrap;
@@ -137,7 +134,7 @@ p {
   padding: 2rem 0;
   max-width: 35em;
   margin-inline: auto;
-  text-align: center;
+  /* text-align: center; */
 }
 
 a {
@@ -145,7 +142,7 @@ a {
   justify-content: center;
   align-items: center;
   width: max-content;
-  margin-inline: auto;
+  /* margin-inline: auto; */
   margin-bottom: 1rem;
   color: var(--light-purple);
 }
@@ -169,6 +166,27 @@ a:hover::before {
   filter: brightness(70%);
 }
 
+.cta-purple {
+  pointer-events: none;
+}
+
+figure {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  padding: 2em 0;
+  background-color: var(--light-purple);
+  border-radius: 0.5em;
+}
+
+figure > img {
+  width: 85%;
+  max-width: 900px;
+}
+
 @media (min-width: 48em) {
   .header {
     height: 70vh;
@@ -188,10 +206,12 @@ a:hover::before {
 
   p {
     font-size: 1.3rem;
+    text-align: center;
   }
 
   a {
     font-size: 1.5rem;
+    margin-inline: auto;
   }
 
   figure {

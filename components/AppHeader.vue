@@ -215,10 +215,11 @@ header nav > .hamburger-menu {
 
 .inside {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   border-top: solid 1px var(--color-white);
   margin-top: 1em;
+  gap: .7em;
 }
 
 @media (max-width: 48em) {

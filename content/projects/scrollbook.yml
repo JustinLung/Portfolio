@@ -1,8 +1,9 @@
-title: Icy Penguins
+title: Scrollbook
 image: ipad-mockup.png
 description: During the time of my studies at FDND, me and a friend of mine found out about nft’s. We were inspired by various projects throughout the blockchain and created our own nft-set. This nft-set was very unique and is handdrawn by us. We could’nt wait any longer after the design and made a static website for this nft.
 skills: [Nuxtjs, Vuejs, GSAP, ScrollMagic, Canvas HTML5, CSS3, JavaScript, Photoshop]
 githubLink: https://github.com/DaanKorver/the-startup-scrollbook
 liveLink: https://scrollbook.student.fdnd.nl/
 homeTitle: 📗 Scrollbook
+gif: scrollbook-gif.gif
 homeDescription: Deep reading is something we need to do more often.

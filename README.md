@@ -2,7 +2,7 @@
 
 ## 💾 Project Description
 The repository for my portfolio made in Nuxtjs.
-![]()
+![Portfolio Website](https://github.com/JustinLung/Portfolio/blob/master/docs/hero-image.png?raw=true)
 ## 🍕 Skills used
 * 🔖 HTML
 * 🧵 CSS

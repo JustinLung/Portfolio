@@ -4,16 +4,37 @@
       <h3>Portfolio</h3>
       <ul>
         <li class="footer-title">Menu</li>
-        <li><nuxt-link to="/#">Home</nuxt-link></li>
-        <li><nuxt-link to="/#work">Work</nuxt-link></li>
-        <li><nuxt-link to="/#about">About</nuxt-link></li>
-        <li><nuxt-link to="/#contact">Contact</nuxt-link></li>
+        <li><NuxtLink to="/">Home</NuxtLink></li>
+        <li><NuxtLink to="/#work">Work</NuxtLink></li>
+        <li><NuxtLink to="/#about">About</NuxtLink></li>
+        <li><NuxtLink to="/#contact">Contact</NuxtLink></li>
       </ul>
       <ul>
         <li class="footer-title">Social</li>
-        <li><a href="">Instagram</a></li>
-        <li><a href="">Linkedin</a></li>
-        <li><a href="">Github</a></li>
+        <li>
+          <a
+            href="https://instagram.com/justinlung_"
+            target="_blank"
+            rel="noreferrer"
+            >Instagram</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
+            target="_blank"
+            rel="noreferrer"
+            >Linkedin</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/JustinLung"
+            target="_blank"
+            rel="noreferrer"
+            >Github</a
+          >
+        </li>
       </ul>
     </section>
     <section class="footer-copyright-wrapper">

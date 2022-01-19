@@ -19,19 +19,28 @@
       <ul>
         <li>
           <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img src="~assets/icons/instagram-logo.svg" alt="Instagram"
+            ><img
+              src="~assets/icons/instagram-logo.svg"
+              alt="Instagram"
+              rel="noreferrer"
           /></a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
             target="_blank"
-            ><img src="~assets/icons/linkedin-logo.svg" alt="Linkedin"
+            ><img
+              src="~assets/icons/linkedin-logo.svg"
+              alt="Linkedin"
+              rel="noreferrer"
           /></a>
         </li>
         <li>
           <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img src="~assets/icons/github-logo.svg" alt="github"
+            ><img
+              src="~assets/icons/github-logo.svg"
+              alt="github"
+              rel="noreferrer"
           /></a>
         </li>
       </ul>

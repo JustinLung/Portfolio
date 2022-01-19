@@ -25,6 +25,7 @@
         href="https://github.com/JustinLung"
         target="_blank"
         class="github-link"
+        rel="noreferrer"
         >Github!</a
       >
     </h3>

@@ -28,11 +28,5 @@ $ npm run generate
 
 For a more detailed explenation [documentatie](https://nuxtjs.org).
 
-## 📺 Bronnen
+## 📺 Sources
 [Tablericons](https://tablericons.com/)
-
-## 🚖 Licentie
-
-![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
-
-This work is licensed under [GNU GPLv3](./LICENSE).

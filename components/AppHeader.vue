@@ -3,11 +3,11 @@
     <h1>Portfolio</h1>
     <nav>
       <ul class="nav-list">
-        <li><nuxt-link to="/">Home</nuxt-link></li>
-        <li><nuxt-link to="/#work">Works</nuxt-link></li>
-        <li><nuxt-link to="/#about">About</nuxt-link></li>
+        <li><NuxtLink to="/">Home</NuxtLink></li>
+        <li><NuxtLink to="/#work">Works</NuxtLink></li>
+        <li><NuxtLink to="/#about">About</NuxtLink></li>
         <li>
-          <nuxt-link to="/#contact" class="cta-purple">Contact</nuxt-link>
+          <NuxtLink to="/#contact" class="cta-purple">Contact</NuxtLink>
         </li>
       </ul>
       <div
@@ -23,36 +23,46 @@
       <div class="overlay" v-bind:class="{ overlay__open: hamburgerOpen }">
         <ul class="overlay__list">
           <li>
-            <a href="#" @click="hamburgerOpen = !hamburgerOpen">Home</a>
+            <NuxtLink to="/" @click.native="hamburgerOpen = !hamburgerOpen"
+              >Home</NuxtLink
+            >
           </li>
           <li>
-            <a href="#work" @click="hamburgerOpen = !hamburgerOpen">Works</a>
+            <NuxtLink to="/#work" @click.native="hamburgerOpen = !hamburgerOpen"
+              >Works</NuxtLink
+            >
           </li>
           <li>
-            <a href="#about" @click="hamburgerOpen = !hamburgerOpen">About</a>
+            <NuxtLink
+              to="/#about"
+              @click.native="hamburgerOpen = !hamburgerOpen"
+              >About</NuxtLink
+            >
           </li>
           <li>
-            <a href="#contact" @click="hamburgerOpen = !hamburgerOpen"
-              >Contact</a
+            <NuxtLink
+              to="/#contact"
+              @click.native="hamburgerOpen = !hamburgerOpen"
+              >Contact</NuxtLink
             >
           </li>
           <li>
             <ul class="inside">
               <li>
                 <a href="https://instagram.com/justinlung_" target="_blank"
-                  ><img src="~assets/instagram-logo.svg" alt="Instagram"
+                  ><img src="~assets/icons/instagram-logo.svg" alt="Instagram"
                 /></a>
               </li>
               <li>
                 <a
                   href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
                   target="_blank"
-                  ><img src="~assets/linkedin-logo.svg" alt="Linkedin"
+                  ><img src="~assets/icons/linkedin-logo.svg" alt="Linkedin"
                 /></a>
               </li>
               <li>
-                <a href="https://instagram.com/justinlung_" target="_blank"
-                  ><img src="~assets/github-logo.svg" alt="github"
+                <a href="https://github.com/JustinLung" target="_blank"
+                  ><img src="~assets/icons/github-logo.svg" alt="github"
                 /></a>
               </li>
             </ul>
@@ -100,6 +110,7 @@ nav {
 }
 .nav-list li:nth-of-type(4) {
   margin: 0;
+  cursor: pointer;
 }
 
 .nav-list li:nth-of-type(4) a:focus {
@@ -181,10 +192,15 @@ header nav > .hamburger-menu {
   transition: clip-path 0.4s ease-out;
   visibility: hidden;
   display: none;
+  overflow-y: hidden;
 }
 
 .overlay__list {
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 15em;
+  margin: 0 auto;
   z-index: 1001;
 }
 

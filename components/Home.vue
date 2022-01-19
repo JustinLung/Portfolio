@@ -9,35 +9,35 @@
         Hi, i’m Justin Lung. A passionate Front End Developer <br />
         based in the Netherlands.
       </p>
-      <nuxt-link to="/#work" class="cta-purple">See my works</nuxt-link>
-      <nuxt-link to="/#contact" class="cta-white">Message me</nuxt-link>
+      <NuxtLink to="/#work" class="cta-purple">See my works</NuxtLink>
+      <NuxtLink to="/#contact" class="cta-white">Message me</NuxtLink>
     </section>
     <figure>
-      <img src="~assets/hero-img.png" alt="" />
+      <img src="~assets/visuals/hero-img.png" alt="" />
     </figure>
     <div class="socials-container">
       <ul>
         <li>
           <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img src="~assets/instagram-logo.svg" alt="Instagram"
+            ><img src="~assets/icons/instagram-logo.svg" alt="Instagram"
           /></a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/justin-lung-1a0753127/?originalSubdomain=nl"
             target="_blank"
-            ><img src="~assets/linkedin-logo.svg" alt="Linkedin"
+            ><img src="~assets/icons/linkedin-logo.svg" alt="Linkedin"
           /></a>
         </li>
         <li>
           <a href="https://instagram.com/justinlung_" target="_blank"
-            ><img src="~assets/github-logo.svg" alt="github"
+            ><img src="~assets/icons/github-logo.svg" alt="github"
           /></a>
         </li>
       </ul>
       <a href="#work" class="arrow-container">
         <p>SCROLL DOWN</p>
-        <a href="#work"><img src="~assets/arrow.svg" alt="arrow" /></a>
+        <a href="#work"><img src="~assets/icons/arrow.svg" alt="arrow" /></a>
       </a>
     </div>
   </div>
@@ -47,6 +47,7 @@
 div {
   display: flex;
   flex-direction: column-reverse;
+  padding: 1em 0;
 }
 
 br {
@@ -78,6 +79,8 @@ section > p {
   font-size: 1.1rem;
   margin: 1em 0;
   cursor: default;
+  max-width: 26em;
+  margin-inline: auto;
 }
 
 .cta-purple,
@@ -115,6 +118,9 @@ figure > img {
 }
 
 @media (min-width: 48em) {
+  div:first-child {
+    padding-top: 10em;
+  }
   section > h2 {
     font-size: 3rem;
   }
@@ -133,10 +139,6 @@ figure > img {
     max-width: 100%;
     max-height: 100%;
   }
-
-  figure {
-    margin: 0;
-  }
 }
 
 @media (min-width: 62em) {
@@ -147,7 +149,6 @@ figure > img {
   }
 
   #home {
-    margin: 10em 0;
     text-align: left;
   }
 

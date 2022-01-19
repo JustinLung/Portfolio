@@ -3,7 +3,7 @@
     <div class="about-wrapper">
       <div class="circle-container">
         <div class="circle">
-          <img src="~assets/about-img.png" alt="About Image" />
+          <img src="~assets/visuals/about-img.png" alt="About Image" />
         </div>
       </div>
       <div class="text-container">

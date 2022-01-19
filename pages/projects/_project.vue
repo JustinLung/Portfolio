@@ -9,16 +9,29 @@
         class="work-image"
       />
     </section>
-    <ul>
+    <ul class="tags-container">
       <li class="cta-purple" v-for="skill in this.skills" :key="skill">
         {{ skill }}
       </li>
     </ul>
     <main>
       <p>{{ this.description }}</p>
-      <a :href="this.githubLink" target="_blank" rel="noreferrer"
-        >View Github Repository</a
-      >
+      <ul>
+        <li>
+          <a
+            :href="this.githubLink"
+            target="_blank"
+            rel="noreferrer"
+            class="github-link"
+            >View Github Repository</a
+          >
+        </li>
+        <li>
+          <a :href="this.liveLink" target="_blank" rel="noreferrer"
+            >🌐 View Live Version</a
+          >
+        </li>
+      </ul>
       <figure></figure>
     </main>
   </div>
@@ -33,6 +46,7 @@ export default {
       title,
       description,
       githubLink,
+      liveLink,
       image,
       createdAt,
       updatedAt,
@@ -42,6 +56,7 @@ export default {
       title,
       description,
       githubLink,
+      liveLink,
       image,
       createdAt,
       updatedAt,
@@ -96,7 +111,7 @@ figure {
   border-radius: 0.5em;
 }
 
-ul {
+.tags-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -104,16 +119,17 @@ ul {
   gap: 0.5em;
 }
 
-li {
+.tags-container li {
   padding: 0.5em 1em;
 }
 
-li:nth-child(even) {
+.tags-container li:nth-child(even) {
   background-color: var(--color-white);
   color: var(--purple);
 }
 
 main {
+  font-size: 1.2rem;
   padding: 0 1em;
 }
 
@@ -125,25 +141,24 @@ p {
 }
 
 a {
-  font-size: 1.5rem;
   display: flex;
-  width: max-content;
-  margin-inline: auto;
   justify-content: center;
   align-items: center;
+  width: max-content;
+  margin-inline: auto;
   margin-bottom: 1rem;
   color: var(--light-purple);
 }
 
-a::before {
-  content: '';
-  background-image: url('~assets/github-logo.svg');
+.github-link::before {
+  content: "";
+  background-image: url("~assets/icons/github-logo.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 1.2em;
   height: 1.2em;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 a:hover {
@@ -175,15 +190,19 @@ a:hover::before {
     font-size: 1.3rem;
   }
 
+  a {
+    font-size: 1.5rem;
+  }
+
   figure {
     height: 35em;
   }
 
   .header img {
-    width: 35em;
+    width: 45em;
   }
 
-  ul {
+  .tags-container {
     gap: 1em;
   }
 }

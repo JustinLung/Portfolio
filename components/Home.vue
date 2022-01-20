@@ -136,7 +136,7 @@ figure > img {
 
 @media (min-width: 48em) {
   div:first-child {
-    padding-top: 10em;
+    padding: 10em 3em 0;
   }
   section > h2 {
     font-size: 3rem;

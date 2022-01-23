@@ -38,7 +38,7 @@
       </ul>
     </section>
     <section class="footer-copyright-wrapper">
-      <p>©Justin Lung 2021</p>
+      <h3>©Justin Lung 2021</h3>
     </section>
   </footer>
 </template>
@@ -77,6 +77,11 @@ ul > li:first-child {
   border-top: 0.1em;
   border-style: solid;
   padding: 2em 0;
+}
+
+.footer-copyright-wrapper h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 @media (min-width: 48em) {

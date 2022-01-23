@@ -1,10 +1,10 @@
 <template>
-  <main>
+  <div>
     <Home />
     <Works />
     <About />
     <Contact />
-  </main>
+  </div>
 </template>
 
 <script>

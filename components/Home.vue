@@ -45,8 +45,8 @@
         </li>
       </ul>
       <a href="#work" class="arrow-container">
-        <p>SCROLL DOWN</p>
-        <a href="#work"><img src="~assets/icons/arrow.svg" alt="arrow" /></a>
+        SCROLL DOWN
+        <img src="~assets/icons/arrow.svg" alt="arrow" />
       </a>
     </div>
   </div>
@@ -183,23 +183,19 @@ figure > img {
 
   .arrow-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1em;
     cursor: pointer;
-  }
-
-  .arrow-container > p {
     writing-mode: vertical-rl;
     text-orientation: mixed;
   }
 
-  .arrow-container a > img {
+  .arrow-container > img {
     transition: 0.3s ease;
   }
 
-  .arrow-container a > img:hover {
+  .arrow-container > img:hover {
     transform: translateY(10px);
   }
 }

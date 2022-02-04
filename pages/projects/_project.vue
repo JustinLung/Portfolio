@@ -77,7 +77,7 @@ export default {
 <style scoped>
 .header {
   width: 100%;
-  height: 50vh;
+  height: 25em;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -189,7 +189,7 @@ figure > img {
 
 @media (min-width: 48em) {
   .header {
-    height: 70vh;
+    height: 40em;
   }
 
   main {

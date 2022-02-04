@@ -25,7 +25,6 @@
     </div>
   </section>
 </template>
-<script></script>
 <style scoped>
 section {
   background-color: var(--dark-purple);
@@ -35,6 +34,11 @@ section {
 
   padding: 4em 0;
   margin-top: 2em;
+}
+
+.observed {
+  opacity: 1 !important;
+  transition: .3s ease;
 }
 
 .about-wrapper {
@@ -67,6 +71,12 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  opacity: 0;
+}
+
+.text-container {
+  opacity: 0;
 }
 
 .about-wrapper .circle > img {

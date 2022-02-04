@@ -2,11 +2,25 @@
   <section id="contact">
     <h2>Connect with me</h2>
     <ul>
-      <li><a href="https://www.instagram.com/justinlung_/" target="_blank">Instagram</a></li>
-      <li><a href="https://www.linkedin.com/in/justin-lung-1a0753127/" target="_blank">Linkedin</a></li>
-      <li><a href="https://github.com/JustinLung" target="_blank">Github</a></li>
+      <li>
+        <a href="https://www.instagram.com/justinlung_/" target="_blank"
+          >Instagram</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/justin-lung-1a0753127/"
+          target="_blank"
+          >Linkedin</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/JustinLung" target="_blank">Github</a>
+      </li>
     </ul>
-    <a href="mailto:justinlung77@gmail.com" class="cta-purple">Send me a message</a>
+    <a href="mailto:justinlung77@gmail.com" class="cta-purple"
+      >Send me a message</a
+    >
   </section>
 </template>
 <script></script>
@@ -48,8 +62,7 @@ li > a:hover {
   margin: 0 auto;
 }
 
-@media(min-width: 48em) {
-
+@media (min-width: 48em) {
   section {
     padding: 3em 0;
   }
@@ -63,7 +76,7 @@ li > a:hover {
   }
 
   ul > li {
-    margin: .5em;
+    margin: 0.5em;
   }
 }
 </style>

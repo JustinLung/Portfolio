@@ -1,6 +1,6 @@
 <template>
   <section id="work">
-    <h2 class="work-title animate">Latest projects</h2>
+    <h2 class="work-title">Latest projects</h2>
     <div class="work-container">
       <section v-for="(project, index) in this.works" :key="index">
         <figure class="thumbnail">
@@ -49,6 +49,7 @@ export default {
 };
 </script>
 <style scoped>
+
 #work {
   padding: 0 1em;
   margin-top: 5em;

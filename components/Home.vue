@@ -1,19 +1,23 @@
 <template>
   <div>
     <section id="home">
-      <h2>
+      <h2 class="home-heading">
         <span>Creative</span> Designer <br />
         & Developer.
       </h2>
-      <p>
+      <p class="home-text">
         Hi, i’m Justin Lung. A passionate Front End Developer <br />
         based in the Netherlands.
       </p>
-      <NuxtLink to="/#work" class="cta-purple">See my works</NuxtLink>
-      <NuxtLink to="/#contact" class="cta-white">Message me</NuxtLink>
+      <NuxtLink to="/#work" class="cta cta-purple">See my works</NuxtLink>
+      <NuxtLink to="/#contact" class="cta cta-white">Message me</NuxtLink>
     </section>
     <figure>
-      <img src="~assets/visuals/hero-img.png" alt="" />
+      <img
+        src="~assets/visuals/hero-img.png"
+        alt="hero-image"
+        class="hero-image"
+      />
     </figure>
     <div class="socials-container">
       <ul>
@@ -58,6 +62,30 @@ export default {
       ctaHover: false,
     };
   },
+  mounted: function () {
+    let tl = gsap.timeline({
+      defaults: { ease: "power.4inOut", duration: 2 },
+    });
+
+    tl.from(".home-heading", {
+      duration: 1,
+      delay: 1,
+      y: 200,
+      skewY: 10,
+      opacity: 0,
+      stagger: { amount: 0.5 },
+    })
+      .to(
+        ".home-text",
+        {
+          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%",
+          opacity: 1,
+          duration: 1,
+        },
+        "-=1"
+      )
+      .from(".cta, .hero-image", { duration: 0.5, opacity: 0 }, "-=1");
+  },
 };
 </script>
 <style scoped>
@@ -85,6 +113,7 @@ br {
 section > h2 {
   font-size: 1.7rem;
   cursor: default;
+  opacity: 1;
 }
 
 h2 span:hover {
@@ -98,6 +127,12 @@ section > p {
   cursor: default;
   max-width: 26em;
   margin-inline: auto;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  opacity: 0;
+}
+
+.cta {
+  opacity: 1;
 }
 
 .cta-purple,

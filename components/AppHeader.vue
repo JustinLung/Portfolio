@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header id="header" :class="{ change_color: scrollPosition > 50 }">
     <NuxtLink to="/" class="logo">Portfolio</NuxtLink>
-    <nav>
+    <nav class="nav">
       <ul class="nav-list">
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/#work">Works</NuxtLink></li>
@@ -77,7 +77,29 @@ export default {
   data: () => {
     return {
       hamburgerOpen: false,
+      scrollPosition: null,
     };
+  },
+  mounted: function () {
+    const header = document.querySelector("#header");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", this.updateScroll);
+
+    window.addEventListener("scroll", () => {
+      if (lastScrollY < window.scrollY) {
+        header.classList.add("nav-hidden");
+      } else {
+        header.classList.remove("nav-hidden");
+      }
+      lastScrollY = window.scrollY;
+    });
+  },
+
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
+    },
   },
 };
 </script>
@@ -87,14 +109,27 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 99;
+  transition: 0.3s ease-in-out;
 }
 
 nav {
   flex-grow: 1;
 }
+
+.nav-hidden {
+  transform: translateY(-150px);
+  transition: 0.3s ease-in-out;
+}
+
+.change_color {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
 .nav-list {
   padding: 0;
   margin: 0;

@@ -98,6 +98,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .work-image {

@@ -1,0 +1,9 @@
+title: Advice Generator
+image: advice-generator.png
+description: Once there was a day where the storm was hitting hard in The Netherlands. I had nothing to do and wanted to start programming in JavaScript. I wanted to improve my vanilla JS skills by using asynchronous functions and using an API. This project will generate random advices for you.
+skills: [HTML5, CSS, JavaScript, Advice Slip JSON API]
+githubLink: hhttps://github.com/JustinLung/advice-generator
+liveLink: https://justinlung.github.io/advice-generator/
+homeTitle: 🅿 Advice Generator
+gif: advice-generator-gif.gif
+homeDescription: Having a bad day? Take some advice with you.

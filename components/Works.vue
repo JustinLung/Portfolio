@@ -61,6 +61,7 @@ export default {
 
 #work .work-container {
   display: grid;
+  grid-gap: 2em;
   grid-template-columns: 1fr;
 }
 

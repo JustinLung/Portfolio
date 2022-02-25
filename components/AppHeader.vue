@@ -5,6 +5,7 @@
       <ul class="nav-list">
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/#work">Works</NuxtLink></li>
+        <li><NuxtLink to="/blog">Blog</NuxtLink></li>
         <li><NuxtLink to="/#about">About</NuxtLink></li>
         <li>
           <NuxtLink to="/#contact" class="cta-purple">Contact</NuxtLink>
@@ -30,6 +31,11 @@
           <li>
             <NuxtLink to="/#work" @click.native="hamburgerOpen = !hamburgerOpen"
               >Works</NuxtLink
+            >
+          </li>
+          <li>
+            <NuxtLink to="/blog" @click.native="hamburgerOpen = !hamburgerOpen"
+              >Blog</NuxtLink
             >
           </li>
           <li>
@@ -143,12 +149,12 @@ nav {
 .nav-list li:nth-of-type(1) {
   margin-left: auto;
 }
-.nav-list li:nth-of-type(4) {
+.nav-list li:nth-of-type(5) {
   margin: 0;
   cursor: pointer;
 }
 
-.nav-list li:nth-of-type(4) a:focus {
+.nav-list li:nth-of-type(5) a:focus {
   border: 2px solid var(--color-white);
 }
 
@@ -260,7 +266,7 @@ header nav > .hamburger-menu {
   gap: 0.7em;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 50em) {
   header {
     width: 100%;
     padding: 1.5em;

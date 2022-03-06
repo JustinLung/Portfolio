@@ -3,10 +3,10 @@
     <NuxtLink to="/" class="logo">Portfolio</NuxtLink>
     <nav class="nav">
       <ul class="nav-list">
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/#work">Works</NuxtLink></li>
-        <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-        <li><NuxtLink to="/#about">About</NuxtLink></li>
+        <li><NuxtLink to="/" class="underline">Home</NuxtLink></li>
+        <li><NuxtLink to="/#work" class="underline">Works</NuxtLink></li>
+        <li><NuxtLink to="/blog" class="underline">Blog</NuxtLink></li>
+        <li><NuxtLink to="/#about" class="underline">About</NuxtLink></li>
         <li>
           <NuxtLink to="/#contact" class="cta-purple">Contact</NuxtLink>
         </li>

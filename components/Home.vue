@@ -40,7 +40,7 @@
           /></a>
         </li>
         <li>
-          <a href="https://instagram.com/justinlung_" target="_blank"
+          <a href="http://github.com/justinlung" target="_blank"
             ><img
               src="~assets/icons/github-logo.svg"
               alt="github"

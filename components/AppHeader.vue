@@ -1,6 +1,6 @@
 <template>
   <header id="header" :class="{ change_color: scrollPosition > 50 }">
-    <NuxtLink to="/" class="logo">Portfolio</NuxtLink>
+    <NuxtLink to="/"><h1 class="logo">Portfolio</h1></NuxtLink>
     <nav class="nav">
       <ul class="nav-list">
         <li><NuxtLink to="/" class="underline">Home</NuxtLink></li>

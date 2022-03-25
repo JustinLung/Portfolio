@@ -24,7 +24,6 @@ export default {
       entries.forEach((entry) => {
         const targetClass = entry.target.classList;
         if (entry.isIntersecting) targetClass.add("observed");
-        console.log(entries[0]);
       });
     };
 
@@ -33,7 +32,7 @@ export default {
     });
 
     const contactObserver = new IntersectionObserver(callbackFunction, {
-      threshold: .7,
+      threshold: 0.7,
     });
 
     observer.observe(animate);

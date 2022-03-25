@@ -37,8 +37,12 @@ export default {
     works: [],
   }),
   async fetch() {
-    this.works = await this.$content("projects").fetch();
-    this.works.reverse();
+    try {
+      this.works = await this.$content("projects").fetch();
+      this.works.reverse();
+    } catch (err) {
+      console.log(err);
+    }
   },
   fetchOnServer: false,
   methods: {
@@ -49,7 +53,6 @@ export default {
 };
 </script>
 <style scoped>
-
 #work {
   padding: 0 1em;
   margin-top: 5em;
@@ -63,6 +66,11 @@ export default {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 1fr;
+}
+
+noscript {
+  padding-top: 0.3rem;
+  text-align: center;
 }
 
 .work-title {
@@ -99,7 +107,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .work-image {
@@ -142,6 +149,10 @@ h3 {
 
   .cta-white {
     padding: 0.5em 2.3em;
+  }
+
+  noscript {
+    text-align: left;
   }
 }
 

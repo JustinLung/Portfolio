@@ -6,8 +6,8 @@
         & Developer.
       </h2>
       <p class="home-text">
-        Hi, i’m Justin Lung. A passionate Front End Developer <br />
-        based in the Netherlands.
+        👋 Hi, i’m Justin Lung. A passionate Front End Developer based in the
+        Netherlands.
       </p>
       <NuxtLink to="/#work" class="cta cta-purple">See my works</NuxtLink>
       <NuxtLink to="/#contact" class="cta cta-white">Message me</NuxtLink>

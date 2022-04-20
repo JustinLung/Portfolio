@@ -125,6 +125,14 @@ h2 {
   color: var(--purple);
 }
 
+@media (prefers-color-scheme: light) {
+  .tags-container li:nth-child(even) {
+    background-color: var(--color-white);
+    border: 2px solid var(--light-purple);
+    color: var(--purple);
+  }
+}
+
 main {
   font-size: 1.2rem;
   padding: 0 1em;

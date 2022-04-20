@@ -158,6 +158,12 @@ nav {
   border: 2px solid var(--color-white);
 }
 
+@media (prefers-color-scheme: light) {
+  .nav-list li:nth-of-type(5) a:hover {
+    color: var(--color-black);
+  }
+}
+
 .logo {
   position: relative;
   z-index: 1001;

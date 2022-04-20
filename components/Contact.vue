@@ -62,6 +62,12 @@ li > a:hover {
   margin: 0 auto;
 }
 
+@media (prefers-color-scheme: light) {
+  .cta-purple:hover {
+    color: var(--color-black);
+  }
+}
+
 @media (min-width: 48em) {
   section {
     padding: 3em 0;

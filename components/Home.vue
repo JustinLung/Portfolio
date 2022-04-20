@@ -9,8 +9,8 @@
         👋 Hi, i’m Justin Lung. A passionate Front End Developer based in the
         Netherlands.
       </p>
-      <NuxtLink to="/#work" class="cta cta-purple">See my works</NuxtLink>
-      <NuxtLink to="/#contact" class="cta cta-white">Message me</NuxtLink>
+      <NuxtLink to="/#work" class="cta cta-purple cta-home">See my works</NuxtLink>
+      <NuxtLink to="/#contact" class="cta cta-white cta-home">Message me</NuxtLink>
     </section>
     <figure>
       <img

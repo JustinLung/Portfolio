@@ -9,8 +9,12 @@
         👋 Hi, i’m Justin Lung. A passionate Front End Developer based in the
         Netherlands.
       </p>
-      <NuxtLink to="/#work" class="cta cta-purple cta-home">See my works</NuxtLink>
-      <NuxtLink to="/#contact" class="cta cta-white cta-home">Message me</NuxtLink>
+      <NuxtLink to="/#work" class="cta cta-purple cta-home"
+        >See my works</NuxtLink
+      >
+      <NuxtLink to="/#contact" class="cta cta-white cta-home"
+        >Message me</NuxtLink
+      >
     </section>
     <figure>
       <img
@@ -93,6 +97,8 @@ div {
   display: flex;
   flex-direction: column-reverse;
   padding: 1em 0;
+  max-width: 1440px;
+  margin: auto;
 }
 
 br {
@@ -148,24 +154,41 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5em;
+  margin: 5em auto 2em;
+
+  overflow: hidden;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  background: rgb(56, 51, 67);
+  background: linear-gradient(
+    209deg,
+    rgba(56, 51, 67, 1) 0%,
+    rgba(115, 83, 186, 1) 48%,
+    rgba(149, 110, 236, 1) 100%
+  );
+
+  animation: morph 3.75s linear infinite;
 }
 
 figure > img {
   margin: 2em auto;
-  max-width: 75%;
-  max-height: 75%;
-  animation: up-and-down infinite alternate ease 2s;
+  width: 16em;
   pointer-events: none;
 }
 
-@keyframes up-and-down {
-  from {
-    transform: translateY(-2em);
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 28%;
   }
 
-  to {
-    transform: translateY(2em);
+  33% {
+    border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+  }
+
+  66% {
+    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
   }
 }
 

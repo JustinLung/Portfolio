@@ -1,8 +1,8 @@
 <template>
   <section id="about">
     <div class="about-wrapper">
-      <div class="circle-container">
-        <div class="circle">
+      <div class="blob-container">
+        <div class="blob">
           <img src="~assets/visuals/about-img.png" alt="About Image" />
         </div>
       </div>
@@ -38,7 +38,7 @@ section {
 
 .observed {
   opacity: 1 !important;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .about-wrapper {
@@ -58,40 +58,41 @@ section {
   transform: translateX(-50%);
 }
 
-.about-wrapper .circle-container {
+.about-wrapper .blob-container {
   margin: 2em auto;
 }
 
-.about-wrapper .circle {
-  background: var(--purple);
-  width: 85vw;
-  height: 85vw;
-  border-radius: 50%;
-
+.about-wrapper .blob {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5em auto 2em;
 
-  opacity: 0;
+  overflow: hidden;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  background: var(--purple);
 }
 
-.text-container {
-  opacity: 0;
-}
-
-.about-wrapper .circle > img {
+.about-wrapper .blob > img {
   max-width: 70%;
   max-height: 70%;
-  animation: up-and-down infinite alternate ease 2s;
+  width: 100%;
 }
 
-@keyframes up-and-down {
-  from {
-    transform: translateY(-2em);
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 28%;
   }
 
-  to {
-    transform: translateY(2em);
+  33% {
+    border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+  }
+
+  66% {
+    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
   }
 }
 
@@ -130,23 +131,11 @@ section {
   .about-wrapper .text-container > p {
     font-size: 1.2rem;
   }
-  .about-wrapper .circle-container {
+  .about-wrapper .blob-container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .about-wrapper .circle {
-    width: 40vw;
-    height: 40vw;
-  }
-}
-
-@media (min-width: 80em) {
-  .about-wrapper .circle {
-    width: 25vw;
-    height: 25vw;
   }
 }
 </style>

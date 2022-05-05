@@ -2,9 +2,12 @@
   <section id="work">
     <h2 class="work-title">Latest projects</h2>
     <div class="work-container">
-      <section v-for="(project, index) in this.works" :key="index">
+      <section
+        v-for="(project, index) in this.works"
+        :key="index"
+        class="project"
+      >
         <figure class="thumbnail">
-          <!-- <nuxt-img src="project.image }}" alt="project image" class="work-image"/> -->
           <img
             :src="projectImage(project.image)"
             alt="project image"
@@ -58,7 +61,7 @@ export default {
   margin-top: 5em;
 }
 
-#work > section {
+.project {
   margin-top: 2em;
 }
 
@@ -66,11 +69,6 @@ export default {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 1fr;
-}
-
-noscript {
-  padding-top: 0.3rem;
-  text-align: center;
 }
 
 .work-title {
@@ -149,10 +147,6 @@ h3 {
 
   .cta-white {
     padding: 0.5em 2.3em;
-  }
-
-  noscript {
-    text-align: left;
   }
 }
 

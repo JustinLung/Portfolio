@@ -1,9 +1,9 @@
 <template>
-  <section id="about">
+  <section class="about">
     <div class="about-wrapper">
       <div class="blob-container">
         <div class="blob">
-          <img src="~assets/visuals/about-img.png" alt="About Image" />
+          <img src="~assets/visuals/memoji.png" alt="Justin Memoji" />
         </div>
       </div>
       <div class="text-container">
@@ -34,11 +34,6 @@ section {
 
   padding: 4em 0;
   margin-top: 2em;
-}
-
-.observed {
-  opacity: 1 !important;
-  transition: 0.3s ease;
 }
 
 .about-wrapper {
@@ -72,28 +67,20 @@ section {
   width: 25rem;
   height: 25rem;
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
-  background: var(--purple);
+  background: linear-gradient(
+    209deg,
+    rgba(56, 51, 67, 1) 0%,
+    rgba(115, 83, 186, 1) 48%,
+    rgba(149, 110, 236, 1) 100%
+  );
+
+  animation: morph 3.75s linear infinite;
 }
 
 .about-wrapper .blob > img {
   max-width: 70%;
   max-height: 70%;
   width: 100%;
-}
-
-@keyframes morph {
-  0%,
-  100% {
-    border-radius: 42% 56% 72% 28% / 42% 42% 56% 28%;
-  }
-
-  33% {
-    border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
-  }
-
-  66% {
-    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
-  }
 }
 
 .about-wrapper > div:nth-child(2) {

@@ -23,7 +23,6 @@
     >
   </section>
 </template>
-<script></script>
 <style scoped>
 section > h2 {
   text-align: center;

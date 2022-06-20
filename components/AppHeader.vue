@@ -5,7 +5,6 @@
       <ul class="nav-list">
         <li><NuxtLink to="/" class="underline">Home</NuxtLink></li>
         <li><NuxtLink to="/#work" class="underline">Works</NuxtLink></li>
-        <li><NuxtLink to="/blog" class="underline">Blog</NuxtLink></li>
         <li><NuxtLink to="/#about" class="underline">About</NuxtLink></li>
         <li>
           <NuxtLink to="/#contact" class="cta-purple">Contact</NuxtLink>
@@ -31,11 +30,6 @@
           <li>
             <NuxtLink to="/#work" @click.native="hamburgerOpen = !hamburgerOpen"
               >Works</NuxtLink
-            >
-          </li>
-          <li>
-            <NuxtLink to="/blog" @click.native="hamburgerOpen = !hamburgerOpen"
-              >Blog</NuxtLink
             >
           </li>
           <li>
@@ -152,6 +146,10 @@ nav {
 .nav-list li:nth-of-type(5) {
   margin: 0;
   cursor: pointer;
+}
+
+.nav-list li:last-child {
+  margin-right: 0;
 }
 
 .nav-list li:nth-of-type(5) a:focus {

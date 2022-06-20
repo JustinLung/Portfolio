@@ -177,21 +177,6 @@ figure > img {
   pointer-events: none;
 }
 
-@keyframes morph {
-  0%,
-  100% {
-    border-radius: 42% 56% 72% 28% / 42% 42% 56% 28%;
-  }
-
-  33% {
-    border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
-  }
-
-  66% {
-    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
-  }
-}
-
 @media (min-width: 48em) {
   div:first-child {
     padding: 10em 3em 0;

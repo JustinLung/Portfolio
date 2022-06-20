@@ -45,7 +45,6 @@
     </section>
   </footer>
 </template>
-<script></script>
 <style scoped>
 footer {
   background-color: #000;

@@ -1,11 +1,3 @@
-:root {
-  --dark-purple: #383343;
-  --purple: #7353ba;
-  --light-purple: #956eec;
-  --color-black: #161618;
-  --color-white: #ffffff;
-}
-
 ::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -102,6 +94,21 @@ a {
   height: 2px;
   background-color: var(--purple);
   transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 28%;
+  }
+
+  33% {
+    border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+  }
+
+  66% {
+    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -61,10 +61,6 @@ export default {
   margin-top: 5em;
 }
 
-.project {
-  margin-top: 2em;
-}
-
 #work .work-container {
   display: grid;
   grid-gap: 2em;

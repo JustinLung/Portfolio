@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section id="about">
     <div class="about-wrapper">
       <div class="blob-container">
         <div class="blob">

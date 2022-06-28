@@ -137,7 +137,7 @@ nav {
 }
 .nav-list li {
   margin-right: 3rem;
-  font-size: 1.125rem;
+  font-size: var(--font-size-xs);
 }
 
 .nav-list li:nth-of-type(1) {
@@ -166,7 +166,7 @@ nav {
   position: relative;
   z-index: 1001;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: var(--font-size-l);
 }
 
 header nav > .hamburger-menu {
@@ -253,7 +253,7 @@ header nav > .hamburger-menu {
 }
 
 .overlay__list > li {
-  font-size: 2.5rem;
+  font-size: var(--font-size-xxl);
   text-align: center;
 }
 
@@ -287,7 +287,7 @@ header nav > .hamburger-menu {
   }
 
   .logo {
-    font-size: 1.8rem;
+    font-size: var(--font-size-md);
   }
   .nav-list {
     display: none;

@@ -4,4 +4,11 @@
   --light-purple: #956eec;
   --color-black: #161618;
   --color-white: #ffffff;
+  --font-size-xxl: 3rem;
+  --font-size-xl: 2.5rem;
+  --font-size-l: 2rem;
+  --font-size-md: 1.7rem;
+  --font-size-s: 1.5rem;
+  --font-size-xs: 1.2rem;
+  --font-size-xxs: 1.1rem;
 }

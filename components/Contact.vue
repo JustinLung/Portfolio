@@ -26,7 +26,7 @@
 <style scoped>
 section > h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--font-size-l);
   margin-top: 1.5em;
 }
 
@@ -41,7 +41,7 @@ ul {
 }
 
 ul > li {
-  font-size: 1.5rem;
+  font-size: var(--font-size-s);
 }
 
 li > a {
@@ -73,7 +73,7 @@ li > a:hover {
   }
 
   section > h2 {
-    font-size: 2.5rem;
+    font-size: var(--font-size-xl);
   }
 
   ul {

@@ -57,7 +57,7 @@ footer {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-s);
 }
 
 ul {
@@ -67,7 +67,7 @@ ul {
 }
 
 ul > li:first-child {
-  font-size: 1.2rem;
+  font-size: var(----font-size-s);
   font-weight: bold;
 }
 
@@ -82,7 +82,7 @@ ul > li:first-child {
 }
 
 .footer-copyright-wrapper h3 {
-  font-size: 1.2rem;
+  font-size: var(--font-size-xxs);
   font-weight: normal;
 }
 
@@ -94,7 +94,7 @@ ul > li:first-child {
   }
 
   .footer-wrapper > ul {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xs);
   }
 
   .footer-wrapper > ul:nth-child(3) {
@@ -102,7 +102,7 @@ ul > li:first-child {
   }
 
   .footer-wrapper > h3 {
-    font-size: 1.7rem;
+    font-size: var(--font-size-l);
     margin-right: 2em;
   }
 }

@@ -117,7 +117,7 @@ br {
 }
 
 section > h2 {
-  font-size: 1.7rem;
+  font-size: var(--font-size-l);
   cursor: default;
   opacity: 1;
 }
@@ -128,7 +128,7 @@ h2 span:hover {
 }
 
 section > p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-xs);
   margin: 1em 0;
   cursor: default;
   max-width: 26em;
@@ -157,7 +157,7 @@ figure {
   margin: 5em auto 2em;
 
   overflow: hidden;
-  width: 25rem;
+  max-width: 25rem;
   height: 25rem;
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
   background: rgb(56, 51, 67);
@@ -182,17 +182,17 @@ figure > img {
     padding: 10em 3em 0;
   }
   section > h2 {
-    font-size: 3rem;
+    font-size: var(--font-size-xxl);
   }
 
   section > p {
-    font-size: 1.5rem;
+    font-size: var(--font-size-s);
   }
 
   section .cta-purple,
   section .cta-white {
     padding: 0.5em 2em;
-    font-size: 1.2rem;
+    font-size: var(--font-size-xs);
   }
 
   img {

@@ -72,17 +72,17 @@ export default {
 }
 
 h3 {
-  font-size: 1.3em;
+  font-size: var(--font-size-s);
 }
 
 .work-container section > p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-xs);
   margin-bottom: 0.3em;
 }
 
 .github-text {
   margin: 4em 0;
-  font-size: 1.5em;
+  font-size: var(--font-size-md);
   text-align: center;
 }
 
@@ -119,7 +119,7 @@ h3 {
   }
   .work-title {
     text-align: left;
-    font-size: 1.7rem;
+    font-size: var(--font-size-md);
   }
 
   #work .work-container {

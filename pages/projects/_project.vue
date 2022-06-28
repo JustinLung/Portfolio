@@ -104,7 +104,7 @@ export default {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: var(--font-size-l);
   padding-bottom: 0.5em;
 }
 
@@ -134,7 +134,7 @@ h2 {
 }
 
 main {
-  font-size: 1.2rem;
+  font-size: var(--font-size-xs);
   padding: 0 1em;
 }
 
@@ -142,7 +142,6 @@ p {
   padding: 2rem 0;
   max-width: 35em;
   margin-inline: auto;
-  /* text-align: center; */
 }
 
 a {
@@ -192,8 +191,9 @@ figure {
 }
 
 figure > img {
-  width: 50%;
+  width: 90%;
   max-width: 900px;
+  border-radius: 0.5rem;
 }
 
 @media (min-width: 48em) {
@@ -206,7 +206,7 @@ figure > img {
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: var(--font-size-xl);
   }
 
   h3 {
@@ -214,12 +214,12 @@ figure > img {
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: var(--font-size-s);
     text-align: center;
   }
 
   a {
-    font-size: 1.5rem;
+    font-size: var(--font-size-s);
     margin-inline: auto;
   }
 

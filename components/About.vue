@@ -17,8 +17,8 @@
         <p>
           I started as a Front End Developer in 2018. Since then I have been
           dedicating my life to build beautiful digital products made with
-          Vue.js and Svelte. I’m never done with learning new things and hope to
-          learn more along the road.
+          Vue.js and Svelte. (I've also started learning React! 🎉) I’m never
+          done with learning new things and hope to learn more along the road.
         </p>
         <a href="~assets/cv.pdf" class="cta-purple" download>📄 Resume</a>
       </div>
@@ -45,7 +45,7 @@ section {
 
 .about-wrapper .cta-purple {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: var(--font-size-xs);
   padding: 0.5em 3em;
   margin: 1em auto;
   position: relative;
@@ -64,8 +64,8 @@ section {
   margin: 5em auto 2em;
 
   overflow: hidden;
-  width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 20rem;
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
   background: linear-gradient(
     209deg,
@@ -112,17 +112,22 @@ section {
   }
 
   .about-wrapper .text-container > h2 {
-    font-size: 2.2rem;
+    font-size: var(--font-size-l);
   }
 
   .about-wrapper .text-container > p {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xs);
   }
   .about-wrapper .blob-container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .about-wrapper .blob {
+    width: 25rem;
+    height: 25rem;
   }
 }
 </style>

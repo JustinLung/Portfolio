@@ -1,9 +1,9 @@
 title: Crypto Checker
-image: cryptochecker-mockup.png
+image: mockups/cryptochecker-mockup.png
 description: Togheter with a friend, we were intressted in cryptocurrencies. We wanted to build an application where you can look at prices the easy way.
 skills: [Vue.js, HTML5, SCSS, JavaScript, CryptoCompare Api]
 githubLink: https://github.com/DaanKorver/crypto-checker
 liveLink: https://daankorver.com/crypto-checker/
 homeTitle: 💰 Crypto Checker
-gif: crypto-checker-gif.gif
+gif: gifs/crypto-checker-gif.gif
 homeDescription: Looking at Crypto prices has never been so easy before. 

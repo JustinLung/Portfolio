@@ -183,6 +183,7 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
   width: 100%;
   max-width: 1440px;
   padding: 2em 0;
@@ -191,7 +192,7 @@ figure {
 }
 
 figure > img {
-  width: 85%;
+  width: 50%;
   max-width: 900px;
 }
 

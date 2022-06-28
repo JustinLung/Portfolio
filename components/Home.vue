@@ -157,8 +157,8 @@ figure {
   margin: 5em auto 2em;
 
   overflow: hidden;
-  max-width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 20rem;
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
   background: rgb(56, 51, 67);
   background: linear-gradient(
@@ -206,6 +206,11 @@ figure > img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  figure {
+    width: 25rem;
+    height: 25rem;
   }
 
   #home {

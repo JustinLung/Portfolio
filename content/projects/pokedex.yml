@@ -1,0 +1,9 @@
+title: Pokedex
+image: pokedex-mockup.png
+description: During my frontend development career, I've always despised React/Next because of the syntax. But after my internship at Dept Agency, I saw that React was a powerful framework to use. So I tried this out by making a Pokedex where you can search Pokemon by it's name or by it's national number.
+skills: [Nextjs, React, Framer Motion, Typescript, PokeAPI]
+githubLink: https://github.com/JustinLung/nextjs-pokedex
+liveLink: https://github.com/JustinLung/
+homeTitle: 🐀 Pokedex
+gif: pokedex-gif.gif
+homeDescription: Gotta catch'm all!

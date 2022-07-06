@@ -192,7 +192,7 @@ figure {
 
 figure > img {
   width: 90%;
-  max-width: 900px;
+  max-width: 800px;
   border-radius: 0.5rem;
 }
 

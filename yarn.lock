@@ -831,6 +831,11 @@
     "@emotion/weak-memoize" "^0.3.0"
     "stylis" "4.0.13"
 
+"@emotion/core@^11.0.0":
+  "integrity" "sha512-w4sE3AmHmyG6RDKf6mIbtHpgJUSJ2uGvPQb8VXFL7hFjMPibE8IiehG8cMX3Ztm4svfCQV6KqusQbeIOkurBcA=="
+  "resolved" "https://registry.npmjs.org/@emotion/core/-/core-11.0.0.tgz"
+  "version" "11.0.0"
+
 "@emotion/hash@^0.9.0":
   "integrity" "sha512-14FtKiHhy2QoPIzdTcvh//8OyBlknNs2nXRwIhG904opCby3l+9Xaf/wuPvICBF0rc1ZCNBd3nKe9cd2mecVkQ=="
   "resolved" "https://registry.npmjs.org/@emotion/hash/-/hash-0.9.0.tgz"

@@ -12,6 +12,7 @@
     "@chakra-ui/color-mode": "^2.1.2",
     "@chakra-ui/icons": "^2.0.4",
     "@chakra-ui/react": "^2.2.4",
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fontsource/poppins": "^4.5.8",

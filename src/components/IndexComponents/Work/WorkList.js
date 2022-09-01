@@ -24,7 +24,7 @@ export default function WorkList() {
           <Stack w='100%' as='section' key={project.id}>
             <Box
               bg={theme.styles.colors.secondary}
-              borderR='.5rem'
+              borderRadius='.5rem'
               p={10}
               h='100%'
             >

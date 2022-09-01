@@ -1,4 +1,4 @@
-import { Flex, Text, Link } from '@chakra-ui/react'
+import { Flex, Text, Link, Box } from '@chakra-ui/react'
 import links from '../../data/links.json'
 
 export default function Footer() {
@@ -21,7 +21,7 @@ export default function Footer() {
       <Flex gap={2}>
         {links.map((link) => {
           return (
-            <Link href={link.link} target='_blank'>
+            <Link key={link.id} href={link.link} target='_blank'>
               {link.title} &middot;
             </Link>
           )

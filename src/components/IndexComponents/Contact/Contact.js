@@ -32,7 +32,7 @@ export default function Contact() {
         <Flex gap={{ base: 2, md: 4 }} flexWrap='wrap'>
           {links.map((link) => {
             return (
-              <Link href={link.link} target='_blank' fontSize='2xl'>
+              <Link href={link.link} target='_blank' fontSize='2xl' key={link.id}>
                 {link.title}
               </Link>
             )

@@ -1,9 +1,0 @@
-title: Scrollbook
-image: mockups/ipad-mockup.png
-description: At FDND, we needed to build a project for Scrollbook. Scrollbook is a concept developed to enthuse young people to read for relaxation and promote deep reading. Animation on scroll was very important in this project.
-skills: [Nuxtjs, Vuejs, GSAP, ScrollMagic, Canvas HTML5, CSS3, JavaScript, Photoshop]
-githubLink: https://github.com/DaanKorver/the-startup-scrollbook
-liveLink: https://scrollbook.student.fdnd.nl/
-homeTitle: 📗 Scrollbook
-gif: gifs/scrollbook-gif.gif
-homeDescription: Deep reading is something we need to do more often.

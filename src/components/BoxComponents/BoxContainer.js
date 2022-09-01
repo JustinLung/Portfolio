@@ -1,7 +1,6 @@
 import Box from '../BoxComponents/Box'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry'
 
 export default function BoxContainer() {
   return (

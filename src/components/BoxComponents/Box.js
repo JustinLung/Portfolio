@@ -1,6 +1,5 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry'
 
 export default function Box() {
   const meshRef = useRef();

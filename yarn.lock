@@ -170,7 +170,7 @@
     "core-js-pure" "^3.20.2"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.7", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.3", "@babel/runtime@^7.18.9":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.7", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.3", "@babel/runtime@^7.18.9":
   "integrity" "sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.9.tgz"
   "version" "7.18.9"
@@ -1673,20 +1673,6 @@
   "resolved" "https://registry.npmjs.org/draco3d/-/draco3d-1.5.3.tgz"
   "version" "1.5.3"
 
-"drei@^1.0.0":
-  "integrity" "sha512-Jur4heMo4ZbEgnv7kpUbRNddgQVQyjrTSR0njg2Rd/Eye+wiUd9KNGXWqc3qZ7JDBjiOPbELDbPMZcwvazncjg=="
-  "resolved" "https://registry.npmjs.org/drei/-/drei-1.0.0.tgz"
-  "version" "1.0.0"
-  dependencies:
-    "@babel/runtime" "^7.10.5"
-    "glsl-noise" "^0.0.0"
-    "lodash.omit" "^4.5.0"
-    "lodash.pick" "^4.4.0"
-    "react-merge-refs" "^1.0.0"
-    "stats.js" "^0.17.0"
-    "troika-three-text" "^0.30.2"
-    "utility-types" "^3.10.0"
-
 "electron-to-chromium@^1.4.202":
   "integrity" "sha512-5Ojjtw9/c9HCXtMVE6SXVSHSNjmbFOXpKprl6mY/5moLSxLeWatuYA7KTD+RzJMxLRH6yNNQrqGz9p6IoNBMgw=="
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.204.tgz"
@@ -2888,7 +2874,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react-merge-refs@^1.0.0", "react-merge-refs@^1.1.0":
+"react-merge-refs@^1.1.0":
   "integrity" "sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ=="
   "resolved" "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-1.1.0.tgz"
   "version" "1.1.0"
@@ -2929,7 +2915,7 @@
     "invariant" "^2.2.4"
     "tslib" "^2.0.0"
 
-"react-three-fiber@^6.0.13", "react-three-fiber@>=4.2":
+"react-three-fiber@^6.0.13":
   "integrity" "sha512-uShQnkMVLvnzwf3YzY9mnzCnpmLpvTQkc0ycrtwk8fyjXmZt2695tLn3tufPF6uxq06UKJRKJcjCVCMXyUcEPQ=="
   "resolved" "https://registry.npmjs.org/react-three-fiber/-/react-three-fiber-6.0.13.tgz"
   "version" "6.0.13"
@@ -3247,14 +3233,6 @@
   "resolved" "https://registry.npmjs.org/toggle-selection/-/toggle-selection-1.0.6.tgz"
   "version" "1.0.6"
 
-"troika-three-text@^0.30.2":
-  "integrity" "sha512-FEOmjIm3yEO/Vlg5oe3cvAN3YWW55TRWeDRen3F2Xlo8RTx0Icsy3AZRrwd9ycT2FbuNzHVjnwxAVXX5F+B21A=="
-  "resolved" "https://registry.npmjs.org/troika-three-text/-/troika-three-text-0.30.2.tgz"
-  "version" "0.30.2"
-  dependencies:
-    "troika-three-utils" "^0.30.0"
-    "troika-worker-utils" "^0.30.0"
-
 "troika-three-text@^0.46.4":
   "integrity" "sha512-Qsv0HhUKTZgSmAJs5wvO7YlBoJSP9TGPLmrg+K9pbQq4lseQdcevbno/WI38bwJBZ/qS56hvfqEzY0zUEFzDIw=="
   "resolved" "https://registry.npmjs.org/troika-three-text/-/troika-three-text-0.46.4.tgz"
@@ -3265,20 +3243,10 @@
     "troika-worker-utils" "^0.46.0"
     "webgl-sdf-generator" "1.1.1"
 
-"troika-three-utils@^0.30.0":
-  "integrity" "sha512-ZXTLb3tSCxbJEQyz4hwxYOx/Hrg9rzTrDSqGCmUTRXyOMOtZxrFeHTLBh2kblIb7JfhMUofj9vtRfIjt1UYYQA=="
-  "resolved" "https://registry.npmjs.org/troika-three-utils/-/troika-three-utils-0.30.0.tgz"
-  "version" "0.30.0"
-
 "troika-three-utils@^0.46.0":
   "integrity" "sha512-llHyrXAcwzr0bpg80GxsIp73N7FuImm4WCrKDJkAqcAsWmE5pfP9+Qzw+oMWK1P/AdHQ79eOrOl9NjyW4aOw0w=="
   "resolved" "https://registry.npmjs.org/troika-three-utils/-/troika-three-utils-0.46.0.tgz"
   "version" "0.46.0"
-
-"troika-worker-utils@^0.30.0":
-  "integrity" "sha512-GpW0LK+KCdZQclP50ZdFlVviImeiqEC4I5CQF+sQurcOb9xC6cL5FyrdV1C4abtQ67G8ir3DA8+HktYi35whdg=="
-  "resolved" "https://registry.npmjs.org/troika-worker-utils/-/troika-worker-utils-0.30.0.tgz"
-  "version" "0.30.0"
 
 "troika-worker-utils@^0.46.0":
   "integrity" "sha512-bzOx5f2ZBxkFhXtIvDJlLn2AI3bzCkGVbCndl/2dL5QZrwHEKl45OEIilCxYQQWJG1rEbOD9O80tMjoYjw19OA=="

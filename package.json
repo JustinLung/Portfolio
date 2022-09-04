@@ -17,13 +17,14 @@
     "@emotion/styled": "^11.10.4",
     "@fontsource/poppins": "^4.5.8",
     "@react-three/drei": "^9.17.3",
+    "@react-three/fiber": "^8.6.2",
     "framer-motion": "^6.5.1",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.0",
-    "react-three-fiber": "^6.0.13",
-    "three": "^0.144.0"
+    "three": "^0.144.0",
+    "three-stdlib": "^2.15.0"
   },
   "devDependencies": {
     "eslint": "8.20.0",

@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-dark-grey);
+    color: var(--color-cream-white);
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body.freeze {
+    overflow: hidden;
+    height: 100%
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-cream-white);
+}

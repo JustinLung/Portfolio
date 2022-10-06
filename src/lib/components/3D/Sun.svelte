@@ -13,8 +13,10 @@
 
 <style>
 	div {
-		width: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
 		height: 100vh;
-		background: black;
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { AmbientLight, DirectionalLight } from '@threlte/core';
 	import Camera from './Camera.svelte';
+	import AxesHelper from './helpers/AxesHelper.svelte';
 </script>
 
 <Camera />

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { DEG2RAD } from 'three/src/math/MathUtils';
-	import { OrbitControls, PerspectiveCamera } from '@threlte/core';
-	import AxesHelper from './helpers/AxesHelper.svelte';
+	import { PerspectiveCamera } from '@threlte/core';
 </script>
 
-<PerspectiveCamera fov={100} position={{ x: 5, y: 5, z: 3 }}>
-	<OrbitControls maxPolarAngle={DEG2RAD * 80} autoRotate={true} enableZoom={false} />
-</PerspectiveCamera>
+<PerspectiveCamera
+	fov={80}
+	rotation={{ x: -0.25 }}
+	position={{ z: 10, y: 2 }}
+	lookAt={{ x: 0, y: 0, z: 0 }}
+/>

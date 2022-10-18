@@ -31,7 +31,7 @@
 	}
 
 	h1 {
-		font-size: var(--font-size-xl);
+		font-size: var(--font-size-2xl);
 		line-height: 5rem;
 	}
 

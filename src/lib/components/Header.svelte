@@ -13,6 +13,10 @@
 
 <style>
 	header {
+		width: 100%;
+		position: fixed;
+		background-color: var(--color-dark-transparent);
+		backdrop-filter: blur(24px);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -20,7 +24,7 @@
 	}
 
 	header > a {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 	}
 
 	nav > a {
@@ -37,13 +41,18 @@
 	a {
 		color: var(--color-white);
 		text-decoration: none;
-		font-size: 1rem;
+		font-size: var(--font-size-normal);
 		font-weight: bold;
 	}
 
 	@media (max-width: 55rem) {
 		header {
 			padding: 1rem;
+		}
+
+		header > a,
+		a {
+			font-size: 0.9rem;
 		}
 	}
 </style>

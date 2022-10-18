@@ -1,0 +1,10 @@
+*,
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-family: 'Raleway', sans-serif;
+}

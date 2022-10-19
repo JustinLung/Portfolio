@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Seperator from './Seperator.svelte';
+	import Seperator from '../Seperator.svelte';
 </script>
 
 <section>

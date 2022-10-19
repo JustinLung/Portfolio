@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Arrow from './iconComponents/Arrow.svelte';
-	import Github from './iconComponents/Github.svelte';
+	import Arrow from '../iconComponents/Arrow.svelte';
+	import Github from '../iconComponents/Github.svelte';
 	export let projectImage: string;
 	export let projectTitle: string;
 	export let projectDescription: string;

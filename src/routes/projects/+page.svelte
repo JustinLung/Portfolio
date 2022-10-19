@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageTransition from '$lib/components/PageTransition.svelte';
-	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import ProjectSection from '$lib/components/ProjectSection.svelte';
+	import ProjectCard from '$lib/components/projectComponents/ProjectCard.svelte';
+	import ProjectSection from '$lib/components/projectComponents/ProjectSection.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

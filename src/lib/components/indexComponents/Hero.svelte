@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Instagram from './iconComponents/Instagram.svelte';
-	import Github from './iconComponents/Github.svelte';
-	import Twitter from './iconComponents/Twitter.svelte';
+	import Instagram from '../iconComponents/Instagram.svelte';
+	import Github from '../iconComponents/Github.svelte';
+	import Twitter from '../iconComponents/Twitter.svelte';
 </script>
 
 <section id="home">

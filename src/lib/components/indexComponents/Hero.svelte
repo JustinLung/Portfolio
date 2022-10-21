@@ -42,11 +42,6 @@
 		padding-top: 1rem;
 	}
 
-	span {
-		font-weight: bold;
-		border-bottom: 2px solid var(--color-crimson);
-	}
-
 	div {
 		display: flex;
 		gap: 1rem;
@@ -74,6 +69,11 @@
 
 	a:hover {
 		opacity: 1;
+	}
+
+	span {
+		font-weight: bold;
+		border-bottom: 2px solid var(--color-crimson);
 	}
 
 	@media (max-width: 40rem) {

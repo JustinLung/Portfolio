@@ -5,8 +5,8 @@
 <section>
 	<h1>Projects</h1>
 	<p>
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dolore commodi quisquam sunt
-		amet, sequi accusamus molestiae eaque pariatur. Ipsam.
+		Here you will find some of the personal and client projects that I created with each project
+		containing a small description.
 	</p>
 	<Seperator />
 	<slot />

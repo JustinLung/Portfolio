@@ -16,7 +16,6 @@ export const load: PageServerLoad = async () => {
   }
 }`;
 	const data = await client({ query, fetch: fetch });
-	console.log(data);
 	return {
 		projects: data.projects
 	};

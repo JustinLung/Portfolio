@@ -4,8 +4,8 @@ import { client } from '$lib/vendors/utils';
 export const load: PageServerLoad = async () => {
 	const query = `
     query Projects {
-      projects {
-       title
+      projects(first: 2) {
+        title
         description 
         githubLink
         projectLink
@@ -15,7 +15,6 @@ export const load: PageServerLoad = async () => {
       }
 }`;
 	const data = await client({ query, fetch: fetch });
-	console.log(data);
 	return {
 		projects: data.projects
 	};

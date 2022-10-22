@@ -15,12 +15,14 @@
 	header {
 		width: 100%;
 		position: fixed;
+		top: 0;
 		background-color: var(--color-dark-transparent);
 		backdrop-filter: blur(24px);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1rem 2rem;
+		padding: 1.5rem 2rem;
+		z-index: 1;
 	}
 
 	header > a {

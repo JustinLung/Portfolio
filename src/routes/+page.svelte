@@ -7,7 +7,6 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	console.log(data);
 </script>
 
 <svelte:head>
@@ -18,7 +17,14 @@
 	<Hero />
 	<Seperator />
 	<FeaturedProjects>
-		<ProjectCard projectImage="/assets/images/goconnect-bookings.png" />
-		<ProjectCard projectImage="/assets/images/goconnect-bookings.png" />
+		{#each data.projects as project}
+			<ProjectCard
+				projectTitle={project.title}
+				projectDescription={project.description}
+				projectLink={project.projectLink}
+				githubLink={project.githubLink}
+				projectImage="/assets/images/goconnect-bookings.png"
+			/>
+		{/each}
 	</FeaturedProjects>
 </PageTransition>

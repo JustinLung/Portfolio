@@ -23,6 +23,7 @@
 <style>
 	article {
 		margin-top: 2rem;
+		flex-basis: 50%;
 	}
 
 	img {

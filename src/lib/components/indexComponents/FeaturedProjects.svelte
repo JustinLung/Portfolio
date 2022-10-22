@@ -1,6 +1,9 @@
 <section>
 	<h2>Featured Projects</h2>
-	<p>Some of the recent projects that has been shipped.</p>
+	<p>
+		Some of the recent projects that has been shipped. Look at more <a href="/projects">projects</a
+		>!
+	</p>
 	<div>
 		<slot />
 	</div>
@@ -17,6 +20,17 @@
 		padding-top: 1rem;
 	}
 
+	a {
+		text-decoration: none;
+		color: var(--color-white);
+		font-weight: bold;
+		transition: 0.3s ease-in;
+	}
+
+	a:hover {
+		border-bottom: 2px solid var(--color-crimson);
+	}
+
 	section {
 		max-width: 55rem;
 		margin: 0 auto;
@@ -27,7 +41,6 @@
 		flex-direction: row;
 		gap: 2rem;
 		justify-content: space-around;
-		align-items: center;
 	}
 
 	@media (max-width: 40rem) {

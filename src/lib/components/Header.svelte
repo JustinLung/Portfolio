@@ -16,6 +16,7 @@
 		width: 100%;
 		position: fixed;
 		top: 0;
+		left: 0;
 		background-color: var(--color-dark-transparent);
 		backdrop-filter: blur(24px);
 		display: flex;
@@ -42,7 +43,6 @@
 
 	a {
 		color: var(--color-white);
-		text-decoration: none;
 		font-size: var(--font-size-normal);
 		font-weight: bold;
 	}

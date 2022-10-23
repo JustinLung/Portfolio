@@ -7,10 +7,11 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	const pageTitle = 'Home';
 </script>
 
 <svelte:head>
-	<title>justin.dev</title>
+	<title>justin.dev &#183; {pageTitle}</title>
 </svelte:head>
 
 <PageTransition>

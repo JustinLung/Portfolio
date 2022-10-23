@@ -11,6 +11,9 @@
 <article>
 	<img src={projectImage} alt={projectTitle} />
 	<h2>{projectTitle}</h2>
+	<div>
+		<slot />
+	</div>
 	<p>
 		{projectDescription}
 	</p>
@@ -43,7 +46,12 @@
 		margin-bottom: 1.5rem;
 	}
 
-	div {
+	div:first-child {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	div:last-child {
 		display: flex;
 		flex-direction: row;
 		gap: 0.5rem;
@@ -51,7 +59,6 @@
 
 	a {
 		cursor: pointer;
-		text-decoration: none;
 		padding: 0.5rem 1rem;
 		border-radius: 1rem;
 		background-color: var(--color-pink);
@@ -67,4 +74,10 @@
 	a:hover {
 		opacity: 1;
 	}
+
+	/* @media (max-width: 50rem) {
+		p {
+			font-size: var(--font-size-normal);
+		}
+	} */
 </style>

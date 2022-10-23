@@ -8,3 +8,7 @@ body {
     color: var(--color-white);
     font-family: 'Raleway', sans-serif;
 }
+
+a {
+    text-decoration: none;
+}

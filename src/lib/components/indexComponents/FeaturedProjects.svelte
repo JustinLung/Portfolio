@@ -21,7 +21,6 @@
 	}
 
 	a {
-		text-decoration: none;
 		color: var(--color-white);
 		font-weight: bold;
 		transition: 0.3s ease-in;

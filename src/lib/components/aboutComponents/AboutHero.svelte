@@ -11,10 +11,8 @@
 <style>
 	section {
 		max-width: 55rem;
-		margin: 0 auto;
-		margin-top: 4rem;
+		margin: 6rem auto 0;
 	}
-
 	h1 {
 		font-size: var(--font-size-xl);
 		padding-top: 1rem;
@@ -23,5 +21,11 @@
 	img {
 		border-radius: 0.5rem;
 		width: 100%;
+	}
+
+	@media (max-width: 55rem) {
+		section {
+			margin: 4rem auto 0;
+		}
 	}
 </style>

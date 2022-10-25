@@ -10,7 +10,7 @@
 </script>
 
 <article>
-	<img src={projectImage} alt={projectTitle} />
+	<img src={projectImage} alt={projectTitle} width="880" height="508" />
 	<h2>{projectTitle}</h2>
 	<div>
 		<slot />

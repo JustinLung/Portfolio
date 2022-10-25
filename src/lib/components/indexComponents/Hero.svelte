@@ -6,7 +6,7 @@
 </script>
 
 <section id="home">
-	<h1>Frontend Developer creating immersive websites.</h1>
+	<h1>Frontend Developer creating <span>immersive</span> websites.</h1>
 	<AboutText />
 	<div>
 		<a href="https://instagram.com/justinlung_" target="_blank" rel="noreferrer"><Instagram /></a>
@@ -52,6 +52,36 @@
 
 	a:hover {
 		opacity: 1;
+	}
+
+	span {
+		background-image: linear-gradient(
+			-225deg,
+			var(--color-dark) 0%,
+			var(--color-purple) 29%,
+			var(--color-pink) 67%,
+			var(--color-yellow) 100%
+		);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: var(--color-white);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: gradient 3s linear infinite;
+	}
+
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
 	}
 
 	@media (max-width: 40rem) {

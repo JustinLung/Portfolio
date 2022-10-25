@@ -43,12 +43,14 @@
 		color: var(--color-grey);
 		font-size: var(--font-size-sm);
 		line-height: 2rem;
-		margin-bottom: 1.5rem;
+		padding: 1rem 0;
 	}
 
-	div:first-child {
+	div:first-of-type {
 		display: flex;
 		flex-wrap: wrap;
+		max-width: 40rem;
+		gap: 0.5rem;
 	}
 
 	div:last-child {

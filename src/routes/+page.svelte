@@ -5,6 +5,7 @@
 	import PageTransition from '$lib/components/PageTransition.svelte';
 	import ProjectCard from '$lib/components/projectComponents/ProjectCard.svelte';
 	import type { PageData } from './$types';
+	import ProjectTag from '$lib/components/projectComponents/ProjectTag.svelte';
 
 	export let data: PageData;
 	const pageTitle = 'Home';
@@ -25,7 +26,11 @@
 				projectLink={project.projectLink}
 				githubLink={project.githubLink}
 				projectImage="/assets/images/goconnect-bookings.png"
-			/>
+			>
+				{#each project.projectTags as projectTag}
+					<ProjectTag tagTitle={projectTag.title} />
+				{/each}
+			</ProjectCard>
 		{/each}
 	</FeaturedProjects>
 </PageTransition>

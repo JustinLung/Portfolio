@@ -12,6 +12,9 @@ export const load: PageServerLoad = async () => {
     image {
       url
     }
+    projectTags{
+      title
+    }
 
   }
 }`;

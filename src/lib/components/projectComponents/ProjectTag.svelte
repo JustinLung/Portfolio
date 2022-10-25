@@ -6,7 +6,7 @@
 
 <style>
 	span {
-		background-color: var(--color-crimson);
+		background-color: var(--color-teal-blue);
 		padding: 0.2rem 1rem;
 		font-size: var(--font-size-sm);
 		border-radius: 0.2rem;

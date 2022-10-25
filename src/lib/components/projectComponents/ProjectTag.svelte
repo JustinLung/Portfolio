@@ -6,9 +6,16 @@
 
 <style>
 	span {
-		background-color: var(--color-teal-blue);
+		background-color: var(--color-pink);
+		opacity: 0.8;
 		padding: 0.2rem 1rem;
 		font-size: var(--font-size-sm);
 		border-radius: 0.2rem;
+		transition: 0.3s ease-in-out;
+		cursor: pointer;
+	}
+
+	span:hover {
+		opacity: 1;
 	}
 </style>

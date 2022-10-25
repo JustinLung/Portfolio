@@ -17,7 +17,7 @@
 	<ProjectSection>
 		{#each data.projects as project}
 			<ProjectCard
-				projectImage="/assets/images/goconnect-bookings.png"
+				projectImage={project.image.url}
 				projectTitle={project.title}
 				projectDescription={project.description}
 				projectLink={project.projectLinkl}

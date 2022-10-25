@@ -25,7 +25,7 @@
 				projectDescription={project.description}
 				projectLink={project.projectLink}
 				githubLink={project.githubLink}
-				projectImage="/assets/images/goconnect-bookings.png"
+				projectImage={project.image.url}
 			>
 				{#each project.projectTags as projectTag}
 					<ProjectTag tagTitle={projectTag.title} />

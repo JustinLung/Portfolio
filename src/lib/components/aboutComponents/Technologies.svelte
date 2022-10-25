@@ -1,5 +1,4 @@
 <section>
-	<h2>Technologies</h2>
 	<div>
 		<slot />
 	</div>
@@ -7,30 +6,57 @@
 
 <style>
 	section {
-		max-width: 55rem;
-		margin: 2rem auto 0;
-		position: relative;
-	}
-
-	h2 {
-		font-size: var(--font-size-lg);
-		margin-bottom: 1rem;
-	}
-
-	div {
+		height: 20rem;
+		margin: auto;
 		overflow: hidden;
+		position: relative;
+		width: 100%;
+		max-width: 55rem;
 		display: flex;
-		margin: 0 auto;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	section::before,
+	section::after {
+		background: linear-gradient(to right, var(--color-dark), rgba(255, 255, 255, 0) 100%);
+		content: '';
+		height: 100%;
+		position: absolute;
+		width: 2rem;
+		z-index: 2;
+	}
+	section::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+	section::before {
+		left: 0;
+		top: 0;
+	}
+	section div {
+		-webkit-animation: scroll 20s linear infinite;
+		animation: scroll 20s linear infinite;
+		display: flex;
+		width: calc(11rem * 14);
 	}
 
-	section:after {
-		content: '';
-		background: linear-gradient(to left, var(--color-dark), transparent);
-		height: 100%;
-		width: 10rem;
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		right: 0;
+	@-webkit-keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(calc(11rem * 7));
+		}
+	}
+
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(calc(-250px * 7));
+		}
 	}
 </style>

@@ -4,22 +4,18 @@
 </script>
 
 <figure>
-	<figcaption>{technologyTitle}</figcaption>
 	<img src={technologyImage} alt={technologyTitle} />
+	<figcaption>{technologyTitle}</figcaption>
 </figure>
 
 <style>
 	figure {
-		color: var(--color-white);
-		animation: slide 10s linear infinite;
-		margin: 0.5rem;
-		border-radius: 0.5rem;
-		padding: 2rem;
-		gap: 1rem;
+		height: 100%;
 		display: flex;
-		flex-direction: column-reverse;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		gap: 1rem;
 	}
 
 	figcaption {
@@ -28,15 +24,12 @@
 	}
 
 	img {
-		width: 7rem;
+		filter: grayscale(1);
+		transition: 0.3s ease-in-out;
+		width: 11rem;
 	}
 
-	@keyframes slide {
-		0% {
-			transform: translate3d(0, 0, 0);
-		}
-		100% {
-			transform: translate3d(-700px, 0, 0);
-		}
+	img:hover {
+		filter: grayscale(0);
 	}
 </style>

@@ -18,15 +18,15 @@
 
 <PageTransition>
 	<AboutHero />
-	<Seperator />
-	<Technologies>
+	<!-- <Seperator /> -->
+	<!-- <Technologies>
 		<Technology technologyImage="/assets/images/svelte-logo.png" technologyTitle="Sveltekit" />
 		<Technology technologyImage="/assets/images/svelte-logo.png" technologyTitle="Sveltekit" />
 		<Technology technologyImage="/assets/images/svelte-logo.png" technologyTitle="Sveltekit" />
 		<Technology technologyImage="/assets/images/svelte-logo.png" technologyTitle="Sveltekit" />
 		<Technology technologyImage="/assets/images/svelte-logo.png" technologyTitle="Sveltekit" />
 		<Technology technologyImage="/assets/images/svelte-logo.png" technologyTitle="Sveltekit" />
-	</Technologies>
+	</Technologies> -->
 	<Seperator />
 	<Timeline>
 		{#each data.timelines as timeline}

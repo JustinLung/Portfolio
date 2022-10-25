@@ -7,8 +7,6 @@
 
 	export let data: PageData;
 	const pageTitle = 'Projects';
-
-	console.log(data);
 </script>
 
 <svelte:head>

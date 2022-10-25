@@ -20,7 +20,7 @@
 
 	h1 {
 		font-size: var(--font-size-2xl);
-		line-height: 5rem;
+		line-height: 5 rem;
 	}
 
 	p {

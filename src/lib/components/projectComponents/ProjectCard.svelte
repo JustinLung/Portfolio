@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Arrow from '../iconComponents/Arrow.svelte';
 	import Github from '../iconComponents/Github.svelte';
+
 	export let projectImage: string;
 	export let projectTitle: string;
 	export let projectDescription: string;
@@ -77,9 +78,9 @@
 		opacity: 1;
 	}
 
-	/* @media (max-width: 50rem) {
+	@media (max-width: 50rem) {
 		p {
 			font-size: var(--font-size-normal);
 		}
-	} */
+	}
 </style>

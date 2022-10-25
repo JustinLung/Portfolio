@@ -13,22 +13,17 @@ a {
     text-decoration: none;
 }
 
-@-webkit-keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-250px * 7));
-    }
+/* width */
+::-webkit-scrollbar {
+    width: .5rem;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-250px * 7));
-    }
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(-225deg,
+            var(--color-dark) 0%,
+            var(--color-purple) 29%,
+            var(--color-pink) 67%,
+            var(--color-yellow) 100%);
+    border-radius: 1rem;
 }

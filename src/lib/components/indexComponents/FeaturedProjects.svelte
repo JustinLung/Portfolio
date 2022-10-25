@@ -16,6 +16,7 @@
 	}
 
 	p {
+		color: var(--color-grey);
 		font-size: var(--font-size-sm);
 		padding-top: 1rem;
 	}

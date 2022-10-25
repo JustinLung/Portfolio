@@ -55,7 +55,7 @@
 	}
 
 	span {
-		background-image: linear-gradient(
+		background: linear-gradient(
 			-225deg,
 			var(--color-dark) 0%,
 			var(--color-purple) 29%,

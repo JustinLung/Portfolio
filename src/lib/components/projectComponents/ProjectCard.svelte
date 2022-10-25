@@ -18,7 +18,7 @@
 		{projectDescription}
 	</p>
 	<div>
-		<a href={projectLink} target="_blank" rel="noreferrer">{projectTitle}<Arrow /></a>
+		<a href={projectLink} target="_blank" rel="noreferrer">Live Link<Arrow /></a>
 		<a href={githubLink} target="_blank" rel="noreferrer">Github Repo<Github /></a>
 	</div>
 </article>

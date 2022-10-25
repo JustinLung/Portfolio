@@ -49,7 +49,7 @@
 
 	@media (max-width: 55rem) {
 		header {
-			padding: 1rem;
+			padding: 1.5rem;
 		}
 
 		header > a,

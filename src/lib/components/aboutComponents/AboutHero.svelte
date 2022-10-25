@@ -3,7 +3,7 @@
 </script>
 
 <section>
-	<img src="/assets/images/profile.JPG" alt="profile" width="880" height="586" />
+	<img src="/assets/images/profile.JPG" alt="profile" />
 	<h1>About</h1>
 	<AboutText />
 </section>

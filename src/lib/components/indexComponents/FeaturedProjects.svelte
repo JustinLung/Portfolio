@@ -24,11 +24,11 @@
 	a {
 		color: var(--color-white);
 		font-weight: bold;
-		transition: 0.3s ease-in;
+		transition: 0.3s ease-in-out;
 	}
 
 	a:hover {
-		border-bottom: 2px solid var(--color-crimson);
+		color: var(--color-pink);
 	}
 
 	section {

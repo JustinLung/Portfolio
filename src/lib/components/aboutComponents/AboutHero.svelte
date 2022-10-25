@@ -15,7 +15,7 @@
 	}
 	h1 {
 		font-size: var(--font-size-xl);
-		padding-top: 1rem;
+		margin-top: 2rem;
 	}
 
 	img {

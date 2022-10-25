@@ -78,7 +78,7 @@
 		opacity: 1;
 	}
 
-	@media (max-width: 50rem) {
+	@media (max-width: 35rem) {
 		p {
 			font-size: var(--font-size-normal);
 		}

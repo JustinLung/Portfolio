@@ -39,5 +39,9 @@
 			font-size: var(--font-size-lg);
 			line-height: 2rem;
 		}
+
+		p {
+			font-size: var(--font-size-normal);
+		}
 	}
 </style>

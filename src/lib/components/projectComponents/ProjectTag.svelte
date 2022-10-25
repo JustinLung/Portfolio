@@ -18,4 +18,11 @@
 	span:hover {
 		opacity: 1;
 	}
+
+	@media (max-width: 35rem) {
+		span {
+			padding: 0.5rem 1rem;
+			font-size: var(--font-size-normal);
+		}
+	}
 </style>

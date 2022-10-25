@@ -43,6 +43,12 @@
 		justify-content: space-around;
 	}
 
+	@media (max-width: 35rem) {
+		p {
+			font-size: var(--font-size-normal);
+		}
+	}
+
 	@media (max-width: 40rem) {
 		h2 {
 			font-size: var(--font-size-md);
@@ -51,6 +57,7 @@
 
 	@media (max-width: 50rem) {
 		div {
+			gap: 0;
 			flex-direction: column;
 		}
 	}

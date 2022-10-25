@@ -21,4 +21,10 @@
 		line-height: 2rem;
 		padding-top: 1rem;
 	}
+
+	@media (max-width: 35rem) {
+		p {
+			font-size: var(--font-size-normal);
+		}
+	}
 </style>

@@ -20,7 +20,7 @@
 				projectImage={project.image.url}
 				projectTitle={project.title}
 				projectDescription={project.description}
-				projectLink={project.projectLinkl}
+				projectLink={project.projectLink}
 				githubLink={project.githubLink}
 			>
 				{#each project.projectTags as projectTag}

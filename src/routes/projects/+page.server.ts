@@ -3,20 +3,19 @@ import { client } from '$lib/vendors/utils';
 
 export const load: PageServerLoad = async () => {
 	const query = `
-    query Projects {
-  projects {
-    title
-    description 
-    githubLink
-    projectLink
-    image {
-      url
-    }
-    projectTags{
-      title
-    }
-
-  }
+       query Projects {
+      projects {
+        title
+        description 
+        githubLink
+        projectLink
+          image {
+            url
+         }
+        projectTags{
+          title
+        }
+      }
 }`;
 	const data = await client({ query, fetch: fetch });
 	return {

@@ -45,6 +45,7 @@
 		font-size: var(--font-size-sm);
 		line-height: 2rem;
 		padding: 1rem 0;
+		max-width: 40rem;
 	}
 
 	div:first-of-type {

@@ -19,8 +19,12 @@
 		{projectDescription}
 	</p>
 	<div>
-		<a href={projectLink} target="_blank" rel="noreferrer">Live Link<Arrow /></a>
-		<a href={githubLink} target="_blank" rel="noreferrer">Github Repo<Github /></a>
+		<a href={projectLink} target="_blank" rel="noreferrer" data-sveltekit-prefetch
+			>Live Link<Arrow /></a
+		>
+		<a href={githubLink} target="_blank" rel="noreferrer" data-sveltekit-prefetch
+			>Github Repo<Github /></a
+		>
 	</div>
 </article>
 

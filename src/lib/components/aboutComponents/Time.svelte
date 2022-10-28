@@ -7,7 +7,7 @@
 	export let timeEnd: number;
 </script>
 
-<a href={timeLink} target="_blank" rel="noreferrer">
+<a href={timeLink} target="_blank" rel="noreferrer" data-sveltekit-prefetch>
 	<span class="title">{timeTitle}</span>
 	<Spacer />
 	<div>

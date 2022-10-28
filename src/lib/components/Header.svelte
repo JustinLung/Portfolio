@@ -3,11 +3,14 @@
 </script>
 
 <header>
-	<a href="/">justin.dev</a>
+	<a href="/" data-sveltekit-prefetch>justin.dev</a>
 	<nav>
-		<a href="/" class:active={$page.url.pathname === '/'}>Home</a>
-		<a href="/about" class:active={$page.url.pathname === '/about'}>About</a>
-		<a href="/projects" class:active={$page.url.pathname === '/projects'}>Projects</a>
+		<a href="/" class:active={$page.url.pathname === '/'} data-sveltekit-prefetch>Home</a>
+		<a href="/about" class:active={$page.url.pathname === '/about'} data-sveltekit-prefetch>About</a
+		>
+		<a href="/projects" class:active={$page.url.pathname === '/projects'} data-sveltekit-prefetch
+			>Projects</a
+		>
 	</nav>
 </header>
 

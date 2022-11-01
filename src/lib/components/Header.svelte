@@ -17,15 +17,17 @@
 <style>
 	header {
 		width: 100%;
+		max-width: 55rem;
 		position: fixed;
 		top: 0;
-		left: 0;
+		left: 50%;
+		transform: translateX(-50%);
 		background-color: var(--color-dark-transparent);
 		backdrop-filter: blur(24px);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1.5rem 2rem;
+		padding: 1.5rem 0;
 		z-index: 1;
 	}
 

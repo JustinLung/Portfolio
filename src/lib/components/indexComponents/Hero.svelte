@@ -3,6 +3,7 @@
 	import Instagram from '../iconComponents/Instagram.svelte';
 	import Github from '../iconComponents/Github.svelte';
 	import Twitter from '../iconComponents/Twitter.svelte';
+	import Linkedin from '../iconComponents/Linkedin.svelte';
 </script>
 
 <section id="home">
@@ -10,6 +11,9 @@
 	<AboutText />
 	<div>
 		<a href="https://instagram.com/justinlung_" target="_blank" rel="noreferrer"><Instagram /></a>
+		<a href="https://www.linkedin.com/in/justin-lung-1a0753127/" target="_blank" rel="noreferrer"
+			><Linkedin /></a
+		>
 		<a href="http://twitter.com/justinlung_" target="_blank" rel="noreferrer"><Twitter /></a>
 		<a href="http://github.com/justinlung" target="_blank" rel="noreferrer"><Github /></a>
 		<a href="mailto:justinlung77@gmail.com">Email me</a>
@@ -92,9 +96,10 @@
 			font-size: var(--font-size-lg);
 			line-height: 2.5rem;
 		}
-
 		a:last-child {
-			margin-left: 2rem;
+			padding: 1rem;
+			align-self: flex-end;
+			margin-left: 0;
 		}
 	}
 </style>

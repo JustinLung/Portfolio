@@ -4,7 +4,7 @@ import { client } from '$lib/vendors/utils';
 export const load: PageServerLoad = async () => {
 	const query = `
        query Projects {
-      projects {
+      projects(orderBy: publishedAt_DESC) {
         title
         description 
         githubLink

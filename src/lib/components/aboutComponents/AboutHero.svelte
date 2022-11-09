@@ -11,7 +11,7 @@
 <style>
 	section {
 		max-width: 55rem;
-		margin: 6rem auto 2rem;
+		margin: 9rem auto 2rem;
 	}
 	h1 {
 		font-size: var(--font-size-xl);

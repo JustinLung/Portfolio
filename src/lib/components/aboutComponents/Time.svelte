@@ -29,7 +29,8 @@
 		font-size: var(--font-size-sm);
 	}
 
-	a:hover .title {
+	a:hover .title,
+	a:focus .title {
 		color: var(--color-crimson);
 	}
 

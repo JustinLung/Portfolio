@@ -12,7 +12,30 @@
 <style>
 	span {
 		font-weight: bold;
-		border-bottom: 2px solid var(--color-crimson);
+		position: relative;
+	}
+
+	span:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: var(--color-crimson);
+		transform-origin: bottom left;
+		animation: animationUnderline 1s ease-in-out;
+	}
+
+	@keyframes animationUnderline {
+		0% {
+			opacity: 0;
+			transform: scale(0);
+		}
+		100% {
+			opacity: 1;
+			transform: scaleX(1);
+		}
 	}
 
 	p {

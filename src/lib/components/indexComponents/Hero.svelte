@@ -4,6 +4,11 @@
 	import Github from '../iconComponents/Github.svelte';
 	import Twitter from '../iconComponents/Twitter.svelte';
 	import Linkedin from '../iconComponents/Linkedin.svelte';
+	import Discord from '../iconComponents/Discord.svelte';
+
+	function discordAlert() {
+		alert('Discord: JUSTIN#6904');
+	}
 </script>
 
 <section id="home">
@@ -16,6 +21,7 @@
 		>
 		<a href="http://twitter.com/justinlung_" target="_blank" rel="noreferrer"><Twitter /></a>
 		<a href="http://github.com/justinlung" target="_blank" rel="noreferrer"><Github /></a>
+		<button target="_blank" rel="noreferrer" on:click={discordAlert}><Discord /></button>
 		<a href="mailto:justinlung77@gmail.com">Email me</a>
 	</div>
 </section>
@@ -33,13 +39,15 @@
 
 	div {
 		display: flex;
-		gap: 1rem;
+		gap: 0.5rem;
 		padding: 2rem 0;
 	}
 
-	a {
+	a,
+	button {
+		cursor: pointer;
 		transition: all 0.3s;
-		opacity: 0.8;
+		opacity: 0.8 !important;
 		color: var(--color-white);
 		border-radius: 0.2rem;
 		background: var(--color-pink);
@@ -49,12 +57,17 @@
 		align-items: center;
 	}
 
+	button {
+		border: 0;
+	}
+
 	a:last-child {
 		padding: 0.5rem 1.5rem;
 		margin-left: 3rem;
 	}
 
-	a:hover {
+	a:hover,
+	button:hover {
 		opacity: 1;
 	}
 

@@ -95,14 +95,13 @@
 
 <style>
 	header {
-		position: relative;
+		position: fixed;
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
-		max-width: 85rem;
-		margin: 0 auto;
-		padding: 1.5rem 1rem;
+		padding: 1.5rem 4rem;
 	}
 
 	ul {
@@ -220,6 +219,9 @@
 	}
 
 	@media (max-width: 50rem) {
+		header {
+			padding: 1rem;
+		}
 		.navigation {
 			margin-top: 6rem;
 			align-self: flex-start;

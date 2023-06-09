@@ -1,20 +1,113 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
+	import { socials } from '$lib/data/links';
+	import { gsap, Expo } from 'gsap';
 	import Button from './Button.svelte';
 	import { onMount } from 'svelte';
 
 	export let job: string;
+	export let href: string;
+
+	onMount(() => {
+		const tl = gsap.timeline();
+
+		tl.fromTo(
+			'.hero-title',
+			{
+				skewY: '10deg',
+				opacity: 0,
+				y: 100
+			},
+			{
+				skewY: '0deg',
+				opacity: 1,
+				y: 0,
+				ease: Expo.easeOut,
+				duration: 1,
+				delay: 0.4
+			}
+		);
+
+		gsap.fromTo(
+			'.tag-text',
+			{
+				skewY: '10deg',
+				opacity: 0,
+				y: 100
+			},
+			{
+				skewY: '0deg',
+				opacity: 1,
+				y: 0,
+				ease: Expo.easeOut,
+				duration: 1,
+				delay: 0.5
+			}
+		);
+
+		gsap.fromTo(
+			'.hero-description',
+			{
+				skewY: '10deg',
+				opacity: 0,
+				y: 100
+			},
+			{
+				skewY: '0deg',
+				opacity: 1,
+				y: 0,
+				ease: Expo.easeOut,
+				duration: 1,
+				delay: 0.5
+			}
+		);
+
+		gsap.fromTo(
+			'.button',
+			{
+				skewY: '10deg',
+				opacity: 0,
+				y: 100
+			},
+			{
+				skewY: '0deg',
+				opacity: 1,
+				y: 0,
+				ease: Expo.easeOut,
+				duration: 1,
+				delay: 0.6
+			}
+		);
+
+		gsap.fromTo(
+			'.social',
+			{ opacity: 0 },
+			{ duration: 0.5, opacity: 1, stagger: 0.15, y: 0, delay: 0.6 }
+		);
+	});
 </script>
 
 <section>
 	<span class="tag-text">hello there</span>
-	<h1>
+	<h1 class="hero-title">
 		I’m Justin Lung. A creative frontend developer, from <span class="italic">Amsterdam</span>
 		specialized in <span class="italic">interactive</span>
 		products
 	</h1>
-	<p>Currently working at {job}</p>
-	<Button href="/work" class="button">EXPLORE WORK</Button>
+	<p class="hero-description">
+		Currently working at <a {href} target="_blank" rel="noopener noreferrer">{job}</a>
+	</p>
+	<Button href="/#works" class="button">EXPLORE WORK</Button>
+	<ul>
+		{#each socials as social}
+			<li>
+				<a class="social" href={social.href} target="_blank" rel="noopener noreferrer"
+					>{social.title}</a
+				>
+			</li>
+		{/each}
+	</ul>
+
+	<div class="gradient"/>
 </section>
 
 <style>
@@ -26,6 +119,7 @@
 		align-items: center;
 		padding: 2rem;
 		gap: 1.5rem;
+		position: relative;
 	}
 
 	.tag-text {
@@ -54,5 +148,30 @@
 		font-size: clamp(0.875rem, 4vw, 2rem);
 		padding: 0;
 		margin: 0;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		position: absolute;
+		left: 0;
+		bottom: 1.5rem;
+		font-size: 0.75rem;
+	}
+
+	@media (max-width: 55rem) {
+		section {
+			padding: 1rem;
+		}
+	}
+
+	@media (max-width: 40rem) {
+		ul {
+			display: none;
+		}
 	}
 </style>

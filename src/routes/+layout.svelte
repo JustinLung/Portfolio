@@ -2,6 +2,7 @@
 	import '../css/app.css';
 	import '../css/fonts.css';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Lenis from '$lib/components/Lenis.svelte';
 </script>
@@ -10,5 +11,6 @@
 <Navigation />
 <main>
 	<slot />
+	<Contact />
 </main>
 <Footer />

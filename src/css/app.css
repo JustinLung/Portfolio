@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Helvetica';
 	background-color: var(--ash);
 	color: var(--color-white);
 	padding: 0;

@@ -1,41 +1,12 @@
 <script lang="ts">
-	import { animate, stagger } from 'motion';
-	import gsap from 'gsap';
+	import { socials, links } from '$lib/data/links';
+	import { gsap, Expo } from 'gsap';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	let isActive = false;
 	let nav: HTMLElement;
 
 	let animation;
-
-	const links = [
-		{
-			title: 'WORK',
-			href: '/work'
-		},
-		{
-			title: 'ABOUT',
-			href: '/about'
-		},
-		{
-			title: 'CONTACT',
-			href: '/contact'
-		}
-	];
-
-	const socials = [
-		{
-			title: 'GITHUB',
-			href: 'https://github.com/justinlung'
-		},
-		{
-			title: 'INSTAGRAM',
-			href: 'https://www.instagram.com/justinlung_/'
-		},
-		{
-			title: 'LINKEDIN',
-			href: 'https://www.linkedin.com/in/justin-l-1a0753127/'
-		}
-	];
 
 	function openNav() {
 		isActive = !isActive;
@@ -63,8 +34,8 @@
 	}
 </script>
 
-<header>
-	<a href="/" class="logo" class:active={isActive}>JL</a>
+<header class="header">
+	<a href="/" class="logo" class:active={isActive}>JYTL</a>
 	<nav class:active={isActive} bind:this={nav}>
 		<ul class="navigation">
 			{#each links as link}
@@ -86,7 +57,12 @@
 			</ul>
 		</div>
 	</nav>
-	<button on:click={openNav} class:active={isActive} on:keydown={handleWindowKeyDown}>
+	<button
+		on:click={openNav}
+		class="hamburger"
+		class:active={isActive}
+		on:keydown={handleWindowKeyDown}
+	>
 		<span />
 		<span />
 		<span />

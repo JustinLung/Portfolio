@@ -2,7 +2,7 @@
 	import { fadein } from '$lib/actions/fadeIn';
 </script>
 
-<section>
+<section use:fadein={{ loop: true, y: 25, stagger: 0.2 }}>
 	<p>if you've got any questions</p>
 	<a href="mailto:info@justinlung.nl">Send an email</a>
 </section>

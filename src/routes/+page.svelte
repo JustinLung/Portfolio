@@ -6,8 +6,23 @@
 
 <Hero job="Merlin" href="https://level30wizards.com/" />
 <Projects>
-	<ProjectCard title="hi" />
-	<ProjectCard title="hi" />
-	<ProjectCard title="hi" />
-	<ProjectCard title="hi" />
+	<ProjectCard
+		title="Scrollbook"
+		description="Real, organic and arabica. A brand that communicates coffee real value."
+		src="/images/hero.jpeg"
+		alt="Project"
+	/>
+	<ProjectCard
+		title="Scrollbook"
+		description="Real, organic and arabica. A brand that communicates coffee real value."
+		src="/images/hero.jpeg"
+		alt="Project"
+	/>
+	<ProjectCard
+		title="Scrollbook"
+		href="/"
+		description="Real, organic and arabica. A brand that communicates coffee real value."
+		src="/images/hero.jpeg"
+		alt="Project"
+	/>
 </Projects>

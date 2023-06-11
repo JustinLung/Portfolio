@@ -62,7 +62,7 @@
 		);
 
 		gsap.fromTo(
-			'.button',
+			'.hero-button',
 			{
 				skewY: '10deg',
 				opacity: 0,
@@ -96,7 +96,7 @@
 	<p class="hero-description">
 		Currently working at <a {href} target="_blank" rel="noopener noreferrer">{job}</a>
 	</p>
-	<Button href="/#works" class="button">EXPLORE WORK</Button>
+	<Button href="/#works" class="hero-button">EXPLORE WORK</Button>
 	<ul>
 		{#each socials as social}
 			<li>
@@ -107,7 +107,6 @@
 		{/each}
 	</ul>
 
-	<div class="gradient"/>
 </section>
 
 <style>
@@ -117,10 +116,12 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 2rem;
 		gap: 1.5rem;
 		position: relative;
+		max-width: 85rem;
+		margin: auto;
 	}
+
 
 	.tag-text {
 		font-size: clamp(0.75rem, 4vw, 0.875rem);
@@ -161,17 +162,22 @@
 		left: 0;
 		bottom: 1.5rem;
 		font-size: 0.75rem;
+
+		max-width: 85rem;
+		margin: auto;
+
+		padding: 1.5rem 1rem;
 	}
 
-	@media (max-width: 55rem) {
+	@media (max-width: 50rem) {
 		section {
 			padding: 1rem;
 		}
-	}
 
-	@media (max-width: 40rem) {
 		ul {
-			display: none;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 1.5rem 1rem;
 		}
 	}
 </style>

@@ -2,7 +2,7 @@
 	import { fadein } from '$lib/actions/fadeIn';
 </script>
 
-<footer use:fadein={{ loop: true, delay: 0.3 }}>
+<footer>
 	&#169; {new Date().getFullYear()} — Justin Lung. All rights reserved.
 </footer>
 

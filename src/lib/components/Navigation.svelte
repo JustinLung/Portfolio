@@ -2,7 +2,6 @@
 	import { socials, links } from '$lib/data/links';
 	import { gsap, Expo } from 'gsap';
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	let isActive = false;
 	let nav: HTMLElement;
 
@@ -34,50 +33,56 @@
 	}
 </script>
 
-<header class="header">
-	<a href="/" class="logo" class:active={isActive}>JYTL</a>
-	<nav class:active={isActive} bind:this={nav}>
-		<ul class="navigation">
-			{#each links as link}
-				<li class="item">
-					<a
-						href={link.href}
-						class:active={$page.url.pathname === link.href}
-						data-sveltekit-preload-data="hover">{link.title}</a
-					>
-				</li>
-			{/each}
-		</ul>
-		<div class="nav-footer">
-			<a href="mailto:info@justinlung.nl" class="email">INFO@JUSTINLUNG.NL</a>
-			<ul class="socials">
-				{#each socials as social}
-					<li><a href={social.href}>{social.title}</a></li>
+<div>
+	<header class="header">
+		<a href="/" class="logo" class:active={isActive}>JYTL</a>
+		<nav class:active={isActive} bind:this={nav}>
+			<ul class="navigation">
+				{#each links as link}
+					<li class="item">
+						<a
+							href={link.href}
+							class:active={$page.url.pathname === link.href}
+							data-sveltekit-preload-data="hover">{link.title}</a
+						>
+					</li>
 				{/each}
 			</ul>
-		</div>
-	</nav>
-	<button
-		on:click={openNav}
-		class="hamburger"
-		class:active={isActive}
-		on:keydown={handleWindowKeyDown}
-	>
-		<span />
-		<span />
-		<span />
-	</button>
-</header>
+			<div class="nav-footer">
+				<a href="mailto:info@justinlung.nl" class="email">INFO@JUSTINLUNG.NL</a>
+				<ul class="socials">
+					{#each socials as social}
+						<li><a href={social.href}>{social.title}</a></li>
+					{/each}
+				</ul>
+			</div>
+		</nav>
+		<button
+			on:click={openNav}
+			class="hamburger"
+			class:active={isActive}
+			on:keydown={handleWindowKeyDown}
+		>
+			<span />
+			<span />
+			<span />
+		</button>
+	</header>
+</div>
 
 <style>
 	header {
-		position: fixed;
+		position: absolute;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
 		padding: 1.5rem 4rem;
+		max-width: 85rem;
+		margin: 0 auto;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	ul {

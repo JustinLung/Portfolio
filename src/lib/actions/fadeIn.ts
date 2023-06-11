@@ -15,7 +15,6 @@ interface Params extends IntersectionObserverInit {
         start: any;
         end: any;
     };
-    skewY?: string;
 }
 
 const defaultsParams: Params = {

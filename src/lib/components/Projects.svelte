@@ -25,7 +25,7 @@
 
 	h2 {
 		font-family: 'Migra';
-		font-size: clamp(1.5rem, 4vw, 3rem);
+		font-size: clamp(1.3rem, 4vw, 3rem);
 		font-weight: 300;
 	}
 

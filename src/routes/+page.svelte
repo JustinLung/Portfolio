@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Contact from '$lib/components/Contact.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import Projects from '$lib/components/Projects.svelte';
@@ -26,3 +27,4 @@
 		alt="Project"
 	/>
 </Projects>
+<Contact />

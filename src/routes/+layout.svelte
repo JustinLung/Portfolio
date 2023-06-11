@@ -11,6 +11,5 @@
 <Navigation />
 <main>
 	<slot />
-	<Contact />
 </main>
 <Footer />

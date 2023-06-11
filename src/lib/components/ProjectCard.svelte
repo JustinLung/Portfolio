@@ -10,8 +10,10 @@
 </script>
 
 <article>
-	<picture use:fadein={{ loop: true, y: 25, delay: .2 }}>
-		<img {src} {alt} />
+	<picture use:fadein={{ loop: true, y: 25, delay: 0.2 }}>
+		<a {href}>
+			<img {src} {alt} />
+		</a>
 	</picture>
 	<div class="container">
 		<h3 use:fadein={{ loop: true, delay: 0.3, y: 25 }}>{title}</h3>

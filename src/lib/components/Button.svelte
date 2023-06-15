@@ -1,15 +1,16 @@
 <script lang="ts">
 	export let href: string | null = null;
 	const component = href ? 'a' : 'button';
+	const {class: classes, ...rest} = $$restProps
 </script>
 
 <svelte:element
 	this={component}
 	rel={href?.includes('http') ? 'noopener noreferrer' : undefined}
 	target={href?.includes('http') ? '_blank' : undefined}
-	class="button"
+	class="button {classes}"
 	{href}
-	{...$$restProps}
+	{...rest}
 >
 	<slot />
 </svelte:element>

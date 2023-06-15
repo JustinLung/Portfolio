@@ -106,7 +106,6 @@
 			</li>
 		{/each}
 	</ul>
-
 </section>
 
 <style>
@@ -122,6 +121,9 @@
 		margin: auto;
 	}
 
+	.hero-button {
+		color: var(--raisin-black);
+	}
 
 	.tag-text {
 		font-size: clamp(0.75rem, 4vw, 0.875rem);

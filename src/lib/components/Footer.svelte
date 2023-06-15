@@ -3,9 +3,11 @@
 	import { socials } from '$lib/data/links';
 </script>
 
-<footer>
-	&#169; {new Date().getFullYear()} — Justin Lung. All rights reserved.
-	<ul>
+<footer use:fadein={{ loop: true, stagger: 0.15, y: 0 }}>
+	<p >
+		&#169; {new Date().getFullYear()} — Justin Lung. All rights reserved.
+	</p>
+	<ul use:fadein={{ loop: true, stagger: 0.15, y: 0 }}>
 		{#each socials as social}
 			<li>
 				<a class="social" href={social.href} target="_blank" rel="noopener noreferrer"

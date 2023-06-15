@@ -13,22 +13,35 @@
 			animation = gsap.fromTo(
 				'.item',
 				{ opacity: 0, y: -20 },
-				{ duration: 0.5, opacity: 1, stagger: 0.15, y: 0, delay: 0.4 }
+				{ duration: 1, opacity: 1, stagger: 0.15, y: 0, delay: 0.4, ease: Expo.easeOut }
 			);
-			animation = gsap.fromTo('nav', { y: '-100%' }, { duration: 0.5, y: '0', display: 'flex' });
-			animation = gsap.fromTo('.nav-footer', { opacity: 0 }, { opacity: 1, delay: 1.3 });
+			animation = gsap.fromTo(
+				'nav',
+				{ y: '-100%' },
+				{ duration: 1, y: '0', display: 'flex', ease: Expo.easeOut }
+			);
+			animation = gsap.fromTo(
+				'.nav-footer',
+				{ opacity: 0 },
+				{ opacity: 1, delay: 1.3, ease: Expo.easeOut }
+			);
 			return;
 		}
 
-		animation = gsap.to('nav', { duration: 0.5, y: '-100%', display: 'flex' });
-		animation = gsap.fromTo('.nav-footer', { opacity: 1 }, { opacity: 0 });
+		animation = gsap.to('nav', { duration: 1, y: '-100%', display: 'flex', ease: Expo.easeOut });
+		animation = gsap.fromTo('.nav-footer', { opacity: 1 }, { opacity: 0, ease: Expo.easeOut });
 	}
 
 	function handleWindowKeyDown(event: any) {
 		if (event.key === 'Escape') {
 			isActive = false;
-			animation = gsap.to('nav', { duration: 0.5, y: '-100%', display: 'flex' });
-			animation = gsap.fromTo('.nav-footer', { opacity: 1 }, { opacity: 0 });
+			animation = gsap.to('nav', {
+				duration: 1,
+				y: '-100%',
+				display: 'flex',
+				ease: Expo.easeOut
+			});
+			animation = gsap.fromTo('.nav-footer', { opacity: 1 }, { opacity: 0, ease: Expo.easeOut });
 		}
 	}
 </script>
@@ -79,8 +92,6 @@
 		align-items: center;
 		z-index: 1;
 		padding: 1.5rem 4rem;
-		max-width: 85rem;
-		margin: 0 auto;
 		left: 50%;
 		transform: translateX(-50%);
 	}

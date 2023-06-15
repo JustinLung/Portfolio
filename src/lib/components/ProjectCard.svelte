@@ -20,6 +20,7 @@
 		<p use:fadein={{ loop: true, delay: 0.4, y: 25 }}>{description}</p>
 		<div use:fadein={{ loop: true, delay: 0.5, y: 25 }}>
 			<Button {href} class="button">VIEW CASE STUDY</Button>
+			<Button {href} class="button">GITHUB REPOSITORY</Button>
 		</div>
 	</div>
 </article>

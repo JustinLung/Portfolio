@@ -10,15 +10,15 @@
 </script>
 
 <article>
-	<picture use:fadein={{ loop: true, y: 25, delay: 0.2 }}>
+	<picture use:fadein={{ loop: true, y: 25, stagger: 0.15 }}>
 		<a {href}>
 			<img {src} {alt} />
 		</a>
 	</picture>
-	<div class="container">
-		<h3 use:fadein={{ loop: true, delay: 0.3, y: 25 }}>{title}</h3>
-		<p use:fadein={{ loop: true, delay: 0.4, y: 25 }}>{description}</p>
-		<div use:fadein={{ loop: true, delay: 0.5, y: 25 }}>
+	<div class="container" use:fadein={{ loop: true, stagger: 0.15, y: 25 }}>
+		<h3>{title}</h3>
+		<p>{description}</p>
+		<div class="button-container" use:fadein={{ loop: true, stagger: 0.15, y: 25 }}>
 			<Button {href} class="button">VIEW CASE STUDY</Button>
 			<Button {href} class="button">GITHUB REPOSITORY</Button>
 		</div>
@@ -78,6 +78,11 @@
 		margin: 1rem 0;
 	}
 
+	.button-container {
+		display: flex;
+		gap: 0.5rem;
+	}
+
 	@media (max-width: 55rem) {
 		article {
 			align-items: flex-start;
@@ -90,6 +95,15 @@
 
 		p {
 			font-size: 1rem;
+		}
+
+		.button-container {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		:global(.button-container > button) {
+			width: fit-content;
 		}
 	}
 </style>

@@ -17,7 +17,7 @@
 			);
 			animation = gsap.fromTo(
 				'nav',
-				{ y: '-100%' },
+				{ y: '-100%', position: "absolute" },
 				{ duration: 1, y: '0', display: 'flex', ease: Expo.easeOut }
 			);
 			animation = gsap.fromTo(
@@ -88,10 +88,10 @@
 		position: absolute;
 		width: 100%;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		z-index: 1;
-		padding: 1.5rem 4rem;
+		padding: 1.5rem 6rem;
 		left: 50%;
 		transform: translateX(-50%);
 	}

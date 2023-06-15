@@ -168,7 +168,7 @@
 		max-width: 85rem;
 		margin: auto;
 
-		padding: 1.5rem 1rem;
+		padding: 1.5rem 2rem;
 	}
 
 	@media (max-width: 50rem) {

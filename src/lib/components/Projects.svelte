@@ -6,9 +6,7 @@
 <section id="works">
 	<div class="divider" />
 	<header use:fadein={{ loop: true, stagger: 0.15 }}>
-		<h2>
-			Recent Case Studies
-		</h2>
+		<h2>Recent Case Studies</h2>
 		<Button href="/work">VIEW ALL WORKS</Button>
 	</header>
 	<div class="container">

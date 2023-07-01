@@ -3,6 +3,7 @@
 	import { gsap, Expo } from 'gsap';
 	import Button from './Button.svelte';
 	import { onMount } from 'svelte';
+	import Divider from './Divider.svelte';
 
 	export let job: string;
 	export let href: string;
@@ -83,6 +84,17 @@
 			{ opacity: 0 },
 			{ duration: 0.5, opacity: 1, stagger: 0.15, y: 0, delay: 0.6 }
 		);
+
+		gsap.fromTo(
+			'.italic::after',
+			{
+				opacity: 0
+			},
+			{
+				opacity: 1,
+				delay: 1
+			}
+		);
 	});
 </script>
 
@@ -90,7 +102,8 @@
 	<span class="tag-text">hello there</span>
 	<h1 class="hero-title">
 		I’m Justin Lung. A creative frontend developer, from <span class="italic">Amsterdam</span>
-		specialized in <span class="italic">interactive</span>
+		specialized in
+		<span class="italic"> interactive </span>
 		products
 	</h1>
 	<p class="hero-description">
@@ -108,7 +121,7 @@
 	</ul>
 </section>
 
-<style>
+<style lang="postcss">
 	section {
 		height: 100svh;
 		display: flex;
@@ -133,7 +146,6 @@
 	.italic {
 		font-style: italic;
 		font-weight: 400;
-		border-bottom: 2px solid;
 	}
 
 	h1 {
@@ -169,6 +181,20 @@
 		margin: auto;
 
 		padding: 1.5rem 2rem;
+	}
+
+	.social::after {
+		content: "";
+		display: block;
+		width: 0%;
+		height: 1px;
+		background-color: var(--raisin-black);
+		transform-origin: left;
+		transition: .3s width ease-out;
+	}
+
+	.social:hover::after {
+		width: 100%;
 	}
 
 	@media (max-width: 50rem) {

@@ -3,11 +3,11 @@
 	import { socials } from '$lib/data/links';
 </script>
 
-<footer use:fadein={{ loop: true, stagger: 0.15, y: 0 }}>
-	<p >
+<footer>
+	<p>
 		&#169; {new Date().getFullYear()} — Justin Lung. All rights reserved.
 	</p>
-	<ul use:fadein={{ loop: true, stagger: 0.15, y: 0 }}>
+	<ul>
 		{#each socials as social}
 			<li>
 				<a class="social" href={social.href} target="_blank" rel="noopener noreferrer"
@@ -43,9 +43,27 @@
 		padding: 1.5rem 1rem;
 	}
 
+	a::after {
+		content: "";
+		display: block;
+		width: 0%;
+		height: 1px;
+		background-color: var(--raisin-black);
+		transform-origin: left;
+		transition: .3s width ease-out;
+	}
+
+	a:hover::after {
+		width: 100%;
+	}
+
 	@media (max-width: 55rem) {
 		footer {
 			flex-direction: column-reverse;
+		}
+
+		ul {
+			padding: 0;
 		}
 	}
 </style>

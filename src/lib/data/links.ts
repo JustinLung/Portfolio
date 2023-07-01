@@ -1,5 +1,9 @@
 export const links = [
     {
+        title: 'HOME',
+        href: '/'
+    },
+    {
         title: 'WORK',
         href: '/work'
     },

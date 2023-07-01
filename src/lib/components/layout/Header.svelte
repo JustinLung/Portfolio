@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { socials, links } from '$lib/data/links';
+
 	import { gsap, Expo } from 'gsap';
 	import { page } from '$app/stores';
 	let isActive = false;
@@ -17,7 +18,7 @@
 			);
 			animation = gsap.fromTo(
 				'nav',
-				{ y: '-100%', position: "absolute" },
+				{ y: '-100%', position: 'absolute' },
 				{ duration: 1, y: '0', display: 'flex', ease: Expo.easeOut }
 			);
 			animation = gsap.fromTo(
@@ -46,52 +47,53 @@
 	}
 </script>
 
-<div>
-	<header class="header">
-		<a href="/" class="logo" class:active={isActive}>JYTL</a>
-		<nav class:active={isActive} bind:this={nav}>
-			<ul class="navigation">
-				{#each links as link}
-					<li class="item">
-						<a
-							href={link.href}
-							class:active={$page.url.pathname === link.href}
-							data-sveltekit-preload-data="hover">{link.title}</a
-						>
-					</li>
+<header class="header">
+	<a href="/" class="logo" class:active={isActive}>JYTL</a>
+	<nav class:active={isActive} bind:this={nav}>
+		<ul class="navigation">
+			{#each links as link}
+				<li class="item">
+					<a
+						href={link.href}
+						class:active={$page.url.pathname === link.href}
+						data-sveltekit-preload-data="hover">{link.title}</a
+					>
+				</li>
+			{/each}
+		</ul>
+		<div class="nav-footer">
+			<a href="mailto:info@justinlung.nl" class="email">INFO@JUSTINLUNG.NL</a>
+			<ul class="socials">
+				{#each socials as social}
+					<li><a href={social.href}>{social.title}</a></li>
 				{/each}
 			</ul>
-			<div class="nav-footer">
-				<a href="mailto:info@justinlung.nl" class="email">INFO@JUSTINLUNG.NL</a>
-				<ul class="socials">
-					{#each socials as social}
-						<li><a href={social.href}>{social.title}</a></li>
-					{/each}
-				</ul>
-			</div>
-		</nav>
-		<button
-			on:click={openNav}
-			class="hamburger"
-			class:active={isActive}
-			on:keydown={handleWindowKeyDown}
-		>
-			<span />
-			<span />
-			<span />
-		</button>
-	</header>
-</div>
+		</div>
+	</nav>
+	<button
+		on:click={openNav}
+		class="hamburger"
+		class:active={isActive}
+		on:keydown={handleWindowKeyDown}
+	>
+		<span />
+		<span />
+		<span />
+	</button>
+</header>
 
 <style>
 	header {
-		position: absolute;
+		position: fixed;
+		max-width: 85rem;
+
+		padding: 1.5rem 2rem;
+		margin: 0 auto;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		z-index: 1;
-		padding: 1.5rem 6rem;
 		left: 50%;
 		transform: translateX(-50%);
 	}
@@ -102,22 +104,24 @@
 		list-style: none;
 	}
 
-	a:first-child {
-		position: relative;
-		z-index: 1;
-		transition: 0.3s ease-in-out color;
-	}
-
-	a:first-child.active {
-		color: var(--ash);
-	}
-
 	button {
 		all: unset;
 		position: relative;
 		z-index: 1;
 		cursor: pointer;
 		margin-left: auto;
+
+		display: none;
+	}
+
+	.navigation {
+		display: flex;
+		gap: 1rem;
+		font-size: 0.875rem;
+	}
+
+	.logo.active {
+		color: var(--ash);
 	}
 
 	button span {
@@ -153,71 +157,105 @@
 		display: flex;
 	}
 
-	nav {
-		display: none;
-
-		position: fixed;
-		transform: translateY(-100%);
-		inset: 0;
-
-		font-weight: bold;
-
-		width: 100%;
-		height: 100vh;
-
-		background-color: var(--raisin-black);
-		color: var(--ash);
-
-		overflow: hidden;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.navigation {
-		padding: 1.5rem 1rem;
-		margin: 10rem auto;
-		max-width: 85rem;
-		flex-direction: column;
-		width: 100%;
-		font-size: calc(5rem + 1vw);
-	}
-
-	nav div {
-		width: 100%;
-		max-width: 85rem;
-		margin-top: auto;
-		padding: 1.5rem 1rem;
-		font-weight: 500;
-	}
-
 	a.active {
 		background-color: var(--color-dark);
 	}
 
-	.navigation a:hover {
-		color: transparent;
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: var(--ash);
+	.nav-footer {
+		font-weight: 500;
+		position: absolute;
+		bottom: 2rem;
+		display: none;
+	}
+
+	.nav-footer a::after {
+		content: '';
+		display: block;
+		width: 0%;
+		height: 1px;
+		background-color: var(--ash);
+		transform-origin: left;
+		transition: 0.3s width ease-out;
+	}
+
+	.nav-footer a:hover::after {
+		width: 100%;
 	}
 
 	.socials {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+
 		gap: 1rem;
 	}
 
+	a::after {
+		content: '';
+		display: block;
+		width: 0%;
+		height: 1px;
+		background-color: var(--raisin-black);
+		transform-origin: left;
+		transition: 0.3s width ease-out;
+	}
+
+	a:hover::after {
+		width: 100%;
+	}
+
 	@media (max-width: 50rem) {
-		header {
-			padding: 1rem;
-		}
 		.navigation {
-			margin-top: 6rem;
-			align-self: flex-start;
 			font-size: calc(2rem + 1vw);
+		}
+
+		a:first-child {
+			position: relative;
+			z-index: 1;
+			transition: 0.3s ease-out color;
+		}
+
+		nav {
+			display: none;
+
+			position: fixed;
+			transform: translateY(-100%);
+			inset: 0;
+
+			font-weight: bold;
+
+			width: 100%;
+			height: 100vh;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			background-color: var(--raisin-black);
+			color: var(--ash);
+
+			overflow: hidden;
+			text-align: center;
+		}
+
+		button {
+			display: block;
+		}
+
+		.nav-footer {
+			display: block;
+		}
+
+		.navigation {
+			flex-direction: column;
+			font-size: calc(2rem + 1vw);
+		}
+
+		.navigation a:hover {
+			color: transparent;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: var(--ash);
 		}
 	}
 </style>

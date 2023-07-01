@@ -1,17 +1,20 @@
 <script>
 	import { fadein } from '$lib/actions/fadeIn';
+	import { Expo } from 'gsap';
+	import Divider from './Divider.svelte';
 	import Button from './Button.svelte';
+	import { stagger } from 'motion';
+	import ProjectCard from './ProjectCard.svelte';
 </script>
 
 <section id="works">
-	<div class="divider" />
-	<header use:fadein={{ loop: true, stagger: 0.15 }}>
+	<Divider />
+	<div class="works-header" use:fadein={{ loop: true, y: 20, stagger: 0.1 }}>
 		<h2>Recent Case Studies</h2>
-		<Button href="/work">VIEW ALL WORKS</Button>
-	</header>
-	<div class="container">
-		<slot />
+		<Button href="/works">VIEW ALL</Button>
 	</div>
+
+	<ProjectCard />
 </section>
 
 <style>
@@ -23,30 +26,14 @@
 
 	h2 {
 		font-family: 'Migra';
-		font-size: clamp(1.3rem, 4vw, 3rem);
-		font-weight: 300;
+		font-size: clamp(1.5rem, 4vw, 2.5rem);
+		font-weight: 100;
 	}
 
-	header {
+	.works-header {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-	}
-
-	.divider {
-		height: 1px;
-		width: 100%;
-		background: var(--raisin-black);
-	}
-
-	.container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin: 0 auto;
-
-		gap: 1rem;
 	}
 </style>

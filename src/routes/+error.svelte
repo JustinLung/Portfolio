@@ -1,18 +1,13 @@
 <script lang="ts">
+	import Button from '$lib/components/Button.svelte';
 	import { onMount } from 'svelte';
 	import { gsap, Expo } from 'gsap';
-	import Button from './Button.svelte';
-
-	export let title: string;
-	export let description: string;
-	export let githubHref: string;
-	export let liveHref: string;
 
 	onMount(() => {
 		const tl = gsap.timeline();
 
 		tl.fromTo(
-			'.project-hero-title',
+			'.notfound-title',
 			{
 				skewY: '10deg',
 				opacity: 0,
@@ -29,7 +24,7 @@
 		);
 
 		gsap.fromTo(
-			'.project-hero-description',
+			'.notfound-description',
 			{
 				skewY: '10deg',
 				opacity: 0,
@@ -44,9 +39,8 @@
 				delay: 0.5
 			}
 		);
-
 		gsap.fromTo(
-			'.project-hero-button-container',
+			'.notfound-button',
 			{
 				skewY: '10deg',
 				opacity: 0,
@@ -65,34 +59,41 @@
 </script>
 
 <section>
-	<span class="project-hero-description">{description}</span>
-	<h1 class="project-hero-title">{title}</h1>
-	<div class="project-hero-button-container">
-		<Button href={githubHref} target="_blank" rel="noopener noreferrer">GITHUB</Button>
-		<Button href={liveHref} target="_blank" rel="noopener noreferrer">LIVE</Button>
+	<h1 class="notfound-title">Dude! Where's my page?</h1>
+	<p class="notfound-description">
+		The internet is a mysterious and powerful place, and it's mystery is only exceeded by it's
+		power.
+	</p>
+	<div class="notfound-button">
+		<Button href="/">Go Home</Button>
 	</div>
 </section>
 
 <style>
-	h1 {
-		font-family: 'Migra';
-		font-weight: 300;
-		font-size: clamp(4rem, 4vw, 3.8rem);
-
+	h1,
+	p {
 		padding: 0;
 		margin: 0;
 	}
 
-	span {
-		font-size: clamp(0.75rem, 4vw, 0.875rem);
+	h1 {
+		font-family: 'Migra';
+		font-size: clamp(2rem, 4vw, 3.8rem);
+		font-weight: 100;
+	}
+
+	p {
+		max-width: 30rem;
+		text-align: center;
 	}
 
 	section {
-		height: 70svh;
+		height: 100svh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
+		padding: 0 1.5rem;
 	}
 </style>

@@ -1,109 +1,88 @@
 <script lang="ts">
 	import { fadein } from '$lib/actions/fadeIn';
-	import Button from './Button.svelte';
+	import Divider from './Divider.svelte';
 
 	export let title: string;
-	export let description: string;
+	export let year: string;
+	export let tag: string;
 	export let src: string;
 	export let alt: string;
-	export let href: string;
+	export let current: number;
+	export let last: number;
 </script>
 
 <article>
-	<picture use:fadein={{ loop: true, y: 25, stagger: 0.15 }}>
-		<a {href}>
-			<img {src} {alt} />
-		</a>
-	</picture>
-	<div class="container" use:fadein={{ loop: true, stagger: 0.15, y: 25 }}>
+	<div
+		class="project-header"
+		use:fadein={{
+			loop: true,
+			y: 20,
+			stagger: 0.2
+		}}
+	>
+		<span>0{current} — 0{last}</span>
 		<h3>{title}</h3>
-		<p>{description}</p>
-		<div class="button-container" use:fadein={{ loop: true, stagger: 0.15, y: 25 }}>
-			<Button {href} class="button">VIEW CASE STUDY</Button>
-			<Button {href} class="button">GITHUB REPOSITORY</Button>
+		<div class="tags">
+			<p>{year}</p>
+			<p>{tag}</p>
 		</div>
+	</div>
+	<div
+		class="img-container"
+		use:fadein={{
+			loop: true,
+			y: 20,
+			delay: 0.3
+		}}
+	>
+		<img {src} {alt} />
 	</div>
 </article>
 
 <style>
 	article {
-		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	p {
+		padding: 0;
+		margin: 0;
+	}
+
+	h3 {
+		font-family: 'Migra';
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 100;
+	}
+
+	.project-header {
 		display: flex;
 		flex-direction: row;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
+	}
+
+	.img-container {
+		width: 100%;
+		height: 100%;
+		max-width: 45rem;
+		height: 70svh;
+		margin-left: auto;
+        margin-bottom: 2rem;
 	}
 
 	img {
 		width: 100%;
 		height: 100%;
+
 		object-fit: cover;
-		object-position: center;
-		transition: 0.3s transform ease-out;
-		cursor: pointer;
-	}
-
-	picture {
-		overflow: hidden;
-		flex: 1;
 		border-radius: 8px;
-		height: 700px;
-		width: 100%;
 	}
 
-	img:hover {
-		border-radius: 8px;
-		transform: scale(1.1);
-	}
-
-	.container {
-		flex: 1;
-		padding: 2rem;
-	}
-
-	h3 {
-		font-family: 'Migra';
-		font-weight: 300;
-		font-size: clamp(1.5rem, 4vw, 3rem);
-
-		padding: 0;
-		margin: 0;
-	}
-
-	p {
-		font-weight: 300;
-		font-size: 1.2rem;
-		max-width: 25rem;
-		padding: 0;
-		margin: 1rem 0;
-	}
-
-	.button-container {
-		display: flex;
-		gap: 0.5rem;
-	}
-
-	@media (max-width: 55rem) {
-		article {
-			align-items: flex-start;
-			flex-direction: column;
-		}
-
-		.container {
-			padding: 1rem 0;
-		}
-
-		p {
-			font-size: 1rem;
-		}
-
-		.button-container {
-			flex-direction: column;
-			text-align: center;
-		}
-
-		:global(.button-container > button) {
-			width: fit-content;
+	@media (max-width: 50rem) {
+		.tags {
+			display: none;
 		}
 	}
 </style>

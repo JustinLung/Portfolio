@@ -4,6 +4,11 @@ import { animate, stagger, type Easing } from 'motion';
 interface Params extends IntersectionObserverInit {
     options?: IntersectionObserverInit;
     duration?: number;
+    replay?: {
+        duration?: number;
+        delay?: number;
+        staggerStart?: number;
+    };
     delay?: number;
     y?: number;
     stagger?: number;
@@ -26,13 +31,14 @@ const defaultsParams: Params = {
     loop: false,
     options: {},
     easing: Expo.easeOut,
-    trackPage: true,
+    trackPage: true
 };
 
 export const fadein = (node: HTMLElement, params?: Params) => {
     const {
         options,
         duration,
+        replay,
         delay,
         loop,
         y = 20,
@@ -42,6 +48,10 @@ export const fadein = (node: HTMLElement, params?: Params) => {
         easing,
         stagger: _stagger
     } = { ...defaultsParams, ...params };
+    if (!params) {
+        return;
+    }
+    let animatedOnce = false;
     let played = false;
 
     animate(
@@ -58,7 +68,7 @@ export const fadein = (node: HTMLElement, params?: Params) => {
         }
     );
 
-    const animation = animate(
+    let animation = animate(
         _stagger && node.children.length
             ? (node.children as unknown as Element[])
             : node,
@@ -74,8 +84,32 @@ export const fadein = (node: HTMLElement, params?: Params) => {
         }
     );
 
-    animation.pause();
+    animation.stop();
     animation.finished.then(() => {
+        animatedOnce = true;
+
+        animation = animate(
+            _stagger && node.children.length
+                ? (node.children as unknown as Element[])
+                : node,
+            {
+                opacity: [0, 1],
+                y: [y, 0],
+                ...animationValues?.end
+            },
+            {
+                duration: animatedOnce && (replay?.duration ?? duration),
+                easing: easing,
+                delay: delay
+                    ? 0.2 + (animatedOnce && (replay?.delay ?? delay))
+                    : stagger(_stagger, {
+                        start: animatedOnce && (replay?.staggerStart ?? staggerStart)
+                    })
+            }
+        );
+
+        animation.cancel();
+
         if (!loop) {
             observer.disconnect();
         }
@@ -101,12 +135,18 @@ export const fadein = (node: HTMLElement, params?: Params) => {
 
     return {
         update(params: Params) {
+            if (!params) {
+                return;
+            }
+
             if (!params.trackPage) return;
             observer.observe(node);
-
-
         },
         destroy() {
+            if (!params) {
+                return;
+            }
+
             observer.disconnect();
             animation.stop();
         }

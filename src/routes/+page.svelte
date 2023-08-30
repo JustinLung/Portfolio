@@ -1,10 +1,2 @@
-<script lang="ts">
-	import Contact from '$lib/components/Contact.svelte';
-	import Divider from '$lib/components/Divider.svelte';
-	import Hero from '$lib/components/Hero.svelte';
-	import Projects from '$lib/components/Projects.svelte';
-</script>
-
-<Hero job="Merlin" href="https://merlin.studio/" />
-<Projects />
-<Contact />
+<h1>Welcome to SvelteKit</h1>
+<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>

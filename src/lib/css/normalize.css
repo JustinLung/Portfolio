@@ -258,6 +258,11 @@ Interactive
 Add the correct display in Chrome and Safari.
 */
 
+a {
+	color: var(--white);
+	text-decoration: none;
+}
+
 summary {
 	display: list-item;
 }

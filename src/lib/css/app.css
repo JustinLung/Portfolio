@@ -17,3 +17,24 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
 	pointer-events: none;
 }
+
+body {
+	background-color: var(--black);
+	color: var(--white);
+	position: relative;
+}
+
+.wrapper {
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	max-width: 112.5rem;
+
+	@media (--xl) {
+		padding: 0 3rem;
+	}
+	@media (min-width: 112.5rem) {
+		padding: 0;
+	}
+}

@@ -31,10 +31,12 @@
 	"type": "module",
 	"dependencies": {
 		"@csstools/postcss-global-data": "^2.1.0",
+		"@poppanator/sveltekit-svg": "^4.1.2",
 		"@studio-freight/lenis": "^1.0.19",
 		"@threlte/core": "^6.0.6",
 		"@threlte/extras": "^5.4.1",
 		"@types/three": "^0.155.1",
+		"gsap": "^3.12.2",
 		"postcss-custom-media": "^10.0.0"
 	}
 }

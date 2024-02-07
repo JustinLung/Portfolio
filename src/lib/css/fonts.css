@@ -11,3 +11,37 @@
 	font-weight: 700;
 	font-display: swap;
 }
+
+/* Inter */
+
+/* Inter */
+@font-face {
+	font-family: 'Inter';
+	src:
+	  url('/assets/fonts/Inter/Inter-Regular.woff2') format('woff2'),
+	  url('/assets/fonts/Inter/Inter-Regular.woff') format('woff'),
+	  url('/assets/fonts/Inter/Inter-Regular.ttf') format('ttf');
+	font-weight: 400;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: 'Inter';
+	src:
+	  url('/assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'),
+	  url('/assets/fonts/Inter/Inter-SemiBold.woff') format('woff'),
+	  url('/assets/fonts/Inter/Inter-SemiBold.ttf') format('ttf');
+	font-weight: 600;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: 'Inter';
+	src:
+	  url('/assets/fonts/Inter/Inter-Bold.woff2') format('woff2'),
+	  url('/assets/fonts/Inter/Inter-Bold.woff') format('woff'),
+	  url('/assets/fonts/Inter/Inter-Bold.ttf') format('ttf');
+	font-weight: 700;
+	font-display: swap;
+  }
+  

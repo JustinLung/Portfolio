@@ -38,3 +38,9 @@ body {
 		padding: 0;
 	}
 }
+
+.container {
+	max-width: 85rem;
+	margin-inline: auto;
+	padding: 1.5rem 1rem;
+}

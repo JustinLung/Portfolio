@@ -1,0 +1,13 @@
+/* FK Screamer */
+@font-face {
+	font-family: 'FKScreamer';
+	src: url('/assets/fonts/FKScreamerTrial-Regular-BF6571330a60d38.otf');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'FKScreamer';
+	src: url('/assets/fonts/FKScreamerTrial-Bold-BF6571330a76e9b.otf');
+	font-weight: 700;
+	font-display: swap;
+}

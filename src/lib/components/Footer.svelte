@@ -1,5 +1,8 @@
 <script lang="ts">
 	import Divider from './Divider.svelte';
+	import Instagram from '../icons/Instagram.svg?component';
+	import Linkedin from '../icons/Linkedin.svg?component';
+	import Github from '../icons/Github.svg?component';
 </script>
 
 <footer>
@@ -8,13 +11,13 @@
 		<div class="main-content">
 			<ul class="contact-list">
 				<li class="list-title">Contact me</li>
-				<li>justinlung77@gmail.com</li>
-				<li>+31646021197</li>
+				<li><a href="mailto:justinlung77@gmail.com">justinlung77@gmail.com</a></li>
+				<li><a href="tel:+31646021197">+31646021197</a></li>
 			</ul>
 			<ul class="social-list">
-				<li><span class="">Instagram</span></li>
-				<li><span class="">Linkedin</span></li>
-				<li><span class="">Github</span></li>
+				<li><a href="" target="_blank" rel="noopener noreferrer" class=""><Instagram /></a></li>
+				<li><a href="" target="_blank" rel="noopener noreferrer" class=""><Linkedin /></a></li>
+				<li><a href="" target="_blank" rel="noopener noreferrer" class=""><Github /></a></li>
 			</ul>
 		</div>
 		<Divider />

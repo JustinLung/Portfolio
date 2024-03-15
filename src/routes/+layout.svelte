@@ -10,8 +10,8 @@
 	import '$lib/css/variables.css';
 </script>
 
-<Header />
 <Lenis />
+<Header />
 <main class="main">
 	<slot />
 </main>

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	export let secondary = false;
 	const primary = !secondary;
 
@@ -11,10 +9,8 @@
 
 <svelte:element
 	this={component}
-	class="cta border-underline {primary ? 'button-primary' : 'button-secondary'} {classes}"
 	rel={href?.includes('http') ? 'noopener noreferrer' : undefined}
 	target={href?.includes('http') ? '_blank' : undefined}
-
 	{href}
 	{...rest}
 >
@@ -22,7 +18,7 @@
 </svelte:element>
 
 <style>
-    button {
-        
-    }
+	button {
+		all: unset;
+	}
 </style>

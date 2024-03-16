@@ -1,18 +1,23 @@
-import postcssPresetEnv from 'postcss-preset-env';
-import postcssCustomMedia from 'postcss-custom-media';
-import postcssGlobalData from '@csstools/postcss-global-data';
+const path = require('path');
 
-/** @type {import('postcss-preset-env').Config} */
-const config = {
-	plugins: [
-		postcssCustomMedia,
-		postcssGlobalData({
-			files: ['src/lib/css/media.css']
-		}),
-		postcssPresetEnv({
-			features: { 'nested-rules': true }
-		})
-	]
+module.exports = {
+  plugins: [
+    'postcss-nested',
+    path.resolve(__dirname, 'postcss-util-hover'),
+    'postcss-utilities',
+    'postcss-custom-media',
+    ['@csstools/postcss-global-data', { files: ['src/styles/_media.css'] }],
+    [
+      'postcss-preset-env',
+      {
+        stage: 4,
+        features: {
+          'nesting-rules': true,
+          'custom-media-queries': true,
+          'media-query-ranges': true,
+        },
+        browsers: 'last 2 versions',
+      },
+    ],
+  ],
 };
-
-export default config;

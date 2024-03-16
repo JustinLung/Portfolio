@@ -1,0 +1,19 @@
+.notfound {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .notfound-title {
+    font-size: 5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notfound-description {
+    padding: 0;
+    margin: 0;
+  }
+}

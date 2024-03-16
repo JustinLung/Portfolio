@@ -1,0 +1,48 @@
+.header {
+  font-family: "FKScreamer";
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+
+  div {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  nav {
+    left: 0;
+    top: 0;
+    height: 100svh;
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    ul {
+      display: block;
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
+}

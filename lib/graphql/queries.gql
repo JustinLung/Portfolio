@@ -1,0 +1,13 @@
+type ThisFixesEOFErrorBecauseThisFileIsEmptyWithComments {
+	CatsLike: String
+}
+
+# Example:
+
+# query globalSettings {
+#   globalSettingsCollection(limit: 1) {
+#     items {
+#       ...globalSettingsFields
+#     }
+#   }
+# }

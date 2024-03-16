@@ -1,0 +1,11 @@
+@custom-media --sm (min-width: 30em);
+@custom-media --md (min-width: 48em);
+@custom-media --lg (min-width: 62em);
+@custom-media --xl (min-width: 80em);
+@custom-media --xxl (min-width: 96em);
+
+@custom-media --smMax (max-width: 30em);
+@custom-media --mdMax (max-width: 48em);
+@custom-media --lgMax (max-width: 62em);
+@custom-media --xlMax (max-width: 80em);
+@custom-media --xxlMax (max-width: 96em);

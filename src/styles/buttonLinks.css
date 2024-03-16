@@ -1,0 +1,139 @@
+.button {
+  --button-color: black;
+  --button-background: white;
+
+  color: var(--button-color);
+  background-color: var(--button-background);
+
+  border: 1px solid;
+  border-color: var(--button-color);
+  white-space: nowrap;
+
+  color: var(--button-color);
+  background-color: var(--button-background);
+  font-weight: 500;
+
+  border: 1px solid;
+  border-color: var(--button-background);
+  border-radius: 100px;
+
+  position: relative;
+  z-index: 1;
+
+  width: fit-content;
+  max-width: 340px;
+  min-width: 140px;
+
+  padding: 0.5rem 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.09px;
+
+  padding-inline: 32px;
+  min-height: 45px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  /* Background */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  /* Animating element */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--button-color);
+    border-radius: 20px;
+    z-index: -1;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms var(--easeOutExpo);
+  }
+
+  transition:
+    color 250ms var(--easeOutExpo) 120ms,
+    border-color 250ms var(--easeOutExpo) 120ms,
+    transform 250ms var(--easeOutExpo) 120ms,
+    background-color 250ms var(--easeOutExpo) 120ms;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @hover {
+    color: var(--button-background);
+    border-color: var(--button-background);
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.outline {
+    --button-color: white;
+    --button-background: transparent;
+    border-color: var(--button-color);
+    transition:
+      color 250ms var(--easeOutExpo) 120ms,
+      border-color 250ms var(--easeOutExpo) 120ms,
+      transform 250ms var(--easeOutExpo) 120ms;
+
+    &::after {
+      background-color: var(--button-color);
+    }
+
+    @hover {
+      color: black;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+[class*="link"] {
+  &.underline {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      bottom: -2px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 250ms var(--easeInOutExpo);
+    }
+
+    @hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

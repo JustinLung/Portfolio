@@ -1,7 +1,20 @@
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import s from "./Projects.module.css";
+import { useInView } from "react-intersection-observer";
 import cn from "clsx";
+import { useAnimation } from "framer-motion";
 
 interface ProjectsProps {}
+
+const variant = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, staggerChildren: 0.5 },
+  },
+  hidden: { opacity: 0, y: 100 },
+};
 
 const projects = [
   {
@@ -22,20 +35,31 @@ const projects = [
 ];
 
 export function Projects(props: ProjectsProps) {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
   return (
     <div className={s["project-container"]}>
       {projects.map((project) => {
         return (
-          <section className={s["project"]}>
+          <motion.section className={s["project"]} ref={ref} variants={variant}>
             <h2 className={s["project-title"]}>{project.title}</h2>
-            <div className={s['project-image-container']}>
+            <div className={s["project-image-container"]}>
               <img
                 src={project.src}
                 alt={project.alt}
                 className="project-img"
               />
             </div>
-          </section>
+          </motion.section>
         );
       })}
     </div>

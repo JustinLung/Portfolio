@@ -4,17 +4,30 @@ import cn from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { easeOutExpo } from "@/utils/transitions";
+import { links } from "./links";
 
-const links = [
-  {
-    title: "Home",
-    href: "/",
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+      ease: easeOutExpo,
+    },
   },
-  {
-    title: "Stylegide",
-    href: "/styleguide",
+};
+
+const item = {
+  hidden: { y: 30, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: easeOutExpo,
+    },
   },
-];
+};
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,15 +48,15 @@ export function Header() {
             transition={{ ease: easeOutExpo }}
             className={styles["navigation"]}
           >
-            <ul>
+            <motion.ul variants={container} initial="hidden" animate="show">
               {links.map((link) => {
                 return (
-                  <li key={link.title}>
+                  <motion.li key={link.title} variants={item}>
                     <Link href={link.href}>{link.title}</Link>
-                  </li>
+                  </motion.li>
                 );
               })}
-            </ul>
+            </motion.ul>
           </motion.nav>
         )}
       </AnimatePresence>

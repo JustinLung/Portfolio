@@ -1,0 +1,30 @@
+.Hero {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: "FKScreamer";
+    font-size: 3rem;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (--lg) {
+      font-size: clamp(3rem, -0.057rem + 10.0714vw, 10rem);
+    }
+
+    span:nth-child(2) {
+      padding-left: 13%;
+    }
+  }
+
+  p {
+    max-width: 20rem;
+    text-align: center;
+  }
+}

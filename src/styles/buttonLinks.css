@@ -2,6 +2,7 @@
   --button-color: black;
   --button-background: white;
 
+  font-family: "FKScreamer";
   color: var(--button-color);
   background-color: var(--button-background);
 
@@ -90,20 +91,22 @@
   }
 
   &.outline {
-    --button-color: white;
+    --button-color: var(--black);
     --button-background: transparent;
     border-color: var(--button-color);
     transition:
-      color 250ms var(--easeOutExpo) 120ms,
-      border-color 250ms var(--easeOutExpo) 120ms,
-      transform 250ms var(--easeOutExpo) 120ms;
+      color 250ms var(--easeOutExpo) 160ms,
+      border-color 250ms var(--easeOutExpo) 160ms,
+      transform 250ms var(--easeOutExpo) 160ms;
+
+      font-size: 1.8rem;
 
     &::after {
       background-color: var(--button-color);
     }
 
     @hover {
-      color: black;
+      color: var(--white);
 
       &::after {
         transform: scaleX(1);

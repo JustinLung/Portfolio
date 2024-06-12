@@ -33,7 +33,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className={cn(styles["header"])}>
-      <div className="container">
+      <div className={cn("container", styles["header-block"])}>
         <Link href="/">PORTFOLIO</Link>
         <button className="clear" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "CLOSE" : "MENU"}

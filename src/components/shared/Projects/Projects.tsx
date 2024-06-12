@@ -4,6 +4,7 @@ import s from "./Projects.module.css";
 import { useInView } from "react-intersection-observer";
 import cn from "clsx";
 import { useAnimation } from "framer-motion";
+import Button from "../Button/Button";
 
 interface ProjectsProps {}
 
@@ -47,21 +48,17 @@ export function Projects(props: ProjectsProps) {
   }, [control, inView]);
 
   return (
-    <div className={s["project-container"]}>
-      {projects.map((project) => {
-        return (
-          <motion.section className={s["project"]} ref={ref} variants={variant}>
-            <h2 className={s["project-title"]}>{project.title}</h2>
-            <div className={s["project-image-container"]}>
-              <img
-                src={project.src}
-                alt={project.alt}
-                className="project-img"
-              />
-            </div>
-          </motion.section>
-        );
-      })}
-    </div>
+    <article className={s.projects}>
+      <div className={s["projects-header"]}>
+        <h2>WORK</h2>
+      </div>
+      <div className={s["projects-container"]}>
+        {projects.map((project, i) => (
+          <div key={i} className={s.item}>
+            <img src={project.src} alt="" />
+          </div>
+        ))}
+      </div>
+    </article>
   );
 }

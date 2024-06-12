@@ -1,30 +1,41 @@
-.Hero {
-  height: 100svh;
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: -1;
+  font-family: "FKScreamer";
+  height: calc(100 * var(--svh));
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    font-family: "FKScreamer";
-    font-size: 3rem;
-    text-transform: uppercase;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @media (--lg) {
-      font-size: clamp(3rem, -0.057rem + 10.0714vw, 10rem);
+
+  display: grid;
+  place-content: center;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  p {
+    -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+    font-weight: 700;
+    font-size: min(2.2em, 25vw);
+
+    @media (--md) {
+      font-size: min(3rem, 25vw);
     }
 
-    span:nth-child(2) {
-      padding-left: 13%;
+    @media (--lg) {
+      font-size: min(4.5rem, 25vw);
     }
   }
 
-  p {
-    max-width: 20rem;
-    text-align: center;
+  h1 {
+    font-size: min(6rem, 25vw);
+
+    @media (--md) {
+      font-size: min(8rem, 25vw);
+    }
+
+    @media (--lg) {
+      font-size: min(12rem, 25vw);
+    }
   }
 }

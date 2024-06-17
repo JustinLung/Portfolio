@@ -1,19 +1,33 @@
 .notfound {
-  height: 100svh;
+  height: calc(100 * var(--svh));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 
+  @media (--lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 30rem;
+  }
+
   .notfound-title {
-    font-size: 5rem;
-    padding: 0;
-    margin: 0;
+    font-size: 15rem;
+    font-family: "FKScreamer";
   }
 
   .notfound-description {
-    padding: 0;
-    margin: 0;
+    max-width: 40rem;
+    text-align: center;
+
+    @media (--lg) {
+      font-size: 1.5rem;
+      text-align: left;
+    }
+  }
+
+  .container {
+    justify-content: flex-end;
   }
 }

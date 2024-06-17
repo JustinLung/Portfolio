@@ -1,0 +1,23 @@
+.text-hightlight-container {
+  background-color: var(--white);
+
+  display: flex;
+  align-items: center;
+
+  padding: 8px;
+  height: calc(80 * var(--svh));
+
+  @media (--lg) {
+    height: calc(100 * var(--svh));
+  }
+
+  .paragraph {
+    font-size: 2rem;
+    color: var(--black);
+    max-width: 85rem;
+
+    @media (--lg) {
+      font-size: 4rem;
+    }
+  }
+}

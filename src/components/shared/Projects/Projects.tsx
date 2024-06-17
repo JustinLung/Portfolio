@@ -48,7 +48,7 @@ export function Projects(props: ProjectsProps) {
   }, [control, inView]);
 
   return (
-    <article className={s.projects}>
+    <article className={cn(s.projects)}>
       <div className={s["projects-header"]}>
         <h2>WORK</h2>
       </div>

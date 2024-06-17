@@ -7,6 +7,15 @@ interface AboutProps {}
 export function About(props: AboutProps) {
   return (
     <section className={s.about}>
+      <div className={s.sticky}>
+        <Image
+          src="/images/profile.JPG"
+          alt="Justin"
+          width={1920}
+          height={1080}
+          className={s["about-image"]}
+        />
+      </div>
       <div className={s.content}>
         <h2>About</h2>
         <p className={s.contentText}>
@@ -39,15 +48,30 @@ export function About(props: AboutProps) {
             by a desire to learn, grow, and create.
           </span>
         </p>
-      </div>
-      <div className={s.sticky}>
-        <Image
-          src="/images/profile.JPG"
-          alt="Justin"
-          width={1920}
-          height={1080}
-          className={s["about-image"]}
-        />
+
+        <div className={s['experience-container']}>
+          <h2>Experience</h2>
+          <div className={s.experience}>
+            <span>Mediacollege Amsterdam</span>
+            <span>MBO-4 Software Developer 2017-2020</span>
+          </div>
+          <div className={s.experience}>
+            <span>Engine Branding & Identity</span>
+            <span>Intern Frontend Developer 2019-2019</span>
+          </div>
+          <div className={s.experience}>
+            <span>JustPremium B.V.</span>
+            <span>Intern Frontend Developer 2019-2020</span>
+          </div>
+          <div className={s.experience}>
+            <span>University University of Applied Sciences</span>
+            <span>AD FDND 2021-2023</span>
+          </div>
+          <div className={s.experience}>
+            <span>Merlin Studio</span>
+            <span>Junior Frontend Developer 2023-2024</span>
+          </div>
+        </div>
       </div>
     </section>
   );

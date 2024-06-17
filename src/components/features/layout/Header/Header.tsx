@@ -52,7 +52,9 @@ export function Header() {
               {links.map((link) => {
                 return (
                   <motion.li key={link.title} variants={item}>
-                    <Link href={link.href}>{link.title}</Link>
+                    <Link href={link.href} onClick={() => setIsOpen(false)}>
+                      {link.title}
+                    </Link>
                   </motion.li>
                 );
               })}

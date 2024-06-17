@@ -1,5 +1,6 @@
-import Button from '@/components/shared/Button/Button';
-import styles from './ErrorPage.module.css';
+import Button from "@/components/shared/Button/Button";
+import styles from "./ErrorPage.module.css";
+import cn from "clsx";
 
 interface ErrorPageProps {
   statusCode?: number | null;
@@ -7,14 +8,15 @@ interface ErrorPageProps {
 
 export function ErrorPage(props: ErrorPageProps) {
   return (
-    <section className={styles['notfound']}>
-      <h1 className={styles['notfound-title']}>404</h1>
-      <p className={styles['notfound-description']}>
-        The page you are looking for doesn&apos;t exist.
-      </p>
-      <Button href="/" className="button" icon={true}>
-        Return Home
-      </Button>
+    <section className={cn(styles["notfound"], "container")}>
+      <h1 className={styles["notfound-title"]}>404</h1>
+      <div className={styles['container']}>
+        <p className={styles["notfound-description"]}>
+          Oops! Looks like this page took a coffee break and forgot to come
+          back.
+        </p>
+        <Button href="/" className="button">Home</Button>
+      </div>
     </section>
   );
 }

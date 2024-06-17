@@ -1,7 +1,7 @@
 .projects {
   background-color: var(--white);
   position: relative;
-  padding: 8px;
+  padding: 8px 16px;
 
   @media (--lg) {
     padding-inline: 16px;

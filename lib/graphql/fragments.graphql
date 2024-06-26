@@ -1,0 +1,22 @@
+fragment homepage on HomeRecord {
+  hero {
+    title
+    subtext
+  }
+  highlightedText
+  highlightedWorksTitle
+  highlights {
+    title
+    works {
+      title
+      description
+      image {
+        url
+        alt
+        width
+        height
+        title
+      }
+    }
+  }
+}

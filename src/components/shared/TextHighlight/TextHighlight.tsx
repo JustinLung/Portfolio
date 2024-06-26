@@ -12,7 +12,7 @@ export default function TextHighlight(props: TextHighlightInterface) {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ["50% end", "start start"],
+    offset: ["start end", "start start"],
   });
 
   return (

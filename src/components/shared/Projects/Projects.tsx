@@ -5,8 +5,12 @@ import { useInView } from "react-intersection-observer";
 import cn from "clsx";
 import { useAnimation } from "framer-motion";
 import Button from "../Button/Button";
+import { HighlightedWorkRecord, WorkRecord } from "@lib/generated/sdk";
+import Image from "next/image";
 
-interface ProjectsProps {}
+interface ProjectsProps {
+  highlights: HighlightedWorkRecord;
+}
 
 const variant = {
   visible: {
@@ -17,25 +21,8 @@ const variant = {
   hidden: { opacity: 0, y: 100 },
 };
 
-const projects = [
-  {
-    title: "scrollbook",
-    src: "https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "hi",
-  },
-  {
-    title: "scrollbook",
-    src: "https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "hi",
-  },
-  {
-    title: "scrollbook",
-    src: "https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "hi",
-  },
-];
-
 export function Projects(props: ProjectsProps) {
+  const { highlights } = props;
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -50,15 +37,25 @@ export function Projects(props: ProjectsProps) {
   return (
     <article className={cn(s.projects)}>
       <div className={s["projects-header"]}>
-        <h2>WORK</h2>
+        <h2>{highlights.title}</h2>
       </div>
       <div className={s["projects-container"]}>
-        {projects.map((project, i) => (
-          <div key={i} className={s.item}>
-            <img src={project.src} alt="" />
-          </div>
+        {highlights.works.map((project, i) => (
+          <article key={i} className={s.item}>
+            <Image
+              src={project.image?.url as string}
+              alt={project.image?.alt as string}
+              height={1080}
+              width={1920}
+            />
+            <div className={s.content}>
+              <p>{project.title}</p>
+              <p>{project.description}</p>
+            </div>
+          </article>
         ))}
       </div>
     </article>
   );
 }
+  

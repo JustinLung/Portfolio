@@ -42,6 +42,33 @@
       height: calc(60 * var(--svh));
       object-fit: cover;
       width: 100%;
+      mask: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 5%, white 30%);
+    }
+  }
+
+  .item {
+    position: relative;
+
+    p {
+      font-size: 1rem;
+
+      &:first-child {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .content {
+      position: absolute;
+      bottom: 24px;
+      left: 12px;
+      max-width: 40rem;
+      color: var(-white);
+
+      @media (--lg) {
+        left: 16px;
+      }
     }
   }
 }

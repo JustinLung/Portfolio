@@ -4,11 +4,19 @@ import { Hero } from "@/components/shared/Hero/Hero";
 import { PreFooter } from "@/components/shared/PreFooter/PreFooter";
 import { Projects } from "@/components/shared/Projects/Projects";
 import TextHighlight from "@/components/shared/TextHighlight/TextHighlight";
+import { GetStaticProps } from "next";
+import { nextClient } from "@lib/client";
+import {
+  HighlightedWorkRecord,
+  HomePageQuery,
+  HomeRecord,
+} from "@lib/generated/sdk";
 
+interface PageProps {
+  data: HomeRecord;
+}
 
-interface PageProps {}
-
-export default function Page(props: PageProps) {
+function Page({ data }: PageProps) {
   return (
     <>
       <MetaTags
@@ -16,11 +24,25 @@ export default function Page(props: PageProps) {
         pageDescription={"This is the homepage"}
         currentUrl={"/"}
       />
-      <Hero />
-      <TextHighlight value={"Building magical and accessible web experiences is my passion."}/>
-      <Projects />
-      {/* <About/> */}
+      <Hero
+        title={data?.hero?.title as string}
+        subtext={data?.hero?.subtext as string}
+      />
+      <TextHighlight value={data?.highlightedText as string} />
+      <Projects highlights={data?.highlights as HighlightedWorkRecord} />
       <PreFooter />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const [homePage] = await Promise.allSettled([nextClient.HomePage()]);
+
+  return {
+    props: {
+      data: (homePage as PromiseFulfilledResult<HomePageQuery>).value.home,
+    },
+  };
+};
+
+export default Page;

@@ -1,0 +1,5 @@
+query HomePage {
+  home {
+    ...homepage
+  }
+}

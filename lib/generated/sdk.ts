@@ -25,6 +25,103 @@ export type Scalars = {
   UploadId: any;
 };
 
+/** Block of type About Content (about_content) */
+export type AboutContentRecord = RecordInterface & {
+  __typename?: 'AboutContentRecord';
+  _createdAt: Scalars['DateTime'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>;
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>;
+  _isValid: Scalars['BooleanType'];
+  _modelApiKey: Scalars['String'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>;
+  _publishedAt?: Maybe<Scalars['DateTime']>;
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
+  _updatedAt: Scalars['DateTime'];
+  content?: Maybe<Scalars['String']>;
+  id: Scalars['ItemId'];
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** Block of type About Content (about_content) */
+export type AboutContentRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Block of type About Content (about_content) */
+export type AboutContentRecordContentArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']>;
+};
+
+export type AboutModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<AboutModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<AboutModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  image?: InputMaybe<FileFilter>;
+};
+
+export enum AboutModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC'
+}
+
+/** Record of type About (about) */
+export type AboutRecord = RecordInterface & {
+  __typename?: 'AboutRecord';
+  _createdAt: Scalars['DateTime'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>;
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>;
+  _isValid: Scalars['BooleanType'];
+  _modelApiKey: Scalars['String'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>;
+  _publishedAt?: Maybe<Scalars['DateTime']>;
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
+  _updatedAt: Scalars['DateTime'];
+  aboutContent?: Maybe<AboutContentRecord>;
+  experience?: Maybe<ExperienceRecord>;
+  id: Scalars['ItemId'];
+  image?: Maybe<FileField>;
+};
+
+
+/** Record of type About (about) */
+export type AboutRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
 /** Specifies how to filter Boolean fields */
 export type BooleanFilter = {
   /** Search for records with an exact match */
@@ -77,6 +174,31 @@ export type CreatedAtFilter = {
   lte?: InputMaybe<Scalars['DateTime']>;
   /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
   neq?: InputMaybe<Scalars['DateTime']>;
+};
+
+/** Block of type Experience (experience) */
+export type ExperienceRecord = RecordInterface & {
+  __typename?: 'ExperienceRecord';
+  _createdAt: Scalars['DateTime'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']>;
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>;
+  _isValid: Scalars['BooleanType'];
+  _modelApiKey: Scalars['String'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>;
+  _publishedAt?: Maybe<Scalars['DateTime']>;
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
+  _updatedAt: Scalars['DateTime'];
+  id: Scalars['ItemId'];
+};
+
+
+/** Block of type Experience (experience) */
+export type ExperienceRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
 };
 
 export enum FaviconType {
@@ -240,6 +362,20 @@ export type FileFieldInterfaceTitleArgs = {
 
 export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
+};
+
+/** Specifies how to filter Single-file/image fields */
+export type FileFilter = {
+  /** Search for records with an exact match. The specified value must be an Upload ID */
+  eq?: InputMaybe<Scalars['UploadId']>;
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>;
+  /** Filter records that have one of the specified uploads */
+  in?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
+  /** Exclude records with an exact match. The specified value must be an Upload ID */
+  neq?: InputMaybe<Scalars['UploadId']>;
+  /** Filter records that do not have one of the specified uploads */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
 };
 
 export type GlobalSeoField = {
@@ -2069,11 +2205,17 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query';
   /** Returns meta information regarding a record collection */
+  _allAboutsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
   _allHomesMeta: CollectionMetadata;
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata;
   /** Returns the single instance record */
   _site: Site;
+  /** Returns a specific record */
+  about?: Maybe<AboutRecord>;
+  /** Returns a collection of records */
+  allAbouts: Array<AboutRecord>;
   /** Returns a collection of records */
   allHomes: Array<HomeRecord>;
   /** Returns a collection of assets */
@@ -2082,6 +2224,14 @@ export type Query = {
   home?: Maybe<HomeRecord>;
   /** Returns a specific asset */
   upload?: Maybe<FileField>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllAboutsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<AboutModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
 };
 
 
@@ -2104,6 +2254,26 @@ export type Query_AllUploadsMetaArgs = {
 export type Query_SiteArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryAboutArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<AboutModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<AboutModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllAboutsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<AboutModelFilter>;
+  first?: InputMaybe<Scalars['IntType']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<AboutModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']>;
 };
 
 
@@ -2715,7 +2885,17 @@ export type FocalPoint = {
   y: Scalars['FloatType'];
 };
 
-export type HomepageFragment = { __typename?: 'HomeRecord', highlightedText?: string | null, highlightedWorksTitle?: string | null, hero?: { __typename?: 'HeroRecord', title?: string | null, subtext?: string | null } | null, highlights?: { __typename?: 'HighlightedWorkRecord', title?: string | null, works: Array<{ __typename?: 'WorkRecord', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string, alt?: string | null, width?: any | null, height?: any | null, title?: string | null } | null }> } | null };
+export type HomepageFragment = { __typename?: 'HomeRecord', highlightedText?: string | null, highlightedWorksTitle?: string | null, hero?: { __typename?: 'HeroRecord', title?: string | null, subtext?: string | null } | null, highlights?: { __typename?: 'HighlightedWorkRecord', title?: string | null, works: Array<{ __typename?: 'WorkRecord', title?: string | null, description?: string | null, image?: (
+        { __typename?: 'FileField' }
+        & MediaFragment
+      ) | null }> } | null };
+
+export type AboutpageFragment = { __typename?: 'AboutRecord', image?: (
+    { __typename?: 'FileField' }
+    & MediaFragment
+  ) | null, aboutContent?: { __typename?: 'AboutContentRecord', title?: string | null, content?: string | null } | null };
+
+export type MediaFragment = { __typename?: 'FileField', url: string, alt?: string | null, width?: any | null, height?: any | null, title?: string | null };
 
 export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2725,6 +2905,23 @@ export type HomePageQuery = { __typename?: 'Query', home?: (
     & HomepageFragment
   ) | null };
 
+export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AboutPageQuery = { __typename?: 'Query', about?: (
+    { __typename?: 'AboutRecord' }
+    & AboutpageFragment
+  ) | null };
+
+export const MediaFragmentDoc = gql`
+    fragment media on FileField {
+  url
+  alt
+  width
+  height
+  title
+}
+    `;
 export const HomepageFragmentDoc = gql`
     fragment homepage on HomeRecord {
   hero {
@@ -2739,13 +2936,20 @@ export const HomepageFragmentDoc = gql`
       title
       description
       image {
-        url
-        alt
-        width
-        height
-        title
+        ...media
       }
     }
+  }
+}
+    `;
+export const AboutpageFragmentDoc = gql`
+    fragment aboutpage on AboutRecord {
+  image {
+    ...media
+  }
+  aboutContent {
+    title
+    content
   }
 }
     `;
@@ -2755,7 +2959,16 @@ export const HomePageDocument = gql`
     ...homepage
   }
 }
-    ${HomepageFragmentDoc}`;
+    ${HomepageFragmentDoc}
+${MediaFragmentDoc}`;
+export const AboutPageDocument = gql`
+    query AboutPage {
+  about {
+    ...aboutpage
+  }
+}
+    ${AboutpageFragmentDoc}
+${MediaFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -2766,6 +2979,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     HomePage(variables?: HomePageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<HomePageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<HomePageQuery>(HomePageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'HomePage', 'query');
+    },
+    AboutPage(variables?: AboutPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<AboutPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<AboutPageQuery>(AboutPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'AboutPage', 'query');
     }
   };
 }
@@ -2776,6 +2992,9 @@ export function getSdkWithHooks(client: GraphQLClient, withWrapper: SdkFunctionW
     ...sdk,
     useHomePage(key: SWRKeyInterface, variables?: HomePageQueryVariables, config?: SWRConfigInterface<HomePageQuery, ClientError>) {
       return useSWR<HomePageQuery, ClientError>(key, () => sdk.HomePage(variables), config);
+    },
+    useAboutPage(key: SWRKeyInterface, variables?: AboutPageQueryVariables, config?: SWRConfigInterface<AboutPageQuery, ClientError>) {
+      return useSWR<AboutPageQuery, ClientError>(key, () => sdk.AboutPage(variables), config);
     }
   };
 }

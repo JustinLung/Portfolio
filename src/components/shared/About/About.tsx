@@ -1,16 +1,20 @@
 import Image from "next/image";
 import s from "./About.module.css";
 import cn from "clsx";
+import { AboutRecord } from "@lib/generated/sdk";
 
-interface AboutProps {}
+interface AboutProps {
+  data: AboutRecord;
+}
 
 export function About(props: AboutProps) {
+  const { data } = props;
   return (
     <section className={s.about}>
       <div className={s.sticky}>
         <Image
-          src="/images/profile.JPG"
-          alt="Justin"
+          src={data.image?.url as string}
+          alt={data.image?.alt as string}
           width={1920}
           height={1080}
           className={s["about-image"]}
@@ -49,7 +53,7 @@ export function About(props: AboutProps) {
           </span>
         </p>
 
-        <div className={s['experience-container']}>
+        <div className={s["experience-container"]}>
           <h2>Experience</h2>
           <div className={s.experience}>
             <span>Mediacollege Amsterdam</span>

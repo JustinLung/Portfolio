@@ -1,3 +1,93 @@
+"""Block of type About Content (about_content)"""
+type AboutContentRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """Editing URL"""
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """Generates SEO and Social card meta tags to be used in your frontend"""
+  _seoMetaTags(
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  content(
+    """Process content as markdown"""
+    markdown: Boolean
+  ): String
+  id: ItemId!
+  title: String
+}
+
+input AboutModelFilter {
+  AND: [AboutModelFilter]
+  OR: [AboutModelFilter]
+  _createdAt: CreatedAtFilter
+  _firstPublishedAt: PublishedAtFilter
+  _isValid: BooleanFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _updatedAt: UpdatedAtFilter
+  id: ItemIdFilter
+  image: FileFilter
+}
+
+enum AboutModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  id_ASC
+  id_DESC
+}
+
+"""Record of type About (about)"""
+type AboutRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """Editing URL"""
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """Generates SEO and Social card meta tags to be used in your frontend"""
+  _seoMetaTags(
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  aboutContent: AboutContentRecord
+  experience: ExperienceRecord
+  id: ItemId!
+  image: FileField
+}
+
 """Specifies how to filter Boolean fields"""
 input BooleanFilter {
   """Search for records with an exact match"""
@@ -77,6 +167,29 @@ scalar CustomData
 
 """A ISO 8601 compliant datetime value"""
 scalar DateTime
+
+"""Block of type Experience (experience)"""
+type ExperienceRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """Editing URL"""
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """Generates SEO and Social card meta tags to be used in your frontend"""
+  _seoMetaTags(
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
+}
 
 enum FaviconType {
   appleTouchIcon
@@ -280,6 +393,30 @@ interface FileFieldInterface {
   ): String!
   video: UploadVideoField
   width: IntType
+}
+
+"""Specifies how to filter Single-file/image fields"""
+input FileFilter {
+  """
+  Search for records with an exact match. The specified value must be an Upload ID
+  """
+  eq: UploadId
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+
+  """Filter records that have one of the specified uploads"""
+  in: [UploadId]
+
+  """
+  Exclude records with an exact match. The specified value must be an Upload ID
+  """
+  neq: UploadId
+
+  """Filter records that do not have one of the specified uploads"""
+  notIn: [UploadId]
 }
 
 """
@@ -2297,6 +2434,18 @@ input PublishedAtFilter {
 """The query root for this schema"""
 type Query {
   """Returns meta information regarding a record collection"""
+  _allAboutsMeta(
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: AboutModelFilter
+
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): CollectionMetadata!
+
+  """Returns meta information regarding a record collection"""
   _allHomesMeta(
     """
     If you want to fallback to a default translation when a translation has not been found
@@ -2326,6 +2475,38 @@ type Query {
     """The locale to use to fetch the field's content"""
     locale: SiteLocale
   ): Site!
+
+  """Returns a specific record"""
+  about(
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: AboutModelFilter
+
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+    orderBy: [AboutModelOrderBy] = [_updatedAt_DESC]
+  ): AboutRecord
+
+  """Returns a collection of records"""
+  allAbouts(
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: AboutModelFilter
+
+    """Limit the number of results"""
+    first: IntType = 20
+
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+    orderBy: [AboutModelOrderBy] = [_updatedAt_DESC]
+
+    """Skip the first results"""
+    skip: IntType
+  ): [AboutRecord!]!
 
   """Returns a collection of records"""
   allHomes(

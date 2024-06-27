@@ -3,3 +3,9 @@ query HomePage {
     ...homepage
   }
 }
+
+query AboutPage {
+  about {
+    ...aboutpage
+  }
+}

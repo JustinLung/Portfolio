@@ -6,9 +6,26 @@
 
   position: fixed;
   z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
+
+  .menu {
+    display: block;
+
+    @media (--lg) {
+      display: none;
+    }
+  }
+
+  .desktop-nav ul {
+    display: none;
+    @media (--lg) {
+      display: flex;
+      gap: 8px;
+      font-size: 2rem;
+      font-weight: 200;
+      letter-spacing: -0.24px;
+    }
+  }
 
   div {
     z-index: 1;
@@ -24,7 +41,7 @@
     cursor: pointer;
   }
 
-  nav {
+  .navigation {
     left: 0;
     top: 0;
     height: 100svh;

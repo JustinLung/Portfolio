@@ -18,7 +18,7 @@ export default function TextHighlight(props: TextHighlightInterface) {
   return (
     <div className={cn(s["text-hightlight-container"])}>
       <motion.p
-        className={s.paragraph}
+        className={cn(s.paragraph, "container")}
         ref={element}
         style={{ opacity: scrollYProgress }}
       >

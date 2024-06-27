@@ -32,10 +32,31 @@ const item = {
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className={cn(styles["header"])}>
+    <header
+      className={cn(styles["header"])}
+      style={{
+        mixBlendMode: !isOpen ? "difference" : "unset",
+      }}
+    >
       <div className={cn("container", styles["header-block"])}>
         <Link href="/">PORTFOLIO</Link>
-        <button className="clear" onClick={() => setIsOpen(!isOpen)}>
+        <nav className={styles["desktop-nav"]}>
+          <motion.ul variants={container} initial="hidden" animate="show">
+            {links.map((link) => {
+              return (
+                <motion.li key={link.title} variants={item}>
+                  <Link href={link.href} onClick={() => setIsOpen(false)}>
+                    {link.title}
+                  </Link>
+                </motion.li>
+              );
+            })}
+          </motion.ul>
+        </nav>
+        <button
+          className={cn("clear", styles["menu"])}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? "CLOSE" : "MENU"}
         </button>
       </div>

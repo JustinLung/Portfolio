@@ -1,5 +1,6 @@
+import { motion } from "framer-motion";
 import s from "./Hero.module.css";
-import cn from "clsx";
+import { easeOutExpo } from "@/utils/transitions";
 
 interface HeroProps {
   title: string;
@@ -10,8 +11,30 @@ export function Hero(props: HeroProps) {
   const { title, subtext } = props;
   return (
     <section className={s.hero}>
-      <p>{subtext}</p>
-      <h1>{title}</h1>
+      <motion.p
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{
+          ease: easeOutExpo,
+          delay: 0.7,
+          duration: 0.3,
+        }}
+      >
+        {subtext}
+      </motion.p>
+      <motion.h1
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{
+          ease: easeOutExpo,
+          delay: .8,
+          duration: 0.3,
+        }}
+      >
+        {title}
+      </motion.h1>
     </section>
   );
 }

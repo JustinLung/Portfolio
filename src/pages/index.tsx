@@ -6,17 +6,14 @@ import { Projects } from "@/components/shared/Projects/Projects";
 import TextHighlight from "@/components/shared/TextHighlight/TextHighlight";
 import { GetStaticProps } from "next";
 import { nextClient } from "@lib/client";
-import {
-  HighlightedWorkRecord,
-  HomePageQuery,
-  HomeRecord,
-} from "@lib/generated/sdk";
+import { HomePageQuery, HomeRecord } from "@lib/generated/sdk";
 
 interface PageProps {
   data: HomeRecord;
 }
 
-function Page({ data }: PageProps) {
+export default function Page({ data }: PageProps) {
+  console.log(data);
   return (
     <>
       <MetaTags
@@ -29,12 +26,11 @@ function Page({ data }: PageProps) {
         subtext={data?.hero?.subtext as string}
       />
       <TextHighlight value={data?.highlightedText as string} />
-      <Projects highlights={data?.highlights as HighlightedWorkRecord} />
+      <Projects data={data} title={data.projectTitle as string} />
       <PreFooter />
     </>
   );
 }
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const [homePage] = await Promise.allSettled([nextClient.HomePage()]);
 
@@ -44,5 +40,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   };
 };
-
-export default Page;

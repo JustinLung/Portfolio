@@ -1,0 +1,15 @@
+.Parallax {
+  overflow: clip;
+
+  > *,
+  > * > * {
+    height: 100%;
+  }
+
+  :global(video),
+  :global(img) {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

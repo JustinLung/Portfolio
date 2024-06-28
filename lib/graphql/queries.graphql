@@ -9,3 +9,9 @@ query AboutPage {
     ...aboutpage
   }
 }
+
+query ProjectPage {
+  project {
+    ...project
+  }
+}

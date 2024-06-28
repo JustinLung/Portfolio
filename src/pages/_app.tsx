@@ -1,4 +1,5 @@
 import { BaseLayout } from "@/components/features/layout/BaseLayout/BaseLayout";
+import { PageTransition } from "@/components/shared/PageTransition/PageTransition";
 import "@/styles/all.css";
 import { useLenis } from "@/utils/useLenis";
 import { useVhFix } from "@/utils/useVhFix";

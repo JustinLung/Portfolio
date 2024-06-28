@@ -1,0 +1,74 @@
+.projects {
+  padding-top: calc(87px * 2);
+
+  h1 {
+    margin-bottom: 24px;
+    font-family: "FKScreamer";
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: clamp(4.3rem, calc(4.17rem + 0.67vw), 4.84rem);
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (--lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.item {
+  position: relative;
+
+  img {
+    height: calc(60 * var(--svh));
+    object-fit: cover;
+    width: 100%;
+    mask: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 5%, white 30%);
+  }
+
+  p {
+    font-size: 1rem;
+
+    &:first-child {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .content {
+    position: absolute;
+    bottom: 24px;
+    left: 12px;
+    max-width: 40rem;
+
+    @media (--lg) {
+      left: 16px;
+    }
+
+    .btn {
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: 16px;
+      position: relative;
+
+      @hover {
+        svg {
+          transform: translateX(4px);
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        transition: 0.3s transform var(--easeOutExpo);
+      }
+    }
+  }
+}

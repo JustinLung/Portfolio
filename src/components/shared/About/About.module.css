@@ -10,6 +10,7 @@
 
   .sticky {
     height: calc(60 * var(--svh));
+    grid-row: 1 / -2;
 
     @media (--lg) {
       position: sticky;

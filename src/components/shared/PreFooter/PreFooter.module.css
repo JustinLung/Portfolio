@@ -4,7 +4,7 @@
   height: calc(50 * var(--svh));
   padding-bottom: 8px;
 
-  @media(--lg) {
+  @media (--lg) {
     padding-bottom: 16px;
   }
 
@@ -29,6 +29,17 @@
         font-size: 1rem;
         color: var(--black);
       }
+    }
+  }
+}
+
+.dark-mode {
+  color: var(--white);
+  background-color: var(--black);
+
+  ul {
+    a {
+      color: var(--white) !important;
     }
   }
 }

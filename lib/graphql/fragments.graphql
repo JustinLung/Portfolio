@@ -4,12 +4,11 @@ fragment homepage on HomeRecord {
     subtext
   }
   highlightedText
-  highlightedWorksTitle
-  highlights {
-    title
-    works {
+  projectTitle
+  projects {
+    project {
       title
-      description
+      slug
       image {
         ...media
       }
@@ -33,4 +32,16 @@ fragment media on FileField {
   width
   height
   title
+}
+
+fragment project on ProjectRecord {
+  project {
+    id
+    slug
+    title
+    description
+    image {
+      ...media
+    }
+  }
 }

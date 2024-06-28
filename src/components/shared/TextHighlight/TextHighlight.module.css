@@ -13,6 +13,7 @@
   .paragraph {
     font-size: 2rem;
     color: var(--black);
+    
 
     @media (--lg) {
       font-size: 4rem;

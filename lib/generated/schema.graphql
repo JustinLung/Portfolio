@@ -188,7 +188,9 @@ type ExperienceRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
+  experience: String
   id: ItemId!
+  job: String
 }
 
 enum FaviconType {
@@ -457,31 +459,6 @@ type HeroRecord implements RecordInterface {
   title: String
 }
 
-"""Block of type Highlighted Work (highlighted_work)"""
-type HighlightedWorkRecord implements RecordInterface {
-  _createdAt: DateTime!
-
-  """Editing URL"""
-  _editingUrl: String
-  _firstPublishedAt: DateTime
-  _isValid: BooleanType!
-  _modelApiKey: String!
-  _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
-
-  """Generates SEO and Social card meta tags to be used in your frontend"""
-  _seoMetaTags(
-    """The locale to use to fetch the field's content"""
-    locale: SiteLocale
-  ): [Tag!]!
-  _status: ItemStatus!
-  _unpublishingScheduledAt: DateTime
-  _updatedAt: DateTime!
-  id: ItemId!
-  title: String
-  works: [WorkRecord!]!
-}
-
 input HomeModelFilter {
   AND: [HomeModelFilter]
   OR: [HomeModelFilter]
@@ -494,8 +471,9 @@ input HomeModelFilter {
   _unpublishingScheduledAt: PublishedAtFilter
   _updatedAt: UpdatedAtFilter
   highlightedText: StringFilter
-  highlightedWorksTitle: StringFilter
   id: ItemIdFilter
+  projectTitle: StringFilter
+  projects: LinkFilter
 }
 
 enum HomeModelOrderBy {
@@ -517,10 +495,10 @@ enum HomeModelOrderBy {
   _updatedAt_DESC
   highlightedText_ASC
   highlightedText_DESC
-  highlightedWorksTitle_ASC
-  highlightedWorksTitle_DESC
   id_ASC
   id_DESC
+  projectTitle_ASC
+  projectTitle_DESC
 }
 
 """Record of type Home (home)"""
@@ -545,9 +523,9 @@ type HomeRecord implements RecordInterface {
   _updatedAt: DateTime!
   hero: HeroRecord
   highlightedText: String
-  highlightedWorksTitle: String
-  highlights: HighlightedWorkRecord
   id: ItemId!
+  projectTitle: String
+  projects: ProjectRecord
 }
 
 input ImgixParams {
@@ -2376,6 +2354,30 @@ enum ItemStatus {
   updated
 }
 
+"""Specifies how to filter Single-link fields"""
+input LinkFilter {
+  """
+  Search for records with an exact match. The specified value must be a Record ID
+  """
+  eq: ItemId
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+
+  """Filter records linked to one of the specified records"""
+  in: [ItemId]
+
+  """
+  Exclude records with an exact match. The specified value must be a Record ID
+  """
+  neq: ItemId
+
+  """Filter records not linked to one of the specified records"""
+  notIn: [ItemId]
+}
+
 scalar MetaTagAttributes
 
 enum MuxThumbnailFormatType {
@@ -2391,6 +2393,30 @@ input OrientationFilter {
 
   """Exclude uploads with the specified orientation"""
   neq: UploadOrientation
+}
+
+"""Record of type Project (project)"""
+type ProjectRecord implements RecordInterface {
+  _createdAt: DateTime!
+
+  """Editing URL"""
+  _editingUrl: String
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  """Generates SEO and Social card meta tags to be used in your frontend"""
+  _seoMetaTags(
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _unpublishingScheduledAt: DateTime
+  _updatedAt: DateTime!
+  id: ItemId!
+  project: [WorkRecord!]!
 }
 
 """Specifies how to filter by publication datetime"""
@@ -2558,6 +2584,17 @@ type Query {
     locale: SiteLocale
     orderBy: [HomeModelOrderBy] = [_updatedAt_DESC]
   ): HomeRecord
+
+  """Returns the single instance record"""
+  project(
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): ProjectRecord
 
   """Returns a specific asset"""
   upload(
@@ -3267,6 +3304,7 @@ type WorkRecord implements RecordInterface {
   ): String
   id: ItemId!
   image: FileField
+  slug: String
   title: String
 }
 

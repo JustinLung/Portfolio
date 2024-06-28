@@ -6,7 +6,7 @@ import { useState } from "react";
 import { easeOutExpo } from "@/utils/transitions";
 import { links } from "./links";
 
-const container = {
+export const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -18,7 +18,7 @@ const container = {
   },
 };
 
-const item = {
+export const item = {
   hidden: { y: 30, opacity: 0 },
   show: {
     y: 0,

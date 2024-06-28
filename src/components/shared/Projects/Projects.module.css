@@ -59,10 +59,30 @@
       bottom: 24px;
       left: 12px;
       max-width: 40rem;
-      color: var(-white);
 
       @media (--lg) {
         left: 16px;
+      }
+
+      .btn {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin-top: 16px;
+        position: relative;
+        
+        @hover {
+          svg {
+            transform: translateX(4px);
+          }
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+          transition: 0.3s transform var(--easeOutExpo);
+        }
       }
     }
   }

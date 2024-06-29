@@ -471,9 +471,9 @@ input HomeModelFilter {
   _unpublishingScheduledAt: PublishedAtFilter
   _updatedAt: UpdatedAtFilter
   highlightedText: StringFilter
+  highlights: LinksFilter
   id: ItemIdFilter
   projectTitle: StringFilter
-  projects: LinkFilter
 }
 
 enum HomeModelOrderBy {
@@ -523,9 +523,9 @@ type HomeRecord implements RecordInterface {
   _updatedAt: DateTime!
   hero: HeroRecord
   highlightedText: String
+  highlights: [ProjectRecord!]!
   id: ItemId!
   projectTitle: String
-  projects: ProjectRecord
 }
 
 input ImgixParams {
@@ -2354,27 +2354,31 @@ enum ItemStatus {
   updated
 }
 
-"""Specifies how to filter Single-link fields"""
-input LinkFilter {
+"""Specifies how to filter Multiple-links fields"""
+input LinksFilter {
   """
-  Search for records with an exact match. The specified value must be a Record ID
+  Filter records linked to all of the specified records. The specified values must be Record IDs
   """
-  eq: ItemId
+  allIn: [ItemId]
+
+  """
+  Filter records linked to at least one of the specified records. The specified values must be Record IDs
+  """
+  anyIn: [ItemId]
+
+  """
+  Search for records with an exact match. The specified values must be Record IDs
+  """
+  eq: [ItemId]
 
   """
   Filter records with the specified field defined (i.e. with any value) or not
   """
   exists: BooleanType
 
-  """Filter records linked to one of the specified records"""
-  in: [ItemId]
-
   """
-  Exclude records with an exact match. The specified value must be a Record ID
+  Filter records not linked to any of the specified records. The specified values must be Record IDs
   """
-  neq: ItemId
-
-  """Filter records not linked to one of the specified records"""
   notIn: [ItemId]
 }
 
@@ -2393,6 +2397,47 @@ input OrientationFilter {
 
   """Exclude uploads with the specified orientation"""
   neq: UploadOrientation
+}
+
+input ProjectModelFilter {
+  AND: [ProjectModelFilter]
+  OR: [ProjectModelFilter]
+  _createdAt: CreatedAtFilter
+  _firstPublishedAt: PublishedAtFilter
+  _isValid: BooleanFilter
+  _publicationScheduledAt: PublishedAtFilter
+  _publishedAt: PublishedAtFilter
+  _status: StatusFilter
+  _unpublishingScheduledAt: PublishedAtFilter
+  _updatedAt: UpdatedAtFilter
+  description: TextFilter
+  id: ItemIdFilter
+  image: FileFilter
+  slug: SlugFilter
+  title: StringFilter
+}
+
+enum ProjectModelOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  _firstPublishedAt_ASC
+  _firstPublishedAt_DESC
+  _isValid_ASC
+  _isValid_DESC
+  _publicationScheduledAt_ASC
+  _publicationScheduledAt_DESC
+  _publishedAt_ASC
+  _publishedAt_DESC
+  _status_ASC
+  _status_DESC
+  _unpublishingScheduledAt_ASC
+  _unpublishingScheduledAt_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  id_ASC
+  id_DESC
+  title_ASC
+  title_DESC
 }
 
 """Record of type Project (project)"""
@@ -2415,8 +2460,14 @@ type ProjectRecord implements RecordInterface {
   _status: ItemStatus!
   _unpublishingScheduledAt: DateTime
   _updatedAt: DateTime!
+  description(
+    """Process content as markdown"""
+    markdown: Boolean
+  ): String
   id: ItemId!
-  project: [WorkRecord!]!
+  image: FileField
+  slug: String
+  title: String
 }
 
 """Specifies how to filter by publication datetime"""
@@ -2478,6 +2529,18 @@ type Query {
     """
     fallbackLocales: [SiteLocale!]
     filter: HomeModelFilter
+
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+  ): CollectionMetadata!
+
+  """Returns meta information regarding a record collection"""
+  _allProjectsMeta(
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: ProjectModelFilter
 
     """The locale to use to fetch the field's content"""
     locale: SiteLocale
@@ -2553,6 +2616,25 @@ type Query {
     skip: IntType
   ): [HomeRecord!]!
 
+  """Returns a collection of records"""
+  allProjects(
+    """
+    If you want to fallback to a default translation when a translation has not been found
+    """
+    fallbackLocales: [SiteLocale!]
+    filter: ProjectModelFilter
+
+    """Limit the number of results"""
+    first: IntType = 20
+
+    """The locale to use to fetch the field's content"""
+    locale: SiteLocale
+    orderBy: [ProjectModelOrderBy] = [_updatedAt_DESC]
+
+    """Skip the first results"""
+    skip: IntType
+  ): [ProjectRecord!]!
+
   """Returns a collection of assets"""
   allUploads(
     """
@@ -2585,15 +2667,17 @@ type Query {
     orderBy: [HomeModelOrderBy] = [_updatedAt_DESC]
   ): HomeRecord
 
-  """Returns the single instance record"""
+  """Returns a specific record"""
   project(
     """
     If you want to fallback to a default translation when a translation has not been found
     """
     fallbackLocales: [SiteLocale!]
+    filter: ProjectModelFilter
 
     """The locale to use to fetch the field's content"""
     locale: SiteLocale
+    orderBy: [ProjectModelOrderBy] = [_updatedAt_DESC]
   ): ProjectRecord
 
   """Returns a specific asset"""
@@ -2699,6 +2783,21 @@ enum SiteLocale {
   en
 }
 
+"""Specifies how to filter Slug fields"""
+input SlugFilter {
+  """Search for records with an exact match"""
+  eq: String
+
+  """Filter records that have one of the specified slugs"""
+  in: [String]
+
+  """Exclude records with an exact match"""
+  neq: String
+
+  """Filter records that do have one of the specified slugs"""
+  notIn: [String]
+}
+
 """Specifies how to filter by status"""
 input StatusFilter {
   """Search the record with the specified status"""
@@ -2760,6 +2859,30 @@ type Tag {
   attributes: MetaTagAttributes
   content: String
   tag: String!
+}
+
+"""Specifies how to filter text fields"""
+input TextFilter {
+  """
+  Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED]
+  """
+  exists: BooleanType
+
+  """
+  Filter records with the specified field set as blank (null or empty string)
+  """
+  isBlank: BooleanType
+
+  """
+  Filter records with the specified field present (neither null, nor empty string)
+  """
+  isPresent: BooleanType
+
+  """Filter records based on a regular expression"""
+  matches: StringMatchesFilter
+
+  """Exclude records based on a regular expression"""
+  notMatches: StringMatchesFilter
 }
 
 """Specifies how to filter by upload type"""
@@ -3276,36 +3399,6 @@ enum VideoMp4Res {
   high
   low
   medium
-}
-
-"""Block of type Work (work)"""
-type WorkRecord implements RecordInterface {
-  _createdAt: DateTime!
-
-  """Editing URL"""
-  _editingUrl: String
-  _firstPublishedAt: DateTime
-  _isValid: BooleanType!
-  _modelApiKey: String!
-  _publicationScheduledAt: DateTime
-  _publishedAt: DateTime
-
-  """Generates SEO and Social card meta tags to be used in your frontend"""
-  _seoMetaTags(
-    """The locale to use to fetch the field's content"""
-    locale: SiteLocale
-  ): [Tag!]!
-  _status: ItemStatus!
-  _unpublishingScheduledAt: DateTime
-  _updatedAt: DateTime!
-  description(
-    """Process content as markdown"""
-    markdown: Boolean
-  ): String
-  id: ItemId!
-  image: FileField
-  slug: String
-  title: String
 }
 
 type focalPoint {

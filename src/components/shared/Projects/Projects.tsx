@@ -15,6 +15,7 @@ interface ProjectsProps {
 
 export function Projects(props: ProjectsProps) {
   const { title, data } = props;
+  console.log(data);
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -26,7 +27,7 @@ export function Projects(props: ProjectsProps) {
     }
   }, [control, inView]);
 
-  const projectsToRender = data?.projects?.project.slice(-3) || [];
+  const projectsToRender = data?.highlights.slice(-3) || [];
 
   return (
     <article className={cn(s.projects)}>

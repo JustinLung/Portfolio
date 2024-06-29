@@ -428,9 +428,9 @@ export type HomeModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   highlightedText?: InputMaybe<StringFilter>;
+  highlights?: InputMaybe<LinksFilter>;
   id?: InputMaybe<ItemIdFilter>;
   projectTitle?: InputMaybe<StringFilter>;
-  projects?: InputMaybe<LinkFilter>;
 };
 
 export enum HomeModelOrderBy {
@@ -476,9 +476,9 @@ export type HomeRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime'];
   hero?: Maybe<HeroRecord>;
   highlightedText?: Maybe<Scalars['String']>;
+  highlights: Array<ProjectRecord>;
   id: Scalars['ItemId'];
   projectTitle?: Maybe<Scalars['String']>;
-  projects?: Maybe<ProjectRecord>;
 };
 
 
@@ -2145,17 +2145,17 @@ export enum ItemStatus {
   Updated = 'updated'
 }
 
-/** Specifies how to filter Single-link fields */
-export type LinkFilter = {
-  /** Search for records with an exact match. The specified value must be a Record ID */
-  eq?: InputMaybe<Scalars['ItemId']>;
+/** Specifies how to filter Multiple-links fields */
+export type LinksFilter = {
+  /** Filter records linked to all of the specified records. The specified values must be Record IDs */
+  allIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>;
+  /** Filter records linked to at least one of the specified records. The specified values must be Record IDs */
+  anyIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>;
+  /** Search for records with an exact match. The specified values must be Record IDs */
+  eq?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>;
   /** Filter records with the specified field defined (i.e. with any value) or not */
   exists?: InputMaybe<Scalars['BooleanType']>;
-  /** Filter records linked to one of the specified records */
-  in?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>;
-  /** Exclude records with an exact match. The specified value must be a Record ID */
-  neq?: InputMaybe<Scalars['ItemId']>;
-  /** Filter records not linked to one of the specified records */
+  /** Filter records not linked to any of the specified records. The specified values must be Record IDs */
   notIn?: InputMaybe<Array<InputMaybe<Scalars['ItemId']>>>;
 };
 
@@ -2173,6 +2173,47 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>;
 };
 
+export type ProjectModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ProjectModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ProjectModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  description?: InputMaybe<TextFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  image?: InputMaybe<FileFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  title?: InputMaybe<StringFilter>;
+};
+
+export enum ProjectModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Record of type Project (project) */
 export type ProjectRecord = RecordInterface & {
   __typename?: 'ProjectRecord';
@@ -2189,14 +2230,23 @@ export type ProjectRecord = RecordInterface & {
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
   id: Scalars['ItemId'];
-  project: Array<WorkRecord>;
+  image?: Maybe<FileField>;
+  slug?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
 };
 
 
 /** Record of type Project (project) */
 export type ProjectRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Project (project) */
+export type ProjectRecordDescriptionArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** Specifies how to filter by publication datetime */
@@ -2224,6 +2274,8 @@ export type Query = {
   _allAboutsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
   _allHomesMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allProjectsMeta: CollectionMetadata;
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta: CollectionMetadata;
   /** Returns the single instance record */
@@ -2234,11 +2286,13 @@ export type Query = {
   allAbouts: Array<AboutRecord>;
   /** Returns a collection of records */
   allHomes: Array<HomeRecord>;
+  /** Returns a collection of records */
+  allProjects: Array<ProjectRecord>;
   /** Returns a collection of assets */
   allUploads: Array<FileField>;
   /** Returns a specific record */
   home?: Maybe<HomeRecord>;
-  /** Returns the single instance record */
+  /** Returns a specific record */
   project?: Maybe<ProjectRecord>;
   /** Returns a specific asset */
   upload?: Maybe<FileField>;
@@ -2257,6 +2311,14 @@ export type Query_AllAboutsMetaArgs = {
 export type Query_AllHomesMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<HomeModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllProjectsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ProjectModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2307,6 +2369,17 @@ export type QueryAllHomesArgs = {
 
 
 /** The query root for this schema */
+export type QueryAllProjectsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ProjectModelFilter>;
+  first?: InputMaybe<Scalars['IntType']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ProjectModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']>;
+};
+
+
+/** The query root for this schema */
 export type QueryAllUploadsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<UploadFilter>;
@@ -2329,7 +2402,9 @@ export type QueryHomeArgs = {
 /** The query root for this schema */
 export type QueryProjectArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ProjectModelFilter>;
   locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ProjectModelOrderBy>>>;
 };
 
 
@@ -2430,6 +2505,18 @@ export enum SiteLocale {
   En = 'en'
 }
 
+/** Specifies how to filter Slug fields */
+export type SlugFilter = {
+  /** Search for records with an exact match */
+  eq?: InputMaybe<Scalars['String']>;
+  /** Filter records that have one of the specified slugs */
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** Exclude records with an exact match */
+  neq?: InputMaybe<Scalars['String']>;
+  /** Filter records that do have one of the specified slugs */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 /** Specifies how to filter by status */
 export type StatusFilter = {
   /** Search the record with the specified status */
@@ -2475,6 +2562,20 @@ export type Tag = {
   attributes?: Maybe<Scalars['MetaTagAttributes']>;
   content?: Maybe<Scalars['String']>;
   tag: Scalars['String'];
+};
+
+/** Specifies how to filter text fields */
+export type TextFilter = {
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
+  exists?: InputMaybe<Scalars['BooleanType']>;
+  /** Filter records with the specified field set as blank (null or empty string) */
+  isBlank?: InputMaybe<Scalars['BooleanType']>;
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']>;
+  /** Filter records based on a regular expression */
+  matches?: InputMaybe<StringMatchesFilter>;
+  /** Exclude records based on a regular expression */
+  notMatches?: InputMaybe<StringMatchesFilter>;
 };
 
 /** Specifies how to filter by upload type */
@@ -2870,51 +2971,16 @@ export enum VideoMp4Res {
   Medium = 'medium'
 }
 
-/** Block of type Work (work) */
-export type WorkRecord = RecordInterface & {
-  __typename?: 'WorkRecord';
-  _createdAt: Scalars['DateTime'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']>;
-  _isValid: Scalars['BooleanType'];
-  _modelApiKey: Scalars['String'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']>;
-  _publishedAt?: Maybe<Scalars['DateTime']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
-  _updatedAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  id: Scalars['ItemId'];
-  image?: Maybe<FileField>;
-  slug?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-/** Block of type Work (work) */
-export type WorkRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Block of type Work (work) */
-export type WorkRecordDescriptionArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']>;
-};
-
 export type FocalPoint = {
   __typename?: 'focalPoint';
   x: Scalars['FloatType'];
   y: Scalars['FloatType'];
 };
 
-export type HomepageFragment = { __typename?: 'HomeRecord', highlightedText?: string | null, projectTitle?: string | null, hero?: { __typename?: 'HeroRecord', title?: string | null, subtext?: string | null } | null, projects?: { __typename?: 'ProjectRecord', project: Array<{ __typename?: 'WorkRecord', title?: string | null, slug?: string | null, image?: (
-        { __typename?: 'FileField' }
-        & MediaFragment
-      ) | null }> } | null };
+export type HomepageFragment = { __typename?: 'HomeRecord', highlightedText?: string | null, projectTitle?: string | null, hero?: { __typename?: 'HeroRecord', title?: string | null, subtext?: string | null } | null, highlights: Array<{ __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, image?: (
+      { __typename?: 'FileField' }
+      & MediaFragment
+    ) | null }> };
 
 export type AboutpageFragment = { __typename?: 'AboutRecord', image?: (
     { __typename?: 'FileField' }
@@ -2922,11 +2988,6 @@ export type AboutpageFragment = { __typename?: 'AboutRecord', image?: (
   ) | null, aboutContent?: { __typename?: 'AboutContentRecord', title?: string | null, content?: string | null } | null };
 
 export type MediaFragment = { __typename?: 'FileField', url: string, alt?: string | null, width?: any | null, height?: any | null, title?: string | null };
-
-export type ProjectFragment = { __typename?: 'ProjectRecord', project: Array<{ __typename?: 'WorkRecord', id: any, slug?: string | null, title?: string | null, description?: string | null, image?: (
-      { __typename?: 'FileField' }
-      & MediaFragment
-    ) | null }> };
 
 export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2947,10 +3008,20 @@ export type AboutPageQuery = { __typename?: 'Query', about?: (
 export type ProjectPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProjectPageQuery = { __typename?: 'Query', project?: (
-    { __typename?: 'ProjectRecord' }
-    & ProjectFragment
-  ) | null };
+export type ProjectPageQuery = { __typename?: 'Query', allProjects: Array<{ __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, image?: (
+      { __typename?: 'FileField' }
+      & MediaFragment
+    ) | null }> };
+
+export type GetProjectBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetProjectBySlugQuery = { __typename?: 'Query', project?: { __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, image?: (
+      { __typename?: 'FileField' }
+      & MediaFragment
+    ) | null } | null };
 
 export const MediaFragmentDoc = gql`
     fragment media on FileField {
@@ -2969,13 +3040,12 @@ export const HomepageFragmentDoc = gql`
   }
   highlightedText
   projectTitle
-  projects {
-    project {
-      title
-      slug
-      image {
-        ...media
-      }
+  highlights {
+    title
+    description
+    slug
+    image {
+      ...media
     }
   }
 }
@@ -2988,19 +3058,6 @@ export const AboutpageFragmentDoc = gql`
   aboutContent {
     title
     content
-  }
-}
-    `;
-export const ProjectFragmentDoc = gql`
-    fragment project on ProjectRecord {
-  project {
-    id
-    slug
-    title
-    description
-    image {
-      ...media
-    }
   }
 }
     `;
@@ -3022,12 +3079,28 @@ export const AboutPageDocument = gql`
 ${MediaFragmentDoc}`;
 export const ProjectPageDocument = gql`
     query ProjectPage {
-  project {
-    ...project
+  allProjects {
+    title
+    description
+    slug
+    image {
+      ...media
+    }
   }
 }
-    ${ProjectFragmentDoc}
-${MediaFragmentDoc}`;
+    ${MediaFragmentDoc}`;
+export const GetProjectBySlugDocument = gql`
+    query getProjectBySlug($slug: String!) {
+  project(filter: {slug: {eq: $slug}}) {
+    title
+    description
+    slug
+    image {
+      ...media
+    }
+  }
+}
+    ${MediaFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -3044,6 +3117,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     ProjectPage(variables?: ProjectPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ProjectPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ProjectPageQuery>(ProjectPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ProjectPage', 'query');
+    },
+    getProjectBySlug(variables: GetProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetProjectBySlugQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetProjectBySlugQuery>(GetProjectBySlugDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectBySlug', 'query');
     }
   };
 }
@@ -3060,6 +3136,9 @@ export function getSdkWithHooks(client: GraphQLClient, withWrapper: SdkFunctionW
     },
     useProjectPage(key: SWRKeyInterface, variables?: ProjectPageQueryVariables, config?: SWRConfigInterface<ProjectPageQuery, ClientError>) {
       return useSWR<ProjectPageQuery, ClientError>(key, () => sdk.ProjectPage(variables), config);
+    },
+    useGetProjectBySlug(key: SWRKeyInterface, variables: GetProjectBySlugQueryVariables, config?: SWRConfigInterface<GetProjectBySlugQuery, ClientError>) {
+      return useSWR<GetProjectBySlugQuery, ClientError>(key, () => sdk.getProjectBySlug(variables), config);
     }
   };
 }

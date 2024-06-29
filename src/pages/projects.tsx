@@ -9,7 +9,7 @@ import cn from "clsx";
 import { PreFooter } from "@/components/shared/PreFooter/PreFooter";
 
 interface PageProps {
-  data: ProjectRecord;
+  data: ProjectRecord[];
 }
 
 export default function Page({ data }: PageProps) {
@@ -19,7 +19,7 @@ export default function Page({ data }: PageProps) {
       <section className={cn("container", s["projects"])}>
         <h1>PROJECTS</h1>
         <div className={s["projects-container"]}>
-          {data.project.map((project, i) => (
+          {data.map((project, i) => (
             <Project
               title={project.title as string}
               description={project.description as string}
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let projectData = null;
 
   if (projectPage.status === "fulfilled") {
-    projectData = projectPage.value.project || null;
+    projectData = projectPage.value.allProjects || null;
   }
 
   return {

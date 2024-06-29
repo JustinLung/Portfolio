@@ -12,22 +12,12 @@ query AboutPage {
 
 query ProjectPage {
   allProjects {
-    title
-    description
-    slug
-    image {
-      ...media
-    }
+   ...project
   }
 }
 
 query getProjectBySlug($slug: String!) {
   project(filter: { slug: { eq: $slug } }) {
-    title
-    description
-    slug
-    image {
-      ...media
-    }
+    ...project
   }
 }

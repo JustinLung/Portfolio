@@ -426,6 +426,34 @@ Represents signed double-precision fractional values as specified by [IEEE 754](
 """
 scalar FloatType
 
+"""Specifies how to filter Multiple files/images field"""
+input GalleryFilter {
+  """
+  Filter records that have all of the specified uploads. The specified values must be Upload IDs
+  """
+  allIn: [UploadId]
+
+  """
+  Filter records that have one of the specified uploads. The specified values must be Upload IDs
+  """
+  anyIn: [UploadId]
+
+  """
+  Search for records with an exact match. The specified values must be Upload IDs
+  """
+  eq: [UploadId]
+
+  """
+  Filter records with the specified field defined (i.e. with any value) or not
+  """
+  exists: BooleanType
+
+  """
+  Filter records that do not have any of the specified uploads. The specified values must be Upload IDs
+  """
+  notIn: [UploadId]
+}
+
 type GlobalSeoField {
   facebookPageUrl: String
   fallbackSeo: SeoField
@@ -2411,8 +2439,10 @@ input ProjectModelFilter {
   _unpublishingScheduledAt: PublishedAtFilter
   _updatedAt: UpdatedAtFilter
   description: TextFilter
+  doubleImage: GalleryFilter
   id: ItemIdFilter
   image: FileFilter
+  projectType: StringFilter
   slug: SlugFilter
   title: StringFilter
 }
@@ -2436,6 +2466,8 @@ enum ProjectModelOrderBy {
   _updatedAt_DESC
   id_ASC
   id_DESC
+  projectType_ASC
+  projectType_DESC
   title_ASC
   title_DESC
 }
@@ -2464,8 +2496,10 @@ type ProjectRecord implements RecordInterface {
     """Process content as markdown"""
     markdown: Boolean
   ): String
+  doubleImage: [FileField!]!
   id: ItemId!
   image: FileField
+  projectType: String
   slug: String
   title: String
 }

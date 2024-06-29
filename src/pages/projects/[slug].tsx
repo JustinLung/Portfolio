@@ -1,4 +1,5 @@
 import MetaTags from "@/components/features/MetaTags";
+import { DoubleImage } from "@/components/shared/DoubleImage/DoubleImage";
 import { Parallax } from "@/components/shared/Parallax/Parallax";
 import { ProjectHero } from "@/components/shared/ProjectHero/ProjectHero";
 import { nextClient } from "@lib/client";
@@ -14,6 +15,7 @@ function Page({ data }: PageProps) {
   return (
     <>
       <ProjectHero data={data} />
+      <DoubleImage data={data} />
     </>
   );
 }

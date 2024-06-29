@@ -2,6 +2,8 @@ import Image from "next/image";
 import s from "./About.module.css";
 import cn from "clsx";
 import { AboutRecord } from "@lib/generated/sdk";
+import { motion } from "framer-motion";
+import { easeOutExpo } from "@/utils/transitions";
 
 interface AboutProps {
   data: AboutRecord;
@@ -9,9 +11,29 @@ interface AboutProps {
 
 export function About(props: AboutProps) {
   const { data } = props;
+  console.log(data);
   return (
     <section className={s.about}>
-      <div className={s.sticky}>
+      <motion.div
+        className={s.sticky}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: {
+            delay: 0.1,
+            duration: 0.2,
+          },
+        }}
+        exit={{
+          opacity: 0,
+        }}
+        transition={{
+          duration: 0.4,
+          ease: easeOutExpo,
+        }}
+      >
         <Image
           src={data.image?.url as string}
           alt={data.image?.alt as string}
@@ -19,9 +41,9 @@ export function About(props: AboutProps) {
           height={1080}
           className={s["about-image"]}
         />
-      </div>
-      <div className={s.content}>
-        <h2>About</h2>
+      </motion.div>
+      <motion.div className={s.content}>
+        <h2>{data.aboutContent?.title}</h2>
         <p className={s.contentText}>
           <span>
             I'm Justin Lung, a 23-year-old creative coder based in the vibrant
@@ -76,7 +98,7 @@ export function About(props: AboutProps) {
             <span>Junior Frontend Developer 2023-2024</span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

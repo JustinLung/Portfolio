@@ -14,14 +14,6 @@
       font-size: clamp(4.3rem, calc(4.17rem + 0.67vw), 4.84rem);
       color: var(--black);
     }
-
-    .projects-link {
-      color: var(--black);
-
-      @hover {
-        color: var(--white);
-      }
-    }
   }
 
   .projects-container {

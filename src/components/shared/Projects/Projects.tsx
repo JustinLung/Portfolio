@@ -34,9 +34,6 @@ export function Projects(props: ProjectsProps) {
       <div className="container">
         <div className={s["projects-header"]}>
           <h2>{title}</h2>
-          <Button className="clear" href="/projects">
-            All Projects
-          </Button>
         </div>
         <div className={s["projects-container"]}>
           {projectsToRender.map((project, i) => (

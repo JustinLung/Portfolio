@@ -1,4 +1,5 @@
 import s from "./PreFooter.module.css";
+import { motion } from "framer-motion";
 import cn from "clsx";
 
 interface PreFooterProps {
@@ -8,7 +9,10 @@ interface PreFooterProps {
 export function PreFooter(props: PreFooterProps) {
   const { isDark = false } = props;
   return (
-    <section className={cn(s.PreFooter, isDark && s["dark-mode"])}>
+    <motion.section
+      layout="position"
+      className={cn(s.PreFooter, isDark && s["dark-mode"])}
+    >
       <div className={s.content}>
         <h2>GET IN TOUCH</h2>
         <ul>
@@ -23,6 +27,6 @@ export function PreFooter(props: PreFooterProps) {
           </li>
         </ul>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -32,3 +32,16 @@ fragment media on FileField {
   height
   title
 }
+
+fragment project on ProjectRecord {
+  title
+  description
+  slug
+  projectType
+  image {
+    ...media
+  }
+  doubleImage {
+    ...media
+  }
+}

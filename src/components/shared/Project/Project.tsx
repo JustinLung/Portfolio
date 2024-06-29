@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Parallax } from "../Parallax/Parallax";
+import { motion } from "framer-motion";
 import s from "./Project.module.css";
 import cn from "clsx";
 import Button from "../Button/Button";
+import { easeOutExpo } from "@/utils/transitions";
 
 interface ProjectProps {
   src: string;
@@ -15,7 +17,27 @@ interface ProjectProps {
 export function Project(props: ProjectProps) {
   const { title, description, src, alt, slug } = props;
   return (
-    <article className={s.item}>
+    <motion.article
+      layout="position"
+      className={s.item}
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 0.1,
+          duration: 0.2,
+        },
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      transition={{
+        duration: 0.4,
+        ease: easeOutExpo,
+      }}
+    >
       <Parallax>
         <Image src={src} alt={alt} height={1080} width={1920} />
       </Parallax>
@@ -26,6 +48,6 @@ export function Project(props: ProjectProps) {
           View Project
         </Button>
       </div>
-    </article>
+    </motion.article>
   );
 }

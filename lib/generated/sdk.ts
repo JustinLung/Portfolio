@@ -380,6 +380,20 @@ export type FileFilter = {
   notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
 };
 
+/** Specifies how to filter Multiple files/images field */
+export type GalleryFilter = {
+  /** Filter records that have all of the specified uploads. The specified values must be Upload IDs */
+  allIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
+  /** Filter records that have one of the specified uploads. The specified values must be Upload IDs */
+  anyIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
+  /** Search for records with an exact match. The specified values must be Upload IDs */
+  eq?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>;
+  /** Filter records that do not have any of the specified uploads. The specified values must be Upload IDs */
+  notIn?: InputMaybe<Array<InputMaybe<Scalars['UploadId']>>>;
+};
+
 export type GlobalSeoField = {
   __typename?: 'GlobalSeoField';
   facebookPageUrl?: Maybe<Scalars['String']>;
@@ -2185,8 +2199,10 @@ export type ProjectModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   description?: InputMaybe<TextFilter>;
+  doubleImage?: InputMaybe<GalleryFilter>;
   id?: InputMaybe<ItemIdFilter>;
   image?: InputMaybe<FileFilter>;
+  projectType?: InputMaybe<StringFilter>;
   slug?: InputMaybe<SlugFilter>;
   title?: InputMaybe<StringFilter>;
 };
@@ -2210,6 +2226,8 @@ export enum ProjectModelOrderBy {
   UpdatedAtDesc = '_updatedAt_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  ProjectTypeAsc = 'projectType_ASC',
+  ProjectTypeDesc = 'projectType_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
@@ -2231,8 +2249,10 @@ export type ProjectRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
   description?: Maybe<Scalars['String']>;
+  doubleImage: Array<FileField>;
   id: Scalars['ItemId'];
   image?: Maybe<FileField>;
+  projectType?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
 };
@@ -2989,6 +3009,14 @@ export type AboutpageFragment = { __typename?: 'AboutRecord', image?: (
 
 export type MediaFragment = { __typename?: 'FileField', url: string, alt?: string | null, width?: any | null, height?: any | null, title?: string | null };
 
+export type ProjectFragment = { __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, projectType?: string | null, image?: (
+    { __typename?: 'FileField' }
+    & MediaFragment
+  ) | null, doubleImage: Array<(
+    { __typename?: 'FileField' }
+    & MediaFragment
+  )> };
+
 export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3008,20 +3036,20 @@ export type AboutPageQuery = { __typename?: 'Query', about?: (
 export type ProjectPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProjectPageQuery = { __typename?: 'Query', allProjects: Array<{ __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, image?: (
-      { __typename?: 'FileField' }
-      & MediaFragment
-    ) | null }> };
+export type ProjectPageQuery = { __typename?: 'Query', allProjects: Array<(
+    { __typename?: 'ProjectRecord' }
+    & ProjectFragment
+  )> };
 
 export type GetProjectBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type GetProjectBySlugQuery = { __typename?: 'Query', project?: { __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, image?: (
-      { __typename?: 'FileField' }
-      & MediaFragment
-    ) | null } | null };
+export type GetProjectBySlugQuery = { __typename?: 'Query', project?: (
+    { __typename?: 'ProjectRecord' }
+    & ProjectFragment
+  ) | null };
 
 export const MediaFragmentDoc = gql`
     fragment media on FileField {
@@ -3061,6 +3089,20 @@ export const AboutpageFragmentDoc = gql`
   }
 }
     `;
+export const ProjectFragmentDoc = gql`
+    fragment project on ProjectRecord {
+  title
+  description
+  slug
+  projectType
+  image {
+    ...media
+  }
+  doubleImage {
+    ...media
+  }
+}
+    `;
 export const HomePageDocument = gql`
     query HomePage {
   home {
@@ -3080,27 +3122,19 @@ ${MediaFragmentDoc}`;
 export const ProjectPageDocument = gql`
     query ProjectPage {
   allProjects {
-    title
-    description
-    slug
-    image {
-      ...media
-    }
+    ...project
   }
 }
-    ${MediaFragmentDoc}`;
+    ${ProjectFragmentDoc}
+${MediaFragmentDoc}`;
 export const GetProjectBySlugDocument = gql`
     query getProjectBySlug($slug: String!) {
   project(filter: {slug: {eq: $slug}}) {
-    title
-    description
-    slug
-    image {
-      ...media
-    }
+    ...project
   }
 }
-    ${MediaFragmentDoc}`;
+    ${ProjectFragmentDoc}
+${MediaFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 

@@ -11,12 +11,13 @@ interface ProjectHeroProps {
 export function ProjectHero(props: ProjectHeroProps) {
   const { data } = props;
   return (
-    <Parallax>
+    <Parallax className={s["hero-container"]}>
       <Image
         src={data.image?.url as string}
         alt={data.image?.alt as string}
         height={1080}
         width={1920}
+        className={s["hero"]}
       />
     </Parallax>
   );

@@ -48,11 +48,7 @@
 
     div {
       margin-top: auto;
-      padding: 8px;
-
-      @media (--lg) {
-        padding: 16px;
-      }
+      padding: 16px;
 
       .description {
         max-width: 35rem;
@@ -100,13 +96,16 @@
   button {
     background: none;
     border: none;
-    width: fit-content;
+    color: var(--white);
+
     font-size: 1.25rem;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
     transition: color 0.3s;
-    color: var(--white);
+    
+    white-space: nowrap;
+
+    padding: 0;
     padding-bottom: 8px;
 
     &::before {

@@ -5,11 +5,16 @@
   font-size: 2rem;
 
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
 
   .menu {
     display: block;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: currentColor;
 
     @media (--lg) {
       display: none;
@@ -32,13 +37,6 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-  }
-
-  button {
-    border: none;
-    background-color: transparent;
-    color: var(--white);
-    cursor: pointer;
   }
 
   .navigation {

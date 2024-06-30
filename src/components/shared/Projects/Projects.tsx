@@ -7,6 +7,7 @@ import { HomeRecord } from "@lib/generated/sdk";
 import Image from "next/image";
 import Button from "../Button/Button";
 import { Parallax } from "../Parallax/Parallax";
+import { motion } from "framer-motion";
 
 interface ProjectsProps {
   data: HomeRecord;
@@ -15,7 +16,6 @@ interface ProjectsProps {
 
 export function Projects(props: ProjectsProps) {
   const { title, data } = props;
-  console.log(data);
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -37,7 +37,7 @@ export function Projects(props: ProjectsProps) {
         </div>
         <div className={s["projects-container"]}>
           {projectsToRender.map((project, i) => (
-            <article key={i} className={s.item}>
+            <motion.article key={i} className={s.item}>
               <Parallax>
                 <Image
                   src={project.image?.url as string}
@@ -57,7 +57,7 @@ export function Projects(props: ProjectsProps) {
                   View Project
                 </Button>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

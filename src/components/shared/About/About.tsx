@@ -4,6 +4,7 @@ import cn from "clsx";
 import { AboutRecord } from "@lib/generated/sdk";
 import { motion } from "framer-motion";
 import { easeOutExpo } from "@/utils/transitions";
+import { container } from "@/components/features/layout/Header/Header";
 
 interface AboutProps {
   data: AboutRecord;
@@ -11,7 +12,6 @@ interface AboutProps {
 
 export function About(props: AboutProps) {
   const { data } = props;
-  console.log(data);
   return (
     <section className={s.about}>
       <motion.div
@@ -42,7 +42,26 @@ export function About(props: AboutProps) {
           className={s["about-image"]}
         />
       </motion.div>
-      <motion.div className={s.content}>
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: {
+            delay: 0.1,
+            duration: 0.2,
+          },
+        }}
+        exit={{
+          opacity: 0,
+        }}
+        transition={{
+          duration: 0.4,
+          ease: easeOutExpo,
+        }}
+        className={s.content}
+      >
         <h2>{data.aboutContent?.title}</h2>
         <p className={s.contentText}>
           <span>

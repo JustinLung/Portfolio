@@ -9,7 +9,6 @@ interface PageProps {
 }
 
 export default function Page({ data }: PageProps) {
-  console.log(data);
   return (
     <>
       <About data={data} />

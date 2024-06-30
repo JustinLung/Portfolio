@@ -17,7 +17,7 @@ export function Hero(props: HeroProps) {
         exit={{ opacity: 0, y: 100 }}
         transition={{
           ease: easeOutExpo,
-          delay: 0.7,
+          delay: 0.3,
           duration: 0.3,
         }}
       >
@@ -29,7 +29,7 @@ export function Hero(props: HeroProps) {
         exit={{ opacity: 0, y: 100 }}
         transition={{
           ease: easeOutExpo,
-          delay: .8,
+          delay: .5,
           duration: 0.3,
         }}
       >

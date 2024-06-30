@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <BaseLayout>
         <Component {...pageProps} />
       </BaseLayout>
+      <PageTransition />
     </>
   );
 }

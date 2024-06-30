@@ -6,6 +6,21 @@ interface PreFooterProps {
   isDark?: boolean;
 }
 
+export const socials = [
+  {
+    href: "https://www.instagram.com/justinlung_/",
+    title: "Instagram",
+  },
+  {
+    href: "https://www.linkedin.com/in/justinlung123/",
+    title: "Linkedin",
+  },
+  {
+    href: "https://github.com/JustinLung",
+    title: "Github",
+  },
+];
+
 export function PreFooter(props: PreFooterProps) {
   const { isDark = false } = props;
   return (
@@ -16,15 +31,15 @@ export function PreFooter(props: PreFooterProps) {
       <div className={s.content}>
         <h2>GET IN TOUCH</h2>
         <ul>
-          <li>
-            <a href="/">INSTAGRAM</a>
-          </li>
-          <li>
-            <a href="/">LINKEDIN</a>
-          </li>
-          <li>
-            <a href="/">GITHUB</a>
-          </li>
+          {socials.map((social, i) => {
+            return (
+              <li>
+                <a href={social.href} target="_blank" rel="noopener noreferrer">
+                  {social.title}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </motion.section>

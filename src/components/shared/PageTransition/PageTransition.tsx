@@ -1,19 +1,19 @@
 // Big thanks to Studio Freight! github.com/studio-freight/
-import styles from './PageTransition.module.css';
-import { useAnimationControls } from 'framer-motion';
-import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
-import { useIsomorphicLayoutEffect } from 'react-use';
-import { motion } from 'framer-motion';
+import styles from "./PageTransition.module.css";
+import { useAnimationControls } from "framer-motion";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import { useIsomorphicLayoutEffect } from "react-use";
+import { motion } from "framer-motion";
 
-import { usePageTransition } from '@/state/pageTransition';
+import { usePageTransition } from "@/state/pageTransition";
 
 const variants = {
   visible: {
-    x: '100%',
+    x: "100%",
   },
   hidden: {
-    x: '0%',
+    x: "0%",
   },
 };
 
@@ -24,25 +24,27 @@ export const PageTransition = () => {
   const [curtainInComplete, setCurtainInComplete] = useState(false);
   const { triggerTransition } = usePageTransition();
   const controls = useAnimationControls();
-
+  
   useEffect(() => {
     if (!curtainInComplete) return;
+
     const changeRouteComplete = () => {
       setPageloaded(true);
     };
 
-    router.events.on('routeChangeComplete', changeRouteComplete);
+    router.events.on("routeChangeComplete", changeRouteComplete);
+
     return () => {
-      router.events.off('routeChangeComplete', changeRouteComplete);
+      router.events.off("routeChangeComplete", changeRouteComplete);
     };
   }, [curtainInComplete, router.events]);
 
   useIsomorphicLayoutEffect(() => {
-    if (triggerTransition === '') return;
+    if (triggerTransition === "") return;
     controls.set({
-      x: '-100%',
+      x: "-100%",
     });
-    controls.start('hidden');
+    controls.start("hidden");
   }, [controls, triggerTransition]);
 
   useIsomorphicLayoutEffect(() => {
@@ -51,12 +53,12 @@ export const PageTransition = () => {
     controls.set({
       x: 0,
     });
-    controls.start('visible');
+    controls.start("visible");
   }, [controls, pageLoaded]);
 
   return (
     <motion.div
-      className={styles['page-transition']}
+      className={styles["page-transition"]}
       animate={controls}
       variants={variants}
       transition={{
@@ -64,9 +66,9 @@ export const PageTransition = () => {
       }}
       ref={curtainRef}
       onAnimationComplete={(e: any) => {
-        if (e === 'visible') {
+        if (e === "visible") {
           usePageTransition.setState({
-            triggerTransition: '',
+            triggerTransition: "",
           });
           setCurtainInComplete(false);
           setPageloaded(false);

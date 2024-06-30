@@ -21,7 +21,6 @@ export default function Page({ data }: PageProps) {
 
   const filteredProjects = data.filter((project) => {
     if (!filter) return true;
-    console.log(project.projectType);
     return project?.projectType?.includes(filter);
   });
 

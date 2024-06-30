@@ -14,7 +14,6 @@ export function BaseLayout(props: BaseLayoutProps) {
       <Header />
       <main className={styles["main"]}>{props.children}</main>
       <Footer />
-      <PageTransition />
     </>
   );
 }

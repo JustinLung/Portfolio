@@ -29,16 +29,32 @@
 
   .experience-container {
     display: grid;
-    gap: 8px;
     margin-top: 2rem;
+    gap: 16px;
+
+    @media(--lg) {
+      gap: 24px;
+    }
 
     .experience {
-      font-size: 1rem;
+      font-size: .75rem;
       display: flex;
       justify-content: space-between;
 
       @media (--lg) {
         font-size: 1.25rem;
+      }
+
+      .maxWidth {
+        max-width: 7.5rem;
+
+        @media(--lg) {
+          max-width: unset;
+        }
+      }
+
+      .alignRight {
+        text-align: right;
       }
     }
   }

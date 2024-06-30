@@ -97,24 +97,34 @@ export function About(props: AboutProps) {
         <div className={s["experience-container"]}>
           <h2>Experience</h2>
           <div className={s.experience}>
-            <span>Mediacollege Amsterdam</span>
-            <span>MBO-4 Software Developer 2017-2020</span>
+            <span className={s.maxWidth}>Mediacollege Amsterdam</span>
+            <span className={s.alignRight}>
+              MBO-4 Software Developer 2017-2020
+            </span>
           </div>
           <div className={s.experience}>
-            <span>Engine Branding & Identity</span>
-            <span>Intern Frontend Developer 2019-2019</span>
+            <span className={s.maxWidth}>Engine Branding & Identity</span>
+            <span className={s.alignRight}>
+              Intern Frontend Developer 2019-2019
+            </span>
           </div>
           <div className={s.experience}>
-            <span>JustPremium B.V.</span>
-            <span>Intern Frontend Developer 2019-2020</span>
+            <span className={s.maxWidth}>JustPremium B.V.</span>
+            <span className={s.alignRight}>
+              Intern Frontend Developer 2019-2020
+            </span>
           </div>
           <div className={s.experience}>
-            <span>University University of Applied Sciences</span>
-            <span>AD FDND 2021-2023</span>
+            <span className={s.maxWidth}>
+              University University of Applied Sciences
+            </span>
+            <span className={s.alignRight}>AD FDND 2021-2023</span>
           </div>
           <div className={s.experience}>
-            <span>Merlin Studio</span>
-            <span>Junior Frontend Developer 2023-2024</span>
+            <span className={s.maxWidth}>Merlin Studio</span>
+            <span className={s.alignRight}>
+              Junior Frontend Developer 2023-2024
+            </span>
           </div>
         </div>
       </motion.div>

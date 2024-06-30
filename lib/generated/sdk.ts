@@ -2200,8 +2200,11 @@ export type ProjectModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   description?: InputMaybe<TextFilter>;
   doubleImage?: InputMaybe<GalleryFilter>;
+  fullScreenMedia?: InputMaybe<FileFilter>;
+  githubLink?: InputMaybe<StringFilter>;
   id?: InputMaybe<ItemIdFilter>;
   image?: InputMaybe<FileFilter>;
+  liveLink?: InputMaybe<StringFilter>;
   projectType?: InputMaybe<StringFilter>;
   slug?: InputMaybe<SlugFilter>;
   title?: InputMaybe<StringFilter>;
@@ -2224,8 +2227,12 @@ export enum ProjectModelOrderBy {
   UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
   UpdatedAtAsc = '_updatedAt_ASC',
   UpdatedAtDesc = '_updatedAt_DESC',
+  GithubLinkAsc = 'githubLink_ASC',
+  GithubLinkDesc = 'githubLink_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  LiveLinkAsc = 'liveLink_ASC',
+  LiveLinkDesc = 'liveLink_DESC',
   ProjectTypeAsc = 'projectType_ASC',
   ProjectTypeDesc = 'projectType_DESC',
   TitleAsc = 'title_ASC',
@@ -2250,8 +2257,11 @@ export type ProjectRecord = RecordInterface & {
   _updatedAt: Scalars['DateTime'];
   description?: Maybe<Scalars['String']>;
   doubleImage: Array<FileField>;
+  fullScreenMedia?: Maybe<FileField>;
+  githubLink?: Maybe<Scalars['String']>;
   id: Scalars['ItemId'];
   image?: Maybe<FileField>;
+  liveLink?: Maybe<Scalars['String']>;
   projectType?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
@@ -3009,7 +3019,10 @@ export type AboutpageFragment = { __typename?: 'AboutRecord', image?: (
 
 export type MediaFragment = { __typename?: 'FileField', url: string, alt?: string | null, width?: any | null, height?: any | null, title?: string | null };
 
-export type ProjectFragment = { __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, projectType?: string | null, image?: (
+export type ProjectFragment = { __typename?: 'ProjectRecord', title?: string | null, description?: string | null, slug?: string | null, projectType?: string | null, githubLink?: string | null, liveLink?: string | null, fullScreenMedia?: (
+    { __typename?: 'FileField' }
+    & MediaFragment
+  ) | null, image?: (
     { __typename?: 'FileField' }
     & MediaFragment
   ) | null, doubleImage: Array<(
@@ -3095,6 +3108,11 @@ export const ProjectFragmentDoc = gql`
   description
   slug
   projectType
+  githubLink
+  liveLink
+  fullScreenMedia {
+    ...media
+  }
   image {
     ...media
   }

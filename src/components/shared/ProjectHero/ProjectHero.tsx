@@ -30,9 +30,18 @@ export function ProjectHero(props: ProjectHeroProps) {
       <div className={cn(s.content, "container")}>
         <span className={s.type}>{data.projectType}</span>
         <p className={s.description}>{data.description}</p>
-        <Link href="/" className={s.link}>
-          Visit Site
-        </Link>
+        <div className={s["link-container"]}>
+          {data.liveLink && (
+            <Link href={data.liveLink as string} className={s.link}>
+              Visit Site
+            </Link>
+          )}
+          {data.githubLink && (
+            <Link href={data.githubLink as string} className={s.link}>
+              Github Repository
+            </Link>
+          )}
+        </div>
       </div>
     </section>
   );

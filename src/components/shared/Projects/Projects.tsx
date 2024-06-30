@@ -33,6 +33,7 @@ export function Projects(props: ProjectsProps) {
                   alt={project.image?.alt as string}
                   height={1080}
                   width={1920}
+                  className={s.projectImage}
                 />
               </Parallax>
               <div className={s.content}>

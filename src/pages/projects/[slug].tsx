@@ -1,6 +1,7 @@
 import MetaTags from "@/components/features/MetaTags";
 import { DoubleImage } from "@/components/shared/DoubleImage/DoubleImage";
 import { Parallax } from "@/components/shared/Parallax/Parallax";
+import { PreFooter } from "@/components/shared/PreFooter/PreFooter";
 import { ProjectHero } from "@/components/shared/ProjectHero/ProjectHero";
 import { nextClient } from "@lib/client";
 import { ProjectRecord } from "@lib/generated/sdk";
@@ -16,6 +17,7 @@ function Page({ data }: PageProps) {
     <>
       <ProjectHero data={data} />
       <DoubleImage data={data} />
+      <PreFooter isDark/>
     </>
   );
 }

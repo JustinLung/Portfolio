@@ -38,6 +38,11 @@ fragment project on ProjectRecord {
   description
   slug
   projectType
+  githubLink
+  liveLink
+  fullScreenMedia {
+    ...media
+  }
   image {
     ...media
   }

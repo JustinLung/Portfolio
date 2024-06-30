@@ -2440,8 +2440,11 @@ input ProjectModelFilter {
   _updatedAt: UpdatedAtFilter
   description: TextFilter
   doubleImage: GalleryFilter
+  fullScreenMedia: FileFilter
+  githubLink: StringFilter
   id: ItemIdFilter
   image: FileFilter
+  liveLink: StringFilter
   projectType: StringFilter
   slug: SlugFilter
   title: StringFilter
@@ -2464,8 +2467,12 @@ enum ProjectModelOrderBy {
   _unpublishingScheduledAt_DESC
   _updatedAt_ASC
   _updatedAt_DESC
+  githubLink_ASC
+  githubLink_DESC
   id_ASC
   id_DESC
+  liveLink_ASC
+  liveLink_DESC
   projectType_ASC
   projectType_DESC
   title_ASC
@@ -2497,8 +2504,11 @@ type ProjectRecord implements RecordInterface {
     markdown: Boolean
   ): String
   doubleImage: [FileField!]!
+  fullScreenMedia: FileField
+  githubLink: String
   id: ItemId!
   image: FileField
+  liveLink: String
   projectType: String
   slug: String
   title: String

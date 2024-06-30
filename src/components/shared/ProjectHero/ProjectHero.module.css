@@ -4,6 +4,7 @@
   .title {
     z-index: 1;
     position: absolute;
+    pointer-events: none;
     left: 50%;
     bottom: 2rem;
     transform: translateX(-50%);
@@ -56,13 +57,17 @@
 .link {
   opacity: 0.5;
   color: var(--white);
-  font-size: 1rem;
+  font-size: 0.75rem;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: color 0.3s;
   color: var(--white);
   padding-bottom: 8px;
+
+  @media (--lg) {
+    font-size: 1rem;
+  }
 
   &::before {
     content: "";
@@ -82,5 +87,15 @@
   &.active::before {
     visibility: visible;
     transform: scaleX(1);
+  }
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+
+  @media (--lg) {
+    flex-direction: row;
+    gap: 1rem;
   }
 }

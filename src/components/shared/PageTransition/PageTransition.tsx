@@ -7,6 +7,7 @@ import { useIsomorphicLayoutEffect } from "react-use";
 import { motion } from "framer-motion";
 
 import { usePageTransition } from "@/state/pageTransition";
+import { easeInOutExpo } from "@/utils/transitions";
 
 const variants = {
   visible: {
@@ -62,7 +63,8 @@ export const PageTransition = () => {
       animate={controls}
       variants={variants}
       transition={{
-        duration: 0.4,
+        duration: 0.7,
+        ease: easeInOutExpo
       }}
       ref={curtainRef}
       onAnimationComplete={(e: any) => {

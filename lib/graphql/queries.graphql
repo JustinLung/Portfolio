@@ -1,0 +1,23 @@
+query HomePage {
+  home {
+    ...homepage
+  }
+}
+
+query AboutPage {
+  about {
+    ...aboutpage
+  }
+}
+
+query ProjectPage {
+  allProjects {
+   ...project
+  }
+}
+
+query getProjectBySlug($slug: String!) {
+  project(filter: { slug: { eq: $slug } }) {
+    ...project
+  }
+}

@@ -1,32 +1,77 @@
 {
-	"name": "portfolio",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^5.27.0",
-		"@typescript-eslint/parser": "^5.27.0",
-		"eslint": "^8.16.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.6.2",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"svelte-preprocess": "^4.10.6",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.4",
-		"vite": "^3.1.0"
-	},
-	"type": "module"
+  "name": "nextcalibur",
+  "version": "0.2.1",
+  "private": true,
+  "engines": {
+    "npm": "please use yarn",
+    "node": "18"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "prepare": "husky install",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write './src/**/*'",
+    "component": "node scripts/component",
+    "state": "node scripts/state",
+    "favicons": "node scripts/favicons && yarn format",
+    "svgr": "svgr src/icons --template src/icons/svgrtemplate.js --index-template src/icons/index-template.js --config-file .svgr.config.js --out-dir src/components/icons",
+    "generate-graphql": "graphql-codegen -r dotenv/config",
+    "watch-graphql": "graphql-codegen --watch -r dotenv/config"
+  },
+  "lint-staged": {
+    "**/*.(js|ts|tsx)": [
+      "eslint --fix"
+    ],
+    "**/*.(js|json|ts|tsx)": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "framer-motion": "^10.16.4",
+    "graphql": "^16.6.0",
+    "graphql-codegen-plugin-typescript-swr": "0.8.3",
+    "graphql-request": "5.1.0",
+    "husky": "^8.0.3",
+    "next": "13.4.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intersection-observer": "^9.8.1",
+    "react-use": "^17.4.0",
+    "typescript": "5.0.4",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@csstools/postcss-global-data": "^2.0.1",
+    "@graphql-codegen/cli": "2.16.4",
+    "@graphql-codegen/introspection": "^2.2.3",
+    "@graphql-codegen/schema-ast": "^2.6.1",
+    "@graphql-codegen/typescript": "3.0.0",
+    "@graphql-codegen/typescript-graphql-request": "^4.5.8",
+    "@graphql-codegen/typescript-operations": "3.0.0",
+    "@studio-freight/lenis": "^1.0.12",
+    "@svgr/cli": "^8.0.1",
+    "@types/node": "20.2.3",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "^10.4.14",
+    "clsx": "^2.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "favicons": "^6.2.2",
+    "lint-staged": "^14.0.0",
+    "postcss": "^8.4.29",
+    "postcss-at-rules-variables": "^0.3.0",
+    "postcss-custom-media": "^10.0.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.1.1",
+    "postcss-utilities": "^0.8.4",
+    "prettier": "^3.0.1",
+    "ts-node": "^10.9.1"
+  }
 }

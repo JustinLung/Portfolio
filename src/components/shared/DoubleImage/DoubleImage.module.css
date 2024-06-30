@@ -1,0 +1,20 @@
+.double {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+
+  @media (--lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: calc(80 * var(--svh));
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

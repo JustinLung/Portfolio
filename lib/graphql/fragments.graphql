@@ -1,0 +1,52 @@
+fragment homepage on HomeRecord {
+  hero {
+    title
+    subtext
+  }
+  highlightedText
+  projectTitle
+  highlights {
+    title
+    description
+    slug
+    image {
+      ...media
+    }
+  }
+}
+
+fragment aboutpage on AboutRecord {
+  image {
+    ...media
+  }
+  aboutContent {
+    title
+    content
+  }
+}
+
+fragment media on FileField {
+  url
+  alt
+  width
+  height
+  title
+}
+
+fragment project on ProjectRecord {
+  title
+  description
+  slug
+  projectType
+  githubLink
+  liveLink
+  fullScreenMedia {
+    ...media
+  }
+  image {
+    ...media
+  }
+  doubleImage {
+    ...media
+  }
+}

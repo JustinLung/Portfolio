@@ -1,0 +1,36 @@
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+:root {
+  --ff-primary: 'Inter';
+  /* --ff-secondary: 'Comic Sans MS'; */
+}
+
+[class*='ff-p'] {
+  font-family: var(--ff-primary);
+}
+
+/* [class*='ff-s'] {
+  font-family: var(--ff-secondary);
+  font-weight: 400;
+}
+
+.ff-p-xxl {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -0.24px;
+
+  @media (--md) {
+    font-size: 6rem;
+    letter-spacing: -0.48px;
+  }
+} */

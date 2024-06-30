@@ -16,17 +16,6 @@ interface ProjectsProps {
 
 export function Projects(props: ProjectsProps) {
   const { title, data } = props;
-  const control = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
-
   const projectsToRender = data?.highlights.slice(-3) || [];
 
   return (
@@ -47,15 +36,17 @@ export function Projects(props: ProjectsProps) {
                 />
               </Parallax>
               <div className={s.content}>
-                <p>{project.title}</p>
-                <p>{project.description}</p>
-                <Button
-                  icon
-                  href={"/projects/" + project.slug}
-                  className={s.btn}
-                >
-                  View Project
-                </Button>
+                <div>
+                  <p>{project.title}</p>
+                  <p  className={s.description}>{project.description}</p>
+                  <Button
+                    icon
+                    href={"/projects/" + project.slug}
+                    className={s.btn}
+                  >
+                    View Project
+                  </Button>
+                </div>
               </div>
             </motion.article>
           ))}

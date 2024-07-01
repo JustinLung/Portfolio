@@ -33,7 +33,7 @@ export function PreFooter(props: PreFooterProps) {
         <ul>
           {socials.map((social, i) => {
             return (
-              <li>
+              <li key={`socials-${i}`}>
                 <a href={social.href} target="_blank" rel="noopener noreferrer">
                   {social.title}
                 </a>

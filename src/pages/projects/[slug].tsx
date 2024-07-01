@@ -17,7 +17,7 @@ function Page({ data }: PageProps) {
     <>
       <ProjectHero data={data} />
       <DoubleImage data={data} />
-      <PreFooter isDark/>
+      <PreFooter isDark />
     </>
   );
 }
@@ -29,6 +29,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const paths = slugsQuery.projects.map((project: any) => ({
       params: { slug: project.slug },
     }));
+
+    console.log("Fetched slugs:", slugsQuery.projects);
 
     return {
       paths,
@@ -46,6 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const slug = context?.params?.slug as string;
     const projectQuery = await nextClient.getProjectBySlug({ slug });
+    console.log("Fetched project data:", projectQuery.project);
 
     return {
       props: {

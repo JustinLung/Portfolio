@@ -16,11 +16,11 @@ export function ProjectHero(props: ProjectHeroProps) {
   return (
     <section>
       <div className={s["hero-wrapper"]}>
-        <h1 className={cn(s.title, "container")}>{data.title}</h1>
+        <h1 className={cn(s.title, "container")}>{data?.title}</h1>
         <Parallax className={s["hero-container"]}>
           <Image
-            src={data.image?.url as string}
-            alt={data.image?.alt as string}
+            src={data?.image?.url as string}
+            alt={data?.image?.alt as string}
             height={1080}
             width={1920}
             className={s["hero"]}
@@ -28,16 +28,16 @@ export function ProjectHero(props: ProjectHeroProps) {
         </Parallax>
       </div>
       <div className={cn(s.content, "container")}>
-        <span className={s.type}>{data.projectType}</span>
-        <p className={s.description}>{data.description}</p>
+        <span className={s.type}>{data?.projectType}</span>
+        <p className={s.description}>{data?.description}</p>
         <div className={s["link-container"]}>
-          {data.liveLink && (
-            <Link href={data.liveLink as string} className={s.link}>
+          {data?.liveLink && (
+            <Link href={data?.liveLink as string} className={s.link}>
               Visit Site
             </Link>
           )}
-          {data.githubLink && (
-            <Link href={data.githubLink as string} className={s.link}>
+          {data?.githubLink && (
+            <Link href={data?.githubLink as string} className={s.link}>
               Github Repository
             </Link>
           )}

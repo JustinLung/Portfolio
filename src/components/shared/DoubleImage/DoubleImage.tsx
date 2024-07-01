@@ -12,7 +12,7 @@ export function DoubleImage(props: DoubleImageProps) {
   const { data } = props;
   return (
     <div className={cn(s.double, "container")}>
-      {data.doubleImage.map((double, i) => {
+      {data?.doubleImage.map((double, i) => {
         return (
           <Parallax className={s.imageContainer}>
             <Image

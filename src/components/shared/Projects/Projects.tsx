@@ -8,6 +8,8 @@ import Image from "next/image";
 import Button from "../Button/Button";
 import { Parallax } from "../Parallax/Parallax";
 import { motion } from "framer-motion";
+import { easeInOutExpo, easeOutExpo } from "@/utils/transitions";
+import { container } from "@/components/features/layout/Header/Header";
 
 interface ProjectsProps {
   data: HomeRecord;
@@ -22,11 +24,36 @@ export function Projects(props: ProjectsProps) {
     <article className={cn(s.projects)}>
       <div className="container">
         <div className={s["projects-header"]}>
-          <h2>{title}</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ delay: 0.3, ease: easeOutExpo }}
+            viewport={{ once: true }}
+          >
+            {title}
+          </motion.h2>
         </div>
         <div className={s["projects-container"]}>
           {projectsToRender.map((project, i) => (
-            <motion.article key={i} className={s.item}>
+            <motion.article
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              transition={{ ease: easeInOutExpo, duration: 0.3 }}
+              viewport={{
+                once: true,
+              }}
+              key={i}
+              className={s.item}
+            >
               <Parallax>
                 <Image
                   src={project.image?.url as string}
@@ -39,7 +66,7 @@ export function Projects(props: ProjectsProps) {
               <div className={s.content}>
                 <div>
                   <p>{project.title}</p>
-                  <p  className={s.description}>{project.description}</p>
+                  <p className={s.description}>{project.description}</p>
                   <Button
                     icon
                     href={"/projects/" + project.slug}

@@ -3,6 +3,8 @@ import s from "./DoubleImage.module.css";
 import cn from "clsx";
 import Image from "next/image";
 import { Parallax } from "../Parallax/Parallax";
+import { motion } from "framer-motion";
+import { easeOutExpo } from "@/utils/transitions";
 
 interface DoubleImageProps {
   data: ProjectRecord;
@@ -11,7 +13,16 @@ interface DoubleImageProps {
 export function DoubleImage(props: DoubleImageProps) {
   const { data } = props;
   return (
-    <div className={cn(s.double, "container")}>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ delay: 0.3, ease: easeOutExpo }}
+      viewport={{ once: true }}
+      className={cn(s.double, "container")}
+    >
       {data?.doubleImage.map((double, i) => {
         return (
           <Parallax className={s.imageContainer}>
@@ -24,6 +35,6 @@ export function DoubleImage(props: DoubleImageProps) {
           </Parallax>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

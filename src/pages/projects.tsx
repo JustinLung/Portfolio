@@ -34,6 +34,7 @@ export default function Page({ data }: PageProps) {
           transition={{
             ease: easeOutExpo,
             duration: 0.5,
+            delay: 0.3,
           }}
         >
           PROJECTS

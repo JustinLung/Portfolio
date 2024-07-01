@@ -1,14 +1,26 @@
 import { Github, Instagram, Linkedin } from "@/components/icons";
+import { motion } from "framer-motion";
 import s from "./Footer.module.css";
 import cn from "clsx";
 import { Divider } from "@/components/shared/Divider/Divider";
 import Button from "@/components/shared/Button/Button";
+import { easeOutExpo } from "@/utils/transitions";
 
 export function Footer() {
   return (
     <footer className={s["footer"]}>
       <div className="container">
-        <p className={s["title"]}>Let's Work Togheter</p>
+        <motion.p
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          transition={{
+            ease: easeOutExpo,
+          }}
+          className={s["title"]}
+        >
+          Let's Work Togheter
+        </motion.p>
         <div className={s["main-content"]}>
           <ul className={s["contact-list"]}>
             <li className={s["list-title"]}>Contact me</li>

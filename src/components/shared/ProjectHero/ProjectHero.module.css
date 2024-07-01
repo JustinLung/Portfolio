@@ -22,7 +22,7 @@
   width: 100%;
 
   @media (--lg) {
-    height: calc(90 * var(--svh));
+    height: calc(100 * var(--svh));
   }
 
   .hero {

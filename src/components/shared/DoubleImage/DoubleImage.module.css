@@ -9,7 +9,11 @@
 
   .imageContainer {
     width: 100%;
-    height: calc(80 * var(--svh));
+    height: calc(50 * var(--svh));
+    
+    @media (--lg) {
+      height: calc(80 * var(--svh));
+    }
   }
 
   img {

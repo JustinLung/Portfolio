@@ -1,15 +1,15 @@
 .hero-wrapper {
   position: relative;
+  
+  .title-container {
+    padding: 0 1rem;
+  }
 
   .title {
     z-index: 1;
     position: absolute;
     pointer-events: none;
-    left: 50%;
     bottom: 2rem;
-    transform: translateX(-50%);
-    width: 100%;
-
     font-family: "FKScreamer";
     text-transform: uppercase;
     font-weight: 400;

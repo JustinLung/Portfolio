@@ -1,6 +1,7 @@
 import s from "./PreFooter.module.css";
 import { motion } from "framer-motion";
 import cn from "clsx";
+import { easeOutExpo } from "@/utils/transitions";
 
 interface PreFooterProps {
   isDark?: boolean;
@@ -24,13 +25,26 @@ export const socials = [
 export function PreFooter(props: PreFooterProps) {
   const { isDark = false } = props;
   return (
-    <motion.section
-      layout="position"
-      className={cn(s.PreFooter, isDark && s["dark-mode"])}
-    >
+    <section className={cn(s.PreFooter, isDark && s["dark-mode"])}>
       <div className={s.content}>
-        <h2>GET IN TOUCH</h2>
-        <ul>
+        <motion.h2
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          transition={{
+            ease: easeOutExpo,
+          }}
+        >
+          GET IN TOUCH
+        </motion.h2>
+        <motion.ul
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          viewport={{ once: true }}
+          transition={{
+            ease: easeOutExpo,
+          }}
+        >
           {socials.map((social, i) => {
             return (
               <li key={`socials-${i}`}>
@@ -40,8 +54,8 @@ export function PreFooter(props: PreFooterProps) {
               </li>
             );
           })}
-        </ul>
+        </motion.ul>
       </div>
-    </motion.section>
+    </section>
   );
 }

@@ -16,8 +16,8 @@ export default function Page({ data }: PageProps) {
   return (
     <>
       <MetaTags
-        pageTitle={"Homepage"}
-        pageDescription={"This is the homepage"}
+        pageTitle={"Portfolio - Home"}
+        pageDescription={"This is my portfolio"}
         currentUrl={"/"}
       />
       <Hero

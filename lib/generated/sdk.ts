@@ -3064,6 +3064,11 @@ export type GetProjectBySlugQuery = { __typename?: 'Query', project?: (
     & ProjectFragment
   ) | null };
 
+export type GetAllProjectBySlugQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllProjectBySlugQuery = { __typename?: 'Query', allProjects: Array<{ __typename?: 'ProjectRecord', slug?: string | null }> };
+
 export const MediaFragmentDoc = gql`
     fragment media on FileField {
   url
@@ -3153,6 +3158,13 @@ export const GetProjectBySlugDocument = gql`
 }
     ${ProjectFragmentDoc}
 ${MediaFragmentDoc}`;
+export const GetAllProjectBySlugDocument = gql`
+    query getAllProjectBySlug {
+  allProjects {
+    slug
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -3172,6 +3184,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     getProjectBySlug(variables: GetProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetProjectBySlugQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetProjectBySlugQuery>(GetProjectBySlugDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectBySlug', 'query');
+    },
+    getAllProjectBySlug(variables?: GetAllProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetAllProjectBySlugQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetAllProjectBySlugQuery>(GetAllProjectBySlugDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getAllProjectBySlug', 'query');
     }
   };
 }
@@ -3191,6 +3206,9 @@ export function getSdkWithHooks(client: GraphQLClient, withWrapper: SdkFunctionW
     },
     useGetProjectBySlug(key: SWRKeyInterface, variables: GetProjectBySlugQueryVariables, config?: SWRConfigInterface<GetProjectBySlugQuery, ClientError>) {
       return useSWR<GetProjectBySlugQuery, ClientError>(key, () => sdk.getProjectBySlug(variables), config);
+    },
+    useGetAllProjectBySlug(key: SWRKeyInterface, variables?: GetAllProjectBySlugQueryVariables, config?: SWRConfigInterface<GetAllProjectBySlugQuery, ClientError>) {
+      return useSWR<GetAllProjectBySlugQuery, ClientError>(key, () => sdk.getAllProjectBySlug(variables), config);
     }
   };
 }

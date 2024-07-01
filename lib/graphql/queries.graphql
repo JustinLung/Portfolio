@@ -21,3 +21,9 @@ query getProjectBySlug($slug: String!) {
     ...project
   }
 }
+
+query getAllProjectBySlug {
+  allProjects {
+    slug
+  }
+}

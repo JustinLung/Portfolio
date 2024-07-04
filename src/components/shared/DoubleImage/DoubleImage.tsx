@@ -25,7 +25,7 @@ export function DoubleImage(props: DoubleImageProps) {
     >
       {data?.doubleImage.map((double, i) => {
         return (
-          <Parallax className={s.imageContainer}>
+          <Parallax className={s.imageContainer} key={`image-${i}`}>
             <Image
               src={double?.url as string}
               alt={double?.alt as string}

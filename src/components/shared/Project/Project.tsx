@@ -44,7 +44,7 @@ export function Project(props: ProjectProps) {
       <div className={s.content}>
         <div>
           <p>{title}</p>
-          <p>{description}</p>
+          <p className={s.description}>{description}</p>
           <Button icon href={"/projects/" + slug} className={s.btn}>
             View Project
           </Button>

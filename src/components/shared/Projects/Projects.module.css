@@ -57,12 +57,12 @@
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 1) 100%
       );
-      
+
       div {
         margin-top: auto;
         padding: 16px;
 
-        @media(--lg) {
+        @media (--lg) {
           padding: 24px;
         }
 
@@ -72,6 +72,9 @@
 
         .description {
           max-width: 35rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
 
         .btn {

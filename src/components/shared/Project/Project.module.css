@@ -55,6 +55,10 @@
       padding: 16px;
 
       @media(--lg) {
+        padding: 24px;
+      }
+
+      @media(--xxl) {
         padding: 32px;
       }
 

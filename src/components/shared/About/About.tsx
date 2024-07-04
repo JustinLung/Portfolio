@@ -10,29 +10,44 @@ interface AboutProps {
   data: AboutRecord;
 }
 
+const experience = [
+  {
+    href: "https://ma-web.nl/",
+    title: "Mediacollege Amsterdam",
+    experience: "MBO-4 Software Developer 2017-2020",
+  },
+  {
+    href: "https://enginebranding.nl/",
+    title: "Engine Branding & Identity",
+    experience: "Intern Frontend Developer 2019-2019",
+  },
+  {
+    href: "https://gumgum.com/",
+    title: "JustPremium B.V.",
+    experience: "Intern Frontend Developer 2019-2020",
+  },
+  {
+    href: "https://fdnd.nl/",
+    title: "University of Applied Sciences",
+    experience: "AD FDND 2021-2023",
+  },
+  {
+    href: "https://merlin.studio/",
+    title: "Merlin Studio",
+    experience: "Junior Frontend Developer 2023-2024",
+  },
+];
+
 export function About(props: AboutProps) {
   const { data } = props;
   return (
     <section className={s.about}>
       <motion.div
         className={s.sticky}
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 0.1,
-            duration: 0.2,
-          },
-        }}
-        exit={{
-          opacity: 0,
-        }}
-        transition={{
-          duration: 0.4,
-          ease: easeOutExpo,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.2 } }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4, ease: easeOutExpo }}
       >
         <Image
           src={data.image?.url as string}
@@ -43,23 +58,10 @@ export function About(props: AboutProps) {
         />
       </motion.div>
       <motion.div
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 0.1,
-            duration: 0.2,
-          },
-        }}
-        exit={{
-          opacity: 0,
-        }}
-        transition={{
-          duration: 0.4,
-          ease: easeOutExpo,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.2 } }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4, ease: easeOutExpo }}
         className={s.content}
       >
         <h2>{data.aboutContent?.title}</h2>
@@ -96,36 +98,19 @@ export function About(props: AboutProps) {
 
         <div className={s["experience-container"]}>
           <h2>Experience</h2>
-          <div className={s.experience}>
-            <span className={s.maxWidth}>Mediacollege Amsterdam</span>
-            <span className={s.alignRight}>
-              MBO-4 Software Developer 2017-2020
-            </span>
-          </div>
-          <div className={s.experience}>
-            <span className={s.maxWidth}>Engine Branding & Identity</span>
-            <span className={s.alignRight}>
-              Intern Frontend Developer 2019-2019
-            </span>
-          </div>
-          <div className={s.experience}>
-            <span className={s.maxWidth}>JustPremium B.V.</span>
-            <span className={s.alignRight}>
-              Intern Frontend Developer 2019-2020
-            </span>
-          </div>
-          <div className={s.experience}>
-            <span className={s.maxWidth}>
-              University University of Applied Sciences
-            </span>
-            <span className={s.alignRight}>AD FDND 2021-2023</span>
-          </div>
-          <div className={s.experience}>
-            <span className={s.maxWidth}>Merlin Studio</span>
-            <span className={s.alignRight}>
-              Junior Frontend Developer 2023-2024
-            </span>
-          </div>
+          {experience.map((project, i) => (
+            <div key={i} className={s.experience}>
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(s.maxWidth, s.projectTitle)}
+              >
+                {project.title}
+              </a>
+              <span className={s.alignRight}>{project.experience}</span>
+            </div>
+          ))}
         </div>
       </motion.div>
     </section>

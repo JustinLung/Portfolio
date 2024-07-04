@@ -41,12 +41,14 @@
       display: flex;
       justify-content: space-between;
 
+
       @media (--lg) {
         font-size: 1.25rem;
       }
 
       .maxWidth {
         max-width: 7.5rem;
+        color: var(--black);
 
         @media(--lg) {
           max-width: unset;

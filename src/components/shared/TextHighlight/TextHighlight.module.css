@@ -13,7 +13,8 @@
   .paragraph {
     font-size: 2rem;
     color: var(--black);
-    
+    max-width: 70rem;
+    text-align: center;
 
     @media (--lg) {
       font-size: 4rem;

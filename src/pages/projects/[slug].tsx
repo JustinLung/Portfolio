@@ -15,6 +15,11 @@ interface PageProps {
 function Page({ data }: PageProps) {
   return (
     <>
+      <MetaTags
+        pageTitle={`Portfolio - ${data.title}`}
+        pageDescription={data.description as string}
+        currentUrl={"/projects" + data.slug}
+      />
       <ProjectHero data={data} />
       <DoubleImage data={data} />
       <PreFooter isDark />
@@ -22,9 +27,9 @@ function Page({ data }: PageProps) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async context => {
+export const getStaticPaths: GetStaticPaths = async (context) => {
   const slugCollection = await nextClient.getAllProjectBySlug();
-  const slugs = slugCollection.allProjects.map(project => ({
+  const slugs = slugCollection.allProjects.map((project) => ({
     params: { slug: project.slug as string },
   }));
   return {
@@ -33,19 +38,18 @@ export const getStaticPaths: GetStaticPaths = async context => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context?.params?.slug as string;
   const projectQuery = nextClient.getProjectBySlug({ slug });
 
-  const [project] = await Promise.allSettled([
-    projectQuery
-  ])
+  const [project] = await Promise.allSettled([projectQuery]);
 
   return {
     props: {
-      data: (project as PromiseFulfilledResult<GetProjectBySlugQuery>).value.project
-    }
-  }
+      data: (project as PromiseFulfilledResult<GetProjectBySlugQuery>).value
+        .project,
+    },
+  };
 };
 
 export default Page;

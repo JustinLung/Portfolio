@@ -27,7 +27,6 @@
     height: calc(60 * var(--svh));
     object-fit: cover;
     width: 100%;
-    mask: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 5%, white 30%);
   }
 
   p {
@@ -45,10 +44,19 @@
     bottom: 0;
     height: 100%;
     display: grid;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
 
     div {
       margin-top: auto;
       padding: 16px;
+
+      @media(--lg) {
+        padding: 32px;
+      }
 
       .description {
         max-width: 35rem;
@@ -102,7 +110,7 @@
     cursor: pointer;
     position: relative;
     transition: color 0.3s;
-    
+
     white-space: nowrap;
 
     padding: 0;
@@ -119,7 +127,7 @@
       visibility: hidden;
       transform: scaleX(0);
       transform-origin: left;
-      transition: all .7s var(--easeInOutExpo);
+      transition: all 0.7s var(--easeInOutExpo);
     }
 
     &:hover::before,

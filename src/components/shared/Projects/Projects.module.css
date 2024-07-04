@@ -52,10 +52,19 @@
       height: 100%;
       width: 100%;
       display: grid;
-
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%
+      );
+      
       div {
         margin-top: auto;
         padding: 16px;
+
+        @media (--lg) {
+          padding: 32px;
+        }
 
         .description {
           max-width: 35rem;

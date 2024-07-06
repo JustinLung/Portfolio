@@ -40,7 +40,7 @@ export function Loader(props: LoaderProps) {
           ease: easeInOutExpo,
           // @ts-ignore
           onUpdate: (latest) => updateProgress(latest / 100),
-        }
+        },
       );
 
       const duration = 2;
@@ -56,7 +56,7 @@ export function Loader(props: LoaderProps) {
           onComplete: () => {
             ref.current!.style.visibility = "hidden";
           },
-        }
+        },
       );
 
       Lenis?.start();

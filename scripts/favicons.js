@@ -11,12 +11,12 @@ const configuration = {
   appName: process.env.COMPANY_NAME, // Your application's name. `string`
   appShortName: process.env.COMPANY_NAME, // Your application's short_name. `string`. Optional. If not set, appName will be used
   appDescription: process.env.COMPANY_NAME, // Your application's description. `string`
-  developerName: 'Merlin Studio', // Your (or your developer's) name. `string`
-  developerURL: 'https://merlin.studio', // Your (or your developer's) URL. `string`
+  developerName: 'Justin Lung', // Your (or your developer's) name. `string`
+  developerURL: 'https://justinlung.com/', // Your (or your developer's) URL. `string`
   dir: 'auto', // Primary text direction for name, short_name, and description
   lang: 'en-US', // Primary language for name and short_name
-  background: '#111010', // Background colour for flattened icons. `string`
-  theme_color: '#111010', // Theme color user for example in Android's task switcher. `string`
+  background: '#2A9D8F', // Background colour for flattened icons. `string`
+  theme_color: '#2A9D8F', // Theme color user for example in Android's task switcher. `string`
   appleStatusBarStyle: 'black-translucent', // Style for Apple status bar: "black-translucent", "default", "black". `string`
   display: 'standalone', // Preferred display mode: "fullscreen", "standalone", "minimal-ui" or "browser". `string`
   orientation: 'any', // Default orientation: "any", "natural", "portrait" or "landscape". `string`

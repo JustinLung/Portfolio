@@ -98,7 +98,7 @@
       border-color 250ms var(--easeOutExpo) 160ms,
       transform 250ms var(--easeOutExpo) 160ms;
 
-      font-size: 1.8rem;
+    font-size: 1.8rem;
 
     &::after {
       background-color: var(--button-color);

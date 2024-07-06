@@ -11,11 +11,11 @@
 }
 
 :root {
-  --ff-primary: 'Inter';
+  --ff-primary: "Inter";
   /* --ff-secondary: 'Comic Sans MS'; */
 }
 
-[class*='ff-p'] {
+[class*="ff-p"] {
   font-family: var(--ff-primary);
 }
 

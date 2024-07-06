@@ -1,5 +1,5 @@
-import Lenis from '@studio-freight/lenis';
-import { create } from 'zustand';
+import Lenis from "@studio-freight/lenis";
+import { create } from "zustand";
 
 export type LenisProps = {
   Lenis?: Lenis;

@@ -16,8 +16,8 @@ export default function Image(props: ImageInterface) {
         alt={alt}
         height={height}
         width={width}
-        fetchPriority={priority ? 'high' : undefined}
-        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? "high" : undefined}
+        loading={priority ? "eager" : "lazy"}
         decoding="async"
       />
     </picture>

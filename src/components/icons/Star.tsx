@@ -1,5 +1,5 @@
-import * as React from 'react';
-import type { SVGProps } from 'react';
+import * as React from "react";
+import type { SVGProps } from "react";
 const SvgStar = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 18 18">
     <path

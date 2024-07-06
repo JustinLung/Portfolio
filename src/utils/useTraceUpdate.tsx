@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 // usage: useTraceUpdate({ prop1, prop2, prop3 })
 export function useTraceUpdate(props: any) {
@@ -12,7 +12,7 @@ export function useTraceUpdate(props: any) {
       return ps;
     }, {});
     if (Object.keys(changedProps).length > 0) {
-      console.log('Changed props:', changedProps);
+      console.log("Changed props:", changedProps);
     }
     prev.current = props;
   });

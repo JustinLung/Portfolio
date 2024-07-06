@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 interface MetaTagsInterface {
   pageTitle: string;
@@ -18,19 +18,19 @@ export default function MetaTags(props: MetaTagsInterface) {
 
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={currentUrl.replace('www.', '')} />
+      <meta property="og:url" content={currentUrl.replace("www.", "")} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={image} />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={currentUrl.replace('www.', '')} />
+      <meta property="twitter:url" content={currentUrl.replace("www.", "")} />
       <meta property="twitter:title" content={pageTitle} />
       <meta property="twitter:description" content={pageDescription} />
       <meta property="twitter:image" content={image} />
 
-      <link rel="canonical" href={currentUrl.replace('www.', '')} />
+      <link rel="canonical" href={currentUrl.replace("www.", "")} />
     </Head>
   );
 }

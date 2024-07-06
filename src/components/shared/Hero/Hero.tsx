@@ -29,7 +29,7 @@ export function Hero(props: HeroProps) {
         exit={{ opacity: 0, y: 100 }}
         transition={{
           ease: easeOutExpo,
-          delay: .5,
+          delay: 0.5,
           duration: 0.3,
         }}
       >

@@ -25,7 +25,7 @@ export const PageTransition = () => {
   const [curtainInComplete, setCurtainInComplete] = useState(false);
   const { triggerTransition } = usePageTransition();
   const controls = useAnimationControls();
-  
+
   useEffect(() => {
     if (!curtainInComplete) return;
 
@@ -64,7 +64,7 @@ export const PageTransition = () => {
       variants={variants}
       transition={{
         duration: 0.7,
-        ease: easeInOutExpo
+        ease: easeInOutExpo,
       }}
       ref={curtainRef}
       onAnimationComplete={(e: any) => {

@@ -1,6 +1,6 @@
 .hero-wrapper {
   position: relative;
-  
+
   .title-container {
     padding: 0 1rem;
   }
@@ -94,7 +94,7 @@
 .link-container {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 
   @media (--lg) {
     flex-direction: row;

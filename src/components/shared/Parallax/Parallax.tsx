@@ -18,7 +18,7 @@ export function Parallax(props: ParallaxProps) {
   let {
     reverse,
     children,
-    forceParallax = true  ,
+    forceParallax = true,
     hasReveal = false,
     modifier = 8,
     ...rest
@@ -37,7 +37,7 @@ export function Parallax(props: ParallaxProps) {
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [`${reverse ? "" : "-"}${modifier}%`, `${reverse ? "-" : ""}${modifier}%`]
+    [`${reverse ? "" : "-"}${modifier}%`, `${reverse ? "-" : ""}${modifier}%`],
   );
 
   return (

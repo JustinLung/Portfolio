@@ -79,7 +79,7 @@ export function ProjectHero(props: ProjectHeroProps) {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{
-            opacity: .5,
+            opacity: 0.5,
           }}
           transition={{ delay: 0.3, ease: easeOutExpo }}
           viewport={{ once: true }}

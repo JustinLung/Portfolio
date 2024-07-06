@@ -28,7 +28,7 @@
   font-size: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 
   .ProgressBar {
     width: 0%;

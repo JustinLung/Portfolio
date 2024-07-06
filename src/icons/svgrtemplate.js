@@ -1,5 +1,5 @@
 const template = (variables, { tpl }) => {
-    return tpl`
+  return tpl`
   ${variables.imports};
   
   ${variables.interfaces};
@@ -9,8 +9,7 @@ const template = (variables, { tpl }) => {
   );
   
   ${variables.exports};
-  `
-  }
-  
-  module.exports = template
-  
+  `;
+};
+
+module.exports = template;

@@ -1,6 +1,10 @@
-import { easeOutExpo } from '@/utils/transitions';
-import { AnimationOptionsWithValueOverrides, useAnimate, useInView } from 'framer-motion';
-import { useEffect } from 'react';
+import { easeOutExpo } from "@/utils/transitions";
+import {
+  AnimationOptionsWithValueOverrides,
+  useAnimate,
+  useInView,
+} from "framer-motion";
+import { useEffect } from "react";
 
 export function useOverflowAnimation({
   animationConfig,
@@ -9,7 +13,7 @@ export function useOverflowAnimation({
   inViewConfig?: {
     root?: any;
     once?: boolean;
-    amount?: 'some' | 'all' | number;
+    amount?: "some" | "all" | number;
   };
   animationConfig?: AnimationOptionsWithValueOverrides;
 }) {
@@ -25,7 +29,7 @@ export function useOverflowAnimation({
         scope.current,
         {
           opacity: [0, 1],
-          y: ['100%', '0%'],
+          y: ["100%", "0%"],
         },
         {
           duration: 0.8,

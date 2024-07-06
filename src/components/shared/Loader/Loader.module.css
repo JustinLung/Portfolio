@@ -1,0 +1,39 @@
+.Loader {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--white);
+  position: fixed;
+  width: 100%;
+  inset: 0;
+  z-index: 101;
+}
+
+@media (--lgMax) {
+  .LoaderText {
+    font-size: 2rem;
+  }
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  width: 95%;
+  font-family: "FKScreamer";
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  .ProgressBar {
+    width: 0%;
+    height: 4px;
+    background-color: var(--white);
+    transform-origin: left;
+  }
+}

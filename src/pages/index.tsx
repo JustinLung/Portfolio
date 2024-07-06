@@ -7,12 +7,14 @@ import TextHighlight from "@/components/shared/TextHighlight/TextHighlight";
 import { GetStaticProps } from "next";
 import { nextClient } from "@lib/client";
 import { HomePageQuery, HomeRecord } from "@lib/generated/sdk";
+import { Loader, useLoading } from "@/components/shared/Loader/Loader";
 
 interface PageProps {
   data: HomeRecord;
 }
 
 export default function Page({ data }: PageProps) {
+  const isLoaderDone = useLoading((state) => state.isLoaderDone);
   return (
     <>
       <MetaTags
@@ -20,6 +22,7 @@ export default function Page({ data }: PageProps) {
         pageDescription={"This is my portfolio"}
         currentUrl={"/"}
       />
+      {!isLoaderDone && <Loader />}
       <Hero
         title={data?.hero?.title as string}
         subtext={data?.hero?.subtext as string}

@@ -3,7 +3,6 @@ import { PageTransition } from "@/components/shared/PageTransition/PageTransitio
 import "@/styles/all.css";
 import { useLenis } from "@/utils/useLenis";
 import { useVhFix } from "@/utils/useVhFix";
-
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -12,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+  
       <BaseLayout>
         <Component {...pageProps} />
       </BaseLayout>

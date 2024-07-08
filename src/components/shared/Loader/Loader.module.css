@@ -1,39 +1,52 @@
 .Loader {
-  align-items: center;
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--background);
-  color: var(--white);
   position: fixed;
+  background-color: var(--green);
+  color: var(--white);
+  height: 100vh;
   width: 100%;
-  inset: 0;
   z-index: 101;
 }
 
-@media (--lgMax) {
-  .LoaderText {
-    font-size: 2rem;
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text {
+    font-family: "FKScreamer";
+    font-size: 2.5rem;
+
+    @media (--lg) {
+      font-size: 3rem;
+    }
   }
 }
 
-.container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 40px;
-  width: 95%;
-  font-family: "FKScreamer";
-  font-size: 2.5rem;
+.loader {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  max-width: 95%;
+  margin-inline: auto;
   gap: 0.5rem;
+}
 
-  .ProgressBar {
-    width: 0%;
-    height: 4px;
-    background-color: var(--white);
-    transform-origin: left;
-  }
+.percentage {
+  font-family: "FKScreamer";
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  background-color: var(--white);
+  height: 4px;
+  margin-bottom: 2rem;
+  width: 100%;
+  transform-origin: left;
+}
+
+.progress {
+  background-color: var(--white);
+  height: 100%;
 }

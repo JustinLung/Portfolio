@@ -14,7 +14,6 @@ interface PageProps {
 }
 
 export default function Page({ data }: PageProps) {
-  const isLoaderDone = useLoading((state) => state.isLoaderDone);
   return (
     <>
       <MetaTags
@@ -22,7 +21,7 @@ export default function Page({ data }: PageProps) {
         pageDescription={"This is my portfolio"}
         currentUrl={"/"}
       />
-      {!isLoaderDone && <Loader />}
+      <Loader />
       <Hero
         title={data?.hero?.title as string}
         subtext={data?.hero?.subtext as string}

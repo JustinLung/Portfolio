@@ -20,6 +20,8 @@ export function Projects(props: ProjectsProps) {
   const { title, data } = props;
   const projectsToRender = data?.highlights.slice(-3) || [];
 
+  const maxDescriptionLength = 100;
+
   return (
     <article className={cn(s.projects)}>
       <div className="container">
@@ -66,7 +68,12 @@ export function Projects(props: ProjectsProps) {
               <div className={s.content}>
                 <div>
                   <p>{project.title}</p>
-                  <p className={s.description}>{project.description}</p>
+                  <p className={s.description}>
+                    {project?.description!.length > maxDescriptionLength
+                      ? project?.description!.slice(0, maxDescriptionLength) +
+                        "..."
+                      : project.description}
+                  </p>
                   <Button
                     icon
                     href={"/projects/" + project.slug}

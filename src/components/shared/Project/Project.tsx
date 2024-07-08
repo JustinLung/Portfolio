@@ -16,6 +16,9 @@ interface ProjectProps {
 
 export function Project(props: ProjectProps) {
   const { title, description, src, alt, slug } = props;
+
+  const maxDescriptionLength = 100;
+
   return (
     <motion.article
       layout="position"
@@ -44,7 +47,11 @@ export function Project(props: ProjectProps) {
       <div className={s.content}>
         <div>
           <p>{title}</p>
-          <p className={s.description}>{description}</p>
+          <p className={s.description}>
+            {description.length > maxDescriptionLength
+              ? description.slice(0, maxDescriptionLength) + "..."
+              : description}
+          </p>
           <Button icon href={"/projects/" + slug} className={s.btn}>
             View Project
           </Button>

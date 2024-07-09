@@ -22,7 +22,7 @@ export function Loader() {
 
   useEffect(() => {
     const controls = animate(0, 100, {
-      duration: 8,
+      duration: 5,
       times: [0, 0.2, 0.2, 0.8, 0.8, 1],
       ease: easeInOutExpo,
       onUpdate(value) {
@@ -84,7 +84,7 @@ export function Loader() {
               className={s["progress-bar"]}
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 8, delay: 0.5, ease: easeInOutExpo }}
+              transition={{ duration: 5, delay: 0.5, ease: easeInOutExpo }}
             >
               <motion.div className={s["progress"]} />
             </motion.div>

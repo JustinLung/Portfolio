@@ -2,7 +2,7 @@
   position: fixed;
   background-color: var(--green);
   color: var(--white);
-  height: 100vh;
+  height: calc(100 * var(--svh));
   width: 100%;
   z-index: 101;
 }

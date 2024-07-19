@@ -11,7 +11,6 @@ export const useLenis = () => {
       orientation: "vertical", // vertical, horizontal
       gestureOrientation: "vertical", // vertical, horizontal, both
       smoothWheel: true,
-      smoothTouch: false,
       infinite: false,
     });
     useLenisState.setState({ Lenis: lenis });

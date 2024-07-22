@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
 import s from "./Hero.module.css";
 import { easeOutExpo } from "@/utils/transitions";
-import { ReactNode } from "react";
 
 interface HeroProps {
   title: string;
   subtext: string;
-  children?: ReactNode;
 }
 
 export function Hero(props: HeroProps) {
-  const { title, subtext, children } = props;
+  const { title, subtext } = props;
   return (
     <section className={s.hero}>
       <motion.p
@@ -37,7 +35,6 @@ export function Hero(props: HeroProps) {
       >
         {title}
       </motion.h1>
-      {children}
     </section>
   );
 }

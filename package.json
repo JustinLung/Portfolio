@@ -30,6 +30,8 @@
     ]
   },
   "dependencies": {
+    "@react-three/drei": "^9.109.2",
+    "@react-three/fiber": "^8.16.8",
     "dotenv": "^16.0.3",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
@@ -43,6 +45,7 @@
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.8.1",
     "react-use": "^17.4.0",
+    "three": "^0.167.0",
     "typescript": "5.0.4",
     "zustand": "^4.4.1"
   },

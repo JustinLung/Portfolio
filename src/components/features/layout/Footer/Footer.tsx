@@ -19,7 +19,7 @@ export function Footer() {
           }}
           className={s["title"]}
         >
-          Let's Work Togheter
+          Let's Work Together
         </motion.p>
         <div className={s["main-content"]}>
           <ul className={s["contact-list"]}>

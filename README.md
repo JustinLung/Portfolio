@@ -26,6 +26,7 @@ Check out the live demo of this portfolio project [here](https://justinlung.com/
 - **TypeScript**: Provides static typing for better development experience and safety.
 - **SEO Optimized**: Built-in optimizations for search engine visibility.
 - **Fast Performance**: Powered by **Next.js** for server-side rendering and optimized performance.
+- **DatoCMS**: Headless CMS 
 
 ## Technologies
 

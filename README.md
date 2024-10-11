@@ -78,9 +78,10 @@ DATO_API_KEY=your_dato_cms_api_key_here
 
 ### Usage in the project:
 
-In the code, the environment variables are accessed as follows:
+In the `client.ts` file, the environment variables are accessed as follows:
 
 ```typescript
+// client.ts
 import { GraphQLClient } from 'graphql-request';
 import { getSdkWithHooks } from '@lib/generated/sdk';
 

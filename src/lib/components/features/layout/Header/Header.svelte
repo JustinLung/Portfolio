@@ -83,25 +83,26 @@
 	}
 </script>
 
-<header class="header container">
-	<Link href="/" class="header__link">portfolio</Link>
-	<nav class="nav">
-		<ul class="nav__list">
-			{#each links.slice(1) as link}
-				<li>
-					<Link href={link.url} class="nav__link underline">{link.name}</Link>
-				</li>
-			{/each}
-		</ul>
+<header class="header">
+	<div class="header__inner">
+		<Link href="/" class="header__link">portfolio</Link>
+		<nav class="nav">
+			<ul class="nav__list">
+				{#each links.slice(1) as link}
+					<li>
+						<Link href={link.url} class="nav__link underline">{link.name}</Link>
+					</li>
+				{/each}
+			</ul>
 
-		<!-- svelte-ignore a11y_consider_explicit_label -->
-		<button class="hamburger" onclick={() => openMenu()}>
-			<span class="hamburger__line"></span>
-			<span class="hamburger__line"></span>
-			<span class="hamburger__line"></span>
-		</button>
-	</nav>
-
+			<!-- svelte-ignore a11y_consider_explicit_label -->
+			<button class="hamburger" onclick={() => openMenu()}>
+				<span class="hamburger__line"></span>
+				<span class="hamburger__line"></span>
+				<span class="hamburger__line"></span>
+			</button>
+		</nav>
+	</div>
 	{#if menu}
 		<div class="overlay" onclick={() => closeMenu()}></div>
 	{/if}

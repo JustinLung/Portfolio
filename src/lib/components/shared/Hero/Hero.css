@@ -1,5 +1,7 @@
 .hero {
-	height: calc(75 * var(--svh));
+	background-color: var(--black);
+
+	height: calc(100 * var(--svh));
 	width: 100%;
 
 	display: flex;
@@ -11,8 +13,16 @@
 	gap: 8px;
 
 	.hero__title {
-		font-size: min(8rem, 25vw);
+		font-size: min(5rem, 25vw);
 		margin: 0;
+
+		@media (--md) {
+			font-size: min(8rem, 25vw);
+		}
+
+		.letter {
+			display: inline-block;
+		}
 	}
 
 	.hero__subtitle {

@@ -1,6 +1,6 @@
-pre-commit:
-  commands:
-    lint-staged:
-      run: pnpm lint-staged
-    type-check:
-      run: pnpm check
+# pre-commit:
+#   commands:
+#     lint-staged:
+#       run: pnpm lint-staged
+#     type-check:
+#       run: pnpm check

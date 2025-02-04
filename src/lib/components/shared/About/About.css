@@ -1,0 +1,50 @@
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: calc(72px + 32px);
+	padding-bottom: 32px;
+	gap: 32px;
+
+	@media (--lg) {
+		flex-direction: row;
+	}
+
+	.about__inner {
+		@media (--lg) {
+			max-width: 650px;
+		}
+		h1 {
+			font-family: 'Tommaso', sans-serif;
+			font-size: min(4rem, 25vw);
+			margin: 0;
+			padding: 0;
+
+			@media (--md) {
+				font-size: min(8rem, 25vw);
+			}
+		}
+
+		.intro {
+			font-weight: 700;
+			font-size: 1.5rem;
+			line-height: 1.25;
+		}
+
+		.description {
+			line-height: 1.5;
+		}
+	}
+
+	picture {
+        position: sticky;
+        top: calc(72px + 32px);
+        align-self: flex-start;
+		flex-basis: calc(32% - 60px);
+
+		img {
+			width: 100%;
+		}
+	}
+}

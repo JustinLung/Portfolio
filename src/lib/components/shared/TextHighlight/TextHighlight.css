@@ -1,0 +1,26 @@
+.TextHighlight {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	text-align: center;
+	font-size: 2rem;
+	height: calc(80 * var(--svh));
+	font-size: 1.5rem;
+	margin-bottom: 32px;
+
+	@media(--lg) {
+		font-size: 2rem;
+	}
+
+	p {
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		max-width: 880px;
+		text-align: center;
+	}
+}

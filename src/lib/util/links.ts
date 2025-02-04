@@ -5,7 +5,7 @@ export const links = [
     },
     {
         name: 'projects',
-        url: '/about'
+        url: '/projects'
     },
     {
         name: 'about',
@@ -24,18 +24,18 @@ export const links = [
 export const socials = [
     {
         name: 'github',
-        url: ''
+        url: 'https://github.com/justinlung'
     },
     {
         name: 'linkedin',
-        url: ''
+        url: 'https://www.linkedin.com/in/justinlung123/'
     },
     {
         name: 'twitter',
-        url: ''
+        url: 'https://twitter.com/justinlung_'
     },
     {
         name: 'instagram',
-        url: ''
+        url: 'https://instagram.com/justinlung_'
     }
 ];

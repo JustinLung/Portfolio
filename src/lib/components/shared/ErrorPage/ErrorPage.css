@@ -1,0 +1,44 @@
+.ErrorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100 * var(--svh));
+    gap: 16px;
+
+    h1 {
+        font-family: 'Tommaso', sans-serif;
+        font-size: min(10rem, 25vw);
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+
+        @media(--md) {
+            font-size: 1.5rem;
+        }
+
+        .letter {
+            display: inline-block;
+        }
+    }
+
+    .link {
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--black);
+        background-color: var(--white);
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: var(--black);
+            color: var(--white);
+        }
+    }
+}

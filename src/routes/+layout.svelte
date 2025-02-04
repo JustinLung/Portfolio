@@ -14,6 +14,7 @@
 	import '$lib/css/buttonLinks.css';
 
 	import Favicons from '$components/features/Favicons.svelte';
+	import Cursor from '$components/features/layout/Cursor/Cursor.svelte';
 	import DesignHelper from '$components/features/DesignHelper/DesignHelper.svelte';
 	import PageTransition from '$components/shared/PageTransition/PageTransition.svelte';
 	import Lenis from '$components/shared/Lenis/Lenis.svelte';
@@ -27,14 +28,16 @@
 	import { gsap } from 'gsap';
 
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { Flip } from 'gsap/dist/Flip';
 	import { onMount } from 'svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger, Flip);
 
 	onMount(() => {
 		if (dev) {
 			console.log('gsap', gsap);
 			console.log('ScrollTrigger', ScrollTrigger);
+			console.log('ScrollTrigger', Flip);
 		}
 	});
 </script>
@@ -43,8 +46,9 @@
 <Favicons />
 
 <Header />
-<main class="container">
+<main>
 	{@render children()}
 </main>
 <Footer />
 <PageTransition />
+<Cursor />

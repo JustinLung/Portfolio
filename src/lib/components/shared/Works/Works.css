@@ -1,6 +1,31 @@
-.Works {
-    h2 {
-        font-size: min(4.5rem, 25vw);
-        font-family: 'Tommaso', sans-serif;
-    }
+.works {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--black);
+	.works__header {
+		display: flex;
+		flex-direction: column;
+
+		.works__title {
+			margin: 0;
+			font-size: min(3.5rem, 25vw);
+			font-family: 'Tommaso', sans-serif;
+		}
+	}
+
+	.works__projects {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;	
+
+		@media(--md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.works__link {
+		color: var(--white);
+		margin-inline: auto;
+		margin-block: 32px;
+	}
 }

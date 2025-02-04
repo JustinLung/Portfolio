@@ -1,7 +1,22 @@
 .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+
+	.header__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		max-width: 100rem;
+		width: 100%;
+		margin: 0 auto;
+		padding: 1.5rem 1rem;
+		
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
 	ul {
 		list-style: none;
@@ -55,7 +70,6 @@
 	border-radius: 100%;
 
 	position: relative;
-	z-index: 99;
 
 	.hamburger__line {
 		width: 50%;
@@ -174,7 +188,7 @@
 }
 
 .menu__additional-links {
-	padding: 32px;
+	padding-inline: 32px;
 	display: flex;
 	gap: 16px;
 
@@ -184,12 +198,15 @@
 }
 
 .menu__close {
+	position: absolute;
+	top: 16px;
+	right: 0;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	align-self: flex-end;
 	margin-right: 32px;
 
 	width: 40px;
@@ -202,13 +219,11 @@
 
 	padding: 0;
 
-	position: relative;
 	z-index: 10;
 
 	background-color: var(--black);
 	border-radius: 100%;
 
-	position: relative;
 	z-index: 99;
 
 	@media (--md) {

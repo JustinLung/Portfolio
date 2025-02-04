@@ -12,6 +12,7 @@ body {
 	color: var(--white);
 	overflow-x: clip;
 	font-feature-settings: 'lnum' 1;
+	cursor: none;
 }
 
 .hibbem:not(:focus):not(:active),
@@ -28,5 +29,30 @@ body {
 .container {
 	max-width: 100rem;
 	margin-inline: auto;
-	padding: 1.5rem 1rem;
+	padding: 0 1rem;
+}
+
+/* Custom Cursor Styles */
+.cursor {
+	position: fixed;
+	width: 20px; /* Size of the cursor */
+	height: 20px; /* Size of the cursor */
+	border-radius: 50%;
+	background-color: #ff5733; /* Cursor color */
+	pointer-events: none;
+	z-index: 9999; /* Ensure the cursor is above other elements */
+	transform: translate(-50%, -50%); /* Center the cursor */
+	transition:
+		transform 0.2s ease-out,
+		opacity 0.3s ease-out;
+	opacity: 0;
+}
+
+.cursor-hover {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1.5); /* Enlarge on hover */
+}
+
+.cursor-follow {
+	transition: transform 0.1s ease-in-out;
 }

@@ -1,0 +1,66 @@
+.carousel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.carousel__header {
+		display: flex;
+		justify-content: space-between;
+        flex-direction: row;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 1rem;
+
+		.carousel__header-title {
+			margin: 0;
+			font-size: min(3.5rem, 25vw);
+			font-family: 'Tommaso', sans-serif;
+		}
+
+		.carousel__button-container {
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+
+            .carousel__button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: var(--white);
+                transition: color 0.3s;
+
+                &:hover {
+                    color: var(--white);
+                }
+
+                .previous-icon {
+                    transform: rotate(180deg);
+                }
+
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+            }
+		}
+	}
+}
+
+.embla {
+	overflow: hidden;
+	width: 100%;
+}
+
+.embla__container {
+	display: flex;
+}
+
+.embla__slide {
+	flex: 0 0 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+	text-align: center;
+}

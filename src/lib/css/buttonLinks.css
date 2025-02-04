@@ -1,0 +1,47 @@
+.button {
+	--button-color: var(--white);
+	--button-background: var(--primary);
+
+	color: var(--button-color);
+	background-color: var(--button-background);
+
+	white-space: nowrap;
+
+	border: 1px solid;
+	border-color: var(--button-background);
+	border-radius: 16px;
+
+	position: relative;
+	z-index: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: fit-content;
+	padding: 16px 32px;
+
+	font-size: 1.125rem;
+	font-weight: 500;
+
+	overflow: hidden;
+	cursor: pointer;
+
+	transition:
+		color 250ms var(--easeOutExpo) 120ms,
+		border-color 250ms var(--easeOutExpo) 120ms,
+		transform 250ms var(--easeOutExpo) 120ms,
+		background-color 250ms var(--easeOutExpo) 120ms;
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	@hover {
+		color: var(--button-background);
+	}
+}
+
+[class*='link'] {
+	text-decoration: none;
+}

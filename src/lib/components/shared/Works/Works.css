@@ -1,0 +1,6 @@
+.Works {
+    h2 {
+        font-size: min(4.5rem, 25vw);
+        font-family: 'Tommaso', sans-serif;
+    }
+}

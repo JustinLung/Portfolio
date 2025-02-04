@@ -1,0 +1,32 @@
+.italic {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.medium {
+	font-weight: 500;
+}
+
+:root {
+	--f-primary: 'Inter';
+	--f-secondary: 'Comic Sans MS';
+
+	--fallbackFont: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+	--ff-primary: var(--f-primary), var(--fallbackFont);
+	--ff-secondary: var(--f-secondary), var(--fallbackFont);
+}
+
+[class*='ff-p'] {
+	font-family: var(--ff-primary);
+	/* Letterspacing is: font-size * 3 */
+	/* letter-spacing: calc(2 * -0.01em); */
+}
+
+[class*='ff-s'] {
+	font-family: var(--ff-secondary);
+}

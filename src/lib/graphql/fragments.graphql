@@ -1,0 +1,5 @@
+query CatFragment {
+	__schema {
+		__typename
+	}
+}

@@ -1,0 +1,15 @@
+.PageTransition {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 15;
+	top: 0;
+	left: 0;
+	background-color: var(--black);
+	visibility: hidden;
+	opacity: 0;
+
+	@media (--reduceMotion) {
+		background-color: transparent;
+	}
+}

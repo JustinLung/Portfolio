@@ -1,34 +1,44 @@
-import prettier from "eslint-config-prettier";
+import prettier from 'eslint-config-prettier';
 import js from '@eslint/js';
 import { includeIgnoreFile } from '@eslint/compat';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
-const gitignorePath = fileURLToPath(new URL("./.gitignore", import.meta.url));
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
 export default ts.config(
-  includeIgnoreFile(gitignorePath),
-  js.configs.recommended,
-  ...ts.configs.recommended,
-  ...svelte.configs["flat/recommended"],
-  prettier,
-  ...svelte.configs['flat/prettier'],
-  {
-    languageOptions: {
-	  globals: {
-	    ...globals.browser,
-	    ...globals.node
-	  }
+	{ ignores: ['src/lib/graphql/**/*.ts', 'scripts/**/*.svelte'] },
+	includeIgnoreFile(gitignorePath),
+	js.configs.recommended,
+	...ts.configs.recommended,
+	...svelte.configs['flat/recommended'],
+	prettier,
+	...svelte.configs['flat/prettier'],
+	{
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.node
+			},
+			parserOptions: {
+				parser: ts.parser
+			}
+		},
+		rules: {
+			'@typescript-eslint/no-empty-object-type': 'off',
+			'@typescript-eslint/no-unused-vars': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+			'no-empty-pattern': 'off',
+			'svelte/no-at-html-tags': 'off'
+		}
+	},
+	{
+		files: ['./src/**/*.svelte'],
+		languageOptions: {
+			parserOptions: {
+				parser: ts.parser
+			}
+		}
 	}
-  },
-  {
-    files: ["**/*.svelte"],
-
-    languageOptions: {
-	  parserOptions: {
-	    parser: ts.parser
-	  }
-	}
-  }
 );

@@ -1,38 +1,88 @@
-# sv
+# Sveltalot
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Everything you need to build a Svelte project, is powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Creating a project
+## Prerequistes
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+- [Node v22.x](https://nodejs.org/en)
+- [pNpM](https://pnpm.io/)
+- [nvm (node version manager)](https://github.com/nvm-sh/nvm)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+git clone git@github.com:MerlinDotStudio/sveltalot.git &&
+cd sveltalot &&
+nvm use &&
+pnpm install
+```
+
+Once you've cloned the project and installed dependencies with `pnpm install`, start a development server:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev
 ```
+
+### What if I don't know Svelte?
+
+If you're used to writing react over svelte, than take a look at [component-party.dev](https://component-party.dev/). This compares simple examples of React (or any other framework) and translates them to Svelte (or whatever other framework you'd like)
 
 ## Building
 
 To create a production version of your app:
 
 ```bash
-npm run build
+pnpm build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `pnpm preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## GraphQL
+
+To generate the GraphQL types make sure you have the correct environment variables in your `.env` file. After that you can generate types by using:
+
+```bash
+pnpm generate-graphql
+```
+
+or use watch mode by using
+
+```bash
+pnpm watch-graphql
+```
+
+## Components and state
+
+To create a new component from our the stack template, you can use:
+
+```bash
+pnpm component ComponentName
+```
+
+or to create state, use:
+
+```bash
+pnpm state StateName
+```
+
+## Favicons
+
+To generate favicons, use:
+
+> Make sure you have the correct environment variables since the source will be pulled from the CMS.
+
+```bash
+pnpm favicons
+```
+
+## Icons
+
+To generate favicons, use:
+
+```bash
+pnpm icons
+```
+
+## Credits
+
+Stack built by [Daan Korver](https://github.com/DaanKorver) @ [Merlin.studio](https://merlin.studio/)

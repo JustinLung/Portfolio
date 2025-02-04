@@ -1,0 +1,85 @@
+/* Define the properties */
+@property --header-height {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 40px;
+}
+
+@property --svh {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 1svh;
+}
+
+@property --dvh {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 1vh;
+}
+
+@property --lvh {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 1lvh;
+}
+
+@property --100svh {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 100svh;
+}
+
+@property --maxWidth {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 2500px;
+}
+
+@property --easeOutExpo {
+	syntax: '<easing-function>';
+	inherits: true;
+	initial-value: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@property --easeInOutExpo {
+	syntax: '<easing-function>';
+	inherits: true;
+	initial-value: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+@property --grid-gap {
+	syntax: '<length>+';
+	inherits: true;
+	initial-value: 0 16px;
+}
+
+@property --marginBlock {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 48px;
+}
+
+/* Variables */
+:root {
+	--header-height: 40px;
+	--svh: 1svh;
+	--dvh: 1vh;
+	--lvh: 1lvh;
+
+	--100svh: calc(100 * var(--svh));
+	--maxWidth: 2500px;
+
+	--easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+	--easeInOutExpo: cubic-bezier(0.87, 0, 0.13, 1);
+	--easeInExpo: cubic-bezier(0.7, 0, 0.84, 0);
+	--easeInOutQuart: cubic-bezier(0.76, 0, 0.24, 1);
+	--easeInQuint: cubic-bezier(0.64, 0, 0.78, 0);
+	--easeOutQuint: cubic-bezier(0.22, 1, 0.36, 1);
+	--easeInOutQuint: cubic-bezier(0.83, 0, 0.17, 1);
+	--easeInQuad: cubic-bezier(0.11, 0, 0.5, 0);
+	--easeOutQuad: cubic-bezier(0.5, 1, 0.89, 1);
+	--easeInOutQuad: cubic-bezier(0.45, 0, 0.55, 1);
+
+	--grid-gap: 0 16px;
+	--marginBlock: 48px;
+}

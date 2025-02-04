@@ -1,0 +1,33 @@
+/* Define the properties */
+@property --primary {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #000;
+}
+
+@property --secondary {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #fff;
+}
+
+@property --white {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #ffffff;
+}
+
+@property --black {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #000000;
+}
+
+/* Variables */
+:root {
+	--primary: #000;
+	--secondary: #fff;
+	--white: #ffffff;
+	--black: #000000;
+	--red: #A20021;
+}

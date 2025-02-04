@@ -1,0 +1,32 @@
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+	overscroll-behavior: none;
+}
+
+body {
+	background-color: var(--black);
+	color: var(--white);
+	overflow-x: clip;
+	font-feature-settings: 'lnum' 1;
+}
+
+.hibbem:not(:focus):not(:active),
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+.container {
+	max-width: 100rem;
+	margin-inline: auto;
+	padding: 1.5rem 1rem;
+}

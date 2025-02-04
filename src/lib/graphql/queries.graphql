@@ -1,0 +1,5 @@
+query CatQuery {
+	__schema {
+		__typename
+	}
+}

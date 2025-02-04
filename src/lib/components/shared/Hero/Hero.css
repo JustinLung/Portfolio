@@ -1,0 +1,22 @@
+.hero {
+	height: calc(75 * var(--svh));
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Tommaso', sans-serif;
+
+	gap: 8px;
+
+	.hero__title {
+		font-size: min(8rem, 25vw);
+		margin: 0;
+	}
+
+	.hero__subtitle {
+		font-size: min(2rem, 25vw);
+		margin: 0;
+	}
+}

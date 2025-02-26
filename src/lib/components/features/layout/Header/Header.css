@@ -71,6 +71,16 @@
 
 	position: relative;
 
+	transition: .2s ease-out background-color;
+
+	&:hover {
+		background-color: var(--red);
+
+		.hamburger__line {
+			background-color: var(--white);
+		}
+	}
+
 	.hamburger__line {
 		width: 50%;
 		height: 1px;
@@ -225,6 +235,16 @@
 	border-radius: 100%;
 
 	z-index: 99;
+
+	transition: .2s ease-out background-color;
+
+	&:hover {
+		background-color: var(--red);
+
+		.hamburger__line {
+			background-color: var(--white);
+		}
+	}
 
 	@media (--md) {
 		width: 60px;

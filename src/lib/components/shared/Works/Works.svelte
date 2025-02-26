@@ -5,13 +5,15 @@
 	import Project from '../Project/Project.svelte';
 	import './Works.css';
 	import Link from '../Link/Link.svelte';
+	import { dummyProjects } from '$lib/util/projects';
 
 	interface WorksProps {
 		title: string;
 		description: string;
+		featuredProjects: any[];
 	}
 
-	const { title, description }: WorksProps = $props();
+	const { title, description, featuredProjects }: WorksProps = $props();
 
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -65,22 +67,6 @@
 				}
 			}
 		);
-
-		// gsap.fromTo(
-		// 	'.works__link',
-		// 	{ y: 30, opacity: 0 },
-		// 	{
-		// 		y: 0,
-		// 		opacity: 1,
-		// 		duration: 1,
-		// 		ease: 'expo.out',
-		// 		stagger: 0.2,
-		// 		scrollTrigger: {
-		// 			trigger: '.works__link',
-		// 			start: 'top 10%',
-		// 		}
-		// 	}
-		// );
 	});
 </script>
 
@@ -90,10 +76,13 @@
 		<p class="works__description">{description}</p>
 	</div>
 	<div class="works__projects">
-		<Project />
-		<Project />
-		<Project />
-		<Project />
+		{#each featuredProjects as project}
+			<Project
+				name={project.title as string}
+				tags={project.tags}
+				image={project.image.url}
+				alt={project.image.alt}
+			/>
+		{/each}
 	</div>
-	<!-- <Link href="/projects" class="works__link">see all projects</Link> -->
 </section>

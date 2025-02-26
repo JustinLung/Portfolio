@@ -1,0 +1,1462 @@
+{
+  "article": [
+    {
+      "key": "top_10_products",
+      "namespace": "surfturf",
+      "name": "Top 10 product",
+      "description": "Top 10 products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "look_image",
+      "namespace": "surfturf",
+      "name": "Look images",
+      "description": "Look image",
+      "type": {
+        "name": "list.file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "middle_section_title",
+      "namespace": "surfturf",
+      "name": "Middle section title",
+      "description": "Middle section title",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "middle_section_text",
+      "namespace": "surfturf",
+      "name": "Middle section text",
+      "description": "Middle section text",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "middle_section_label",
+      "namespace": "surfturf",
+      "name": "Middle section label",
+      "description": "Middle section label",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "middle_section_image",
+      "namespace": "surfturf",
+      "name": "Middle section image",
+      "description": "Middle section image",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "all_products_title",
+      "namespace": "surfturf",
+      "name": "All products title",
+      "description": "All products title",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "all_products_image",
+      "namespace": "surfturf",
+      "name": "All products image",
+      "description": "All products image",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "all_products_link",
+      "namespace": "surfturf",
+      "name": "All products link",
+      "description": "All products link",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "final_words_post",
+      "namespace": "surfturf",
+      "name": "Final words post",
+      "description": "The end/finishing paragraph of the blog post",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products",
+      "namespace": "surfturf",
+      "name": "Related products",
+      "description": "Related products to the article",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "look_images_position",
+      "namespace": "surfturf",
+      "name": "Look images position",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "related_products_position",
+      "namespace": "surfturf",
+      "name": "Related products position",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    }
+  ],
+  "blog": [
+    {
+      "key": "blog_image",
+      "namespace": "surfturf",
+      "name": "Blog image",
+      "description": "Image for this blog",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "brand": [],
+  "collection": [
+    {
+      "key": "sub_collections",
+      "namespace": "surfturf",
+      "name": "Sub collections",
+      "description": "Sub collections",
+      "type": {
+        "name": "list.collection_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [
+    {
+      "key": "shipping_text_below_price",
+      "namespace": "custom",
+      "name": "Shipping text below price",
+      "description": "Market specific text under the price on the product page.",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "show_unit_pricing",
+      "namespace": "custom",
+      "name": "Show unit pricing",
+      "description": "Show unit pricing on the PDP and PLP",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "footer_market_text",
+      "namespace": "custom",
+      "name": "Footer market text",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "store_usps",
+      "namespace": "surfturf",
+      "name": "Store USPs",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "shipping_destinations",
+      "namespace": "surfturf",
+      "name": "Shipping destinations",
+      "description": "This will set the shipping destinations (addressCountry) in the schema for SEO purposes",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "store_shipping_methode",
+      "namespace": "surfturf",
+      "name": "Shipping methode",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "payment_methods",
+      "namespace": "surfturf",
+      "name": "Payment methods",
+      "description": "Supported payment methods",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "algolia_search_index",
+      "namespace": "surfturf",
+      "name": "Algolia search index",
+      "description": "Index used by Algolia for this market",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "order": [
+    {
+      "key": "location_code",
+      "namespace": "postnl",
+      "name": "PostNL location code",
+      "description": "This metafield is used to save the pickup location code. This is used when the merchant selects a pickup point in the checkout",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "page": [],
+  "product": [
+    {
+      "key": "lifestyle_image_left",
+      "namespace": "custom",
+      "name": "Lifestyle Image Left",
+      "description": "Lifestyle Image on the leftside PDP",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "lifestyle_image_right",
+      "namespace": "custom",
+      "name": "Lifestyle Image Right",
+      "description": "Lifetstyle image on he PDP rightside",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "queries",
+      "namespace": "shopify--discovery--product_search_boost",
+      "name": "Search product boosts",
+      "description": "List of search queries for which a product gets higher rank in search results",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products",
+      "description": "List of related products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "related_products_display",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products settings",
+      "description": "Determines how related products are displayed along with algorithmic product recommendations",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "complementary_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Complementary products",
+      "description": "List of complementary products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "available_for_sample_box",
+      "namespace": "surfturf",
+      "name": "Available for Sample box",
+      "description": "This product is available to be included in the Sample box",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "ingredienten_focus",
+      "namespace": "custom",
+      "name": "Ingredienten focus",
+      "description": "Focusgroep van bepaalde ingredienten",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_cluster",
+      "namespace": "custom",
+      "name": "Productcategorie",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "scherpte_van_een_deb_mesje",
+      "namespace": "custom",
+      "name": "Scherpte scheermesjes",
+      "description": "Scherpte schaal van scheermesjes",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "specifieke_aanpak",
+      "namespace": "custom",
+      "name": "Specifieke aanpak",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "aantal_in_stuks",
+      "namespace": "custom",
+      "name": "Aantal in stuks",
+      "description": "Aantal in stuks",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "gewicht_in_grammen",
+      "namespace": "custom",
+      "name": "Gewicht in grammen",
+      "description": "Gewicht in grammen",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "grootte_in_ml",
+      "namespace": "custom",
+      "name": "Grootte in ml",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "hoogte_in_mm",
+      "namespace": "custom",
+      "name": "Hoogte in mm",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "product_specifications_1",
+      "namespace": "surfturf",
+      "name": "Product specifications 1",
+      "description": "Product kenmerk 1",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_specifications_2",
+      "namespace": "surfturf",
+      "name": "Product specifications 2",
+      "description": "Product kenmerk 2",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_specifications_3",
+      "namespace": "surfturf",
+      "name": "Product specifications 3",
+      "description": "Product kenmerk 3",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_specifications_4",
+      "namespace": "surfturf",
+      "name": "Product specifications 4",
+      "description": "Product kenmerk 4",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_instructions",
+      "namespace": "surfturf",
+      "name": "Product instructions",
+      "description": "Product gebruik",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_ingredients",
+      "namespace": "surfturf",
+      "name": "Product ingredients",
+      "description": "Product ingrediënten",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "bundle_tip_overwrite",
+      "namespace": "surfturf",
+      "name": "Bundle tip overwrite",
+      "description": "Bundle tip overwrite",
+      "type": {
+        "name": "product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "coming_soon",
+      "namespace": "surfturf",
+      "name": "Coming soon",
+      "description": "Turn this on to set the product to \"coming soon\" (This will only work if the product has no stock)",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "coming_soon_text",
+      "namespace": "surfturf",
+      "name": "Coming soon text",
+      "description": "Coming soon text (Beschikbaar vanaf september!)",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "bundle_tip_collection",
+      "namespace": "surfturf",
+      "name": "Bundle tip collection",
+      "description": "Bundle tip collection",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "google_product_category",
+      "namespace": "custom",
+      "name": "Google Product Category",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "brandtijd_kaars",
+      "namespace": "specs",
+      "name": "Brandtijd kaars",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "geurfamilie",
+      "namespace": "specs",
+      "name": "Geurfamilie",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "inhoud",
+      "namespace": "specs",
+      "name": "Inhoud",
+      "description": "Inhoud/aantal + ml/g/stuks",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "hold",
+      "namespace": "specs",
+      "name": "Hold",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gewicht",
+      "namespace": "specs",
+      "name": "Gewicht",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "aantal",
+      "namespace": "specs",
+      "name": "Aantal",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "materiaal",
+      "namespace": "specs",
+      "name": "Materiaal",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "breedte",
+      "namespace": "specs",
+      "name": "Breedte",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "lengte",
+      "namespace": "specs",
+      "name": "Lengte",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "type_haar",
+      "namespace": "specs",
+      "name": "Soort kwasthaar",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "kleur",
+      "namespace": "specs",
+      "name": "Kleur",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "type_kam",
+      "namespace": "specs",
+      "name": "Type safety razor kam",
+      "description": "Type safety razor kam",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "based",
+      "namespace": "specs",
+      "name": "Based",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "shine",
+      "namespace": "specs",
+      "name": "Shine",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "knoopdikte",
+      "namespace": "specs",
+      "name": "Knoopdikte scheerkwast",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "unit_pricing_measure",
+      "namespace": "custom",
+      "name": "unit_pricing_measure",
+      "description": "unit_pricing_measure voor in Google Merchant, mag leef blijven. Wordt gevuld via Channable",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "unit_pricing_base_measure",
+      "namespace": "custom",
+      "name": "unit_pricing_base_measure",
+      "description": "unit_pricing_base_measure mag leeg blijven, wordt gevuld via Channable",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "type_safety_razor",
+      "namespace": "custom",
+      "name": "Soort safety razor",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "scheerintensiteitsafetyrazor",
+      "namespace": "custom",
+      "name": "Scheerintensiteit safety razor",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "type_borstelharen",
+      "namespace": "custom",
+      "name": "Soort borstelharen",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "huidtype",
+      "namespace": "custom",
+      "name": "Huidtype",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "producttype_variant",
+      "namespace": "custom",
+      "name": "Producttype variant",
+      "description": "Verdieping op een producttype",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "haartype",
+      "namespace": "custom",
+      "name": "Haartype",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "seizoen",
+      "namespace": "custom",
+      "name": "Seizoen",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "geurnoten",
+      "namespace": "custom",
+      "name": "Geurnoten",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "geurintensiteit",
+      "namespace": "custom",
+      "name": "Geurintensiteit",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gelegenheid",
+      "namespace": "custom",
+      "name": "Gelegenheid",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "niche_parfum",
+      "namespace": "custom",
+      "name": "Niche parfum",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "strategie",
+      "namespace": "custom",
+      "name": "Strategie",
+      "description": "Welke strategie hanteren voor de verkoop van dit product",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "cadeau",
+      "namespace": "custom",
+      "name": "Cadeau",
+      "description": "Producten die wij als cadeau aanraden",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "labels",
+      "namespace": "surfturf",
+      "name": "Product labels",
+      "description": "Labels related to the product",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "geur_familie",
+      "namespace": "specs",
+      "name": "Geur familie",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "structured_data",
+      "namespace": "custom",
+      "name": "Structured Data",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_product",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Product",
+      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "formulation",
+      "namespace": "custom",
+      "name": "Formulation",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "size",
+      "namespace": "shopify",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "suitable-for-skin-type",
+      "namespace": "shopify",
+      "name": "Suitable for skin type",
+      "description": "Specifies products for specific skin conditions, such as dry, aging, or sensitive",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "treatment-type",
+      "namespace": "shopify",
+      "name": "Treatment type",
+      "description": "Specifies the method of treatment, typically for hair loss treatments; e.g. laser, topical",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hair-loss-type",
+      "namespace": "shopify",
+      "name": "Hair loss type",
+      "description": "Organizes products based on type of hair loss, e.g. alopecia areata, male pattern baldness",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "constitutive-ingredients",
+      "namespace": "shopify",
+      "name": "Constitutive ingredients",
+      "description": "Specifies the main components used in a product's formulation, e.g. beeswax, rosehip oil",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product-certifications-standards",
+      "namespace": "shopify",
+      "name": "Product certifications & standards",
+      "description": "Indicates the certifications or standards a product meets, such as organic or cruelty free",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product-form",
+      "namespace": "shopify",
+      "name": "Product form",
+      "description": "Defines the format or presentation of a product, typically for health and beauty; e.g. lotion, serum",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "skin-care-effect",
+      "namespace": "shopify",
+      "name": "Skin care effect",
+      "description": "Defines the intended benefits of skin care products, e.g. anti-aging, plumping",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "aftershave-product-form",
+      "namespace": "shopify",
+      "name": "Aftershave product form",
+      "description": "Identifies the consistency of an aftershave product, such as balm or cream",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "cosmetic-function",
+      "namespace": "shopify",
+      "name": "Cosmetic function",
+      "description": "Defines the intended benefit or effect of a cosmetic product, e.g. soothing, healing",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "package-type",
+      "namespace": "shopify",
+      "name": "Package type",
+      "description": "Defines the type of packaging for a product, e.g. jar, pump",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hair-care-finish",
+      "namespace": "shopify",
+      "name": "Hair care finish",
+      "description": "Defines the final look or texture of hair after use, e.g. shiny, matte",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
+      "type": {
+        "name": "rating",
+        "category": "RATING"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "hair-type",
+      "namespace": "shopify",
+      "name": "Hair type",
+      "description": "Classifies products based on specific hair types or conditions, such as curly or dry",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hold-level",
+      "namespace": "shopify",
+      "name": "Hold level",
+      "description": "Defines the strength of hair styling products, e.g. light, strong",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "scent",
+      "namespace": "shopify",
+      "name": "Scent",
+      "description": "Specifies the fragrance or aroma of a product, such as vanilla or citrus",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "occasion",
+      "namespace": "shopify",
+      "name": "Occasion",
+      "description": "Specifies the suitable event or setting for a product, e.g. casual, formal",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "season",
+      "namespace": "shopify",
+      "name": "Season",
+      "description": "Indicates the season the product is best suited for, such as summer or fall",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "candle-type",
+      "namespace": "shopify",
+      "name": "Candle type",
+      "description": "Specifies the design of candles, such as taper or tea light",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sale",
+      "namespace": "custom",
+      "name": "Uitgesloten van korting",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "suitable-for-hair-type",
+      "namespace": "shopify",
+      "name": "Suitable for hair type",
+      "description": "Specifies the hair needs a product is designed for, e.g. curly, fine",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "shampoo-type",
+      "namespace": "shopify",
+      "name": "Shampoo type",
+      "description": "Classifies shampoos based on their formulation, such as powder or 2-in-1",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "active-ingredient",
+      "namespace": "shopify",
+      "name": "Active ingredient",
+      "description": "Identifies primary substances in personal care items, e.g. vitamin A, retinol",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "serum-target-areas",
+      "namespace": "shopify",
+      "name": "Serum target areas",
+      "description": "Specifies the intended application areas for a serum, such as eyes or face",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "huidtypes",
+      "namespace": "custom",
+      "name": "Huidtypes",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "huidprobleem",
+      "namespace": "custom",
+      "name": "Huidprobleem",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "shaving-kit-components",
+      "namespace": "shopify",
+      "name": "Shaving kit components",
+      "description": "Specifies the items included in a shaving kit, such as razor or brush",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "add_extra_shipping_days",
+      "namespace": "custom",
+      "name": "Add extra shipping days",
+      "description": "Add extra shipping days on top of regular shippings days",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    }
+  ],
+  "variant": [
+    {
+      "key": "variant_color",
+      "namespace": "surfturf",
+      "name": "Variant color",
+      "description": "Variant color (hex code without #)",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "breedte_in_mm",
+      "namespace": "custom",
+      "name": "Breedte in mm",
+      "description": "",
+      "type": {
+        "name": "dimension",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "lengte_in_mm",
+      "namespace": "custom",
+      "name": "Lengte in mm",
+      "description": "Lengte in mm",
+      "type": {
+        "name": "dimension",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "diameter_in_mm",
+      "namespace": "custom",
+      "name": "Diameter in mm",
+      "description": "",
+      "type": {
+        "name": "dimension",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "hoogte_in_mm",
+      "namespace": "custom",
+      "name": "Hoogte in mm",
+      "description": "",
+      "type": {
+        "name": "dimension",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "diameter_knoop_scheerkwast",
+      "namespace": "custom",
+      "name": "Diameter knoop scheerkwast",
+      "description": "",
+      "type": {
+        "name": "dimension",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "variant_gewicht_in_grammen",
+      "namespace": "custom",
+      "name": "variant gewicht in grammen",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "variant_grootte_in_ml",
+      "namespace": "custom",
+      "name": "variant grootte in ml",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "variant_aantal_in_stuks",
+      "namespace": "custom",
+      "name": "variant aantal in stuks",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "brandtijd_kaars",
+      "namespace": "custom",
+      "name": "Brandtijd kaars",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gewicht",
+      "namespace": "specs",
+      "name": "Gewicht",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "inhoud",
+      "namespace": "specs",
+      "name": "Inhoud",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "scherpte",
+      "namespace": "specs",
+      "name": "Scherpte",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "hoogte",
+      "namespace": "specs",
+      "name": "Hoogte",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "aantal",
+      "namespace": "specs",
+      "name": "Aantal",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "bundle_discount_percentage",
+      "namespace": "custom",
+      "name": "Bundle discount percentage",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "custom_label_4",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 4",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_3",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 3",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_2",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 2",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_1",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 1",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_0",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 0",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_system",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Size System",
+      "description": "The country of the size system used by your product.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_type",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Size Type",
+      "description": "Your apparel product’s cut.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mpn",
+      "namespace": "mm-google-shopping",
+      "name": "Google: MPN",
+      "description": "Your product’s Manufacturer Part Number (MPN).",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gender",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Gender",
+      "description": "The gender for which your product is intended.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "condition",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Condition",
+      "description": "The condition of your product at time of sale.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "age_group",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Age Group",
+      "description": "The demographic for which your product is intended.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "shop": []
+}

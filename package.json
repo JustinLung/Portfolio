@@ -70,6 +70,7 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"@types/node": "^22.13.4",
 		"embla-carousel": "^8.5.2",
 		"graphql": "^16.10.0",
 		"graphql-request": "^7.1.2",

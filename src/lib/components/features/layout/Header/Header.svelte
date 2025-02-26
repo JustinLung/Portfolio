@@ -3,6 +3,9 @@
 	import { gsap } from 'gsap';
 	import { links, socials } from '$lib/util/links';
 	import './Header.css';
+	import disableScroll from '$lib/util/disableScroll';
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	let menu = $state(false);
 
@@ -59,6 +62,7 @@
 
 		menuTimeline.play();
 		menu = true;
+		disableScroll(true);
 	}
 
 	function closeMenu() {
@@ -80,7 +84,19 @@
 
 		menuTimeline.play();
 		menu = false;
+		disableScroll(false);
 	}
+
+	function handleKeyPress(event: KeyboardEvent) {
+		if (event.key === 'Escape' && menu) {
+			closeMenu();
+		}
+	}
+
+	onMount(() => {
+		document.addEventListener('keydown', handleKeyPress);
+		return () => document.removeEventListener('keydown', handleKeyPress);
+	});
 </script>
 
 <header class="header">
@@ -90,7 +106,9 @@
 			<ul class="nav__list">
 				{#each links.slice(1) as link}
 					<li>
-						<Link href={link.url} class="nav__link underline">{link.name}</Link>
+						<Link href={link.url} class="nav__link underline">
+							{link.name}
+						</Link>
 					</li>
 				{/each}
 			</ul>
@@ -104,7 +122,7 @@
 		</nav>
 	</div>
 	{#if menu}
-		<div class="overlay" onclick={() => closeMenu()}></div>
+		<div class="overlay" onclick={() => closeMenu()} role="presentation"></div>
 	{/if}
 
 	<section class="menu" class:open={menu}>

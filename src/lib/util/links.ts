@@ -31,7 +31,7 @@ export const socials = [
         url: 'https://www.linkedin.com/in/justinlung123/'
     },
     {
-        name: 'twitter',
+        name: 'X',
         url: 'https://twitter.com/justinlung_'
     },
     {

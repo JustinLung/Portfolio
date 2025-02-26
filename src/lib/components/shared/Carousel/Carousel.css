@@ -2,11 +2,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-block: 64px;
 
 	.carousel__header {
 		display: flex;
 		justify-content: space-between;
-        flex-direction: row;
+		flex-direction: row;
 		align-items: center;
 		width: 100%;
 		margin-bottom: 1rem;
@@ -24,27 +25,27 @@
 			justify-content: center;
 			gap: 1rem;
 
-            .carousel__button {
-                background: none;
-                border: none;
-                cursor: pointer;
-                font-size: 1.5rem;
-                color: var(--white);
-                transition: color 0.3s;
+			.carousel__button {
+				background: none;
+				border: none;
+				cursor: pointer;
+				font-size: 1.5rem;
+				color: var(--white);
+				transition: color 0.3s;
 
-                &:hover {
-                    color: var(--white);
-                }
+				&:hover {
+					color: var(--white);
+				}
 
-                .previous-icon {
-                    transform: rotate(180deg);
-                }
+				.previous-icon {
+					transform: rotate(180deg);
+				}
 
-                &:disabled {
-                    opacity: 0.5;
-                    cursor: not-allowed;
-                }
-            }
+				&:disabled {
+					opacity: 0.5;
+					cursor: not-allowed;
+				}
+			}
 		}
 	}
 }
@@ -56,11 +57,72 @@
 
 .embla__container {
 	display: flex;
+	gap: 16px;
 }
 
 .embla__slide {
-	flex: 0 0 100%;
-	padding: 1rem;
+	position: relative;
 	box-sizing: border-box;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	h3 {
+		font-family: 'Tommaso', sans-serif;
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	img {
+		max-width: 500px;
+		max-height: 500px;
+		object-fit: cover;
+		border-radius: 4px;
+	}
+
+	.link {
+		font-family: 'Tommaso', sans-serif;
+		font-size: 1.25rem;
+
+		color: var(--black);
+		background-color: var(--white);
+		padding: 8px 16px;
+
+		margin-top: 8px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		width: fit-content;
+		border-radius: 4px;
+		border: 1px solid var(--white);
+		transition:
+			background-color 0.2s ease-out,
+			color 0.2s ease-out;
+
+		.icon {
+			width: 16px;
+			height: 16px;
+			transition: transform .2s ease-out;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		&:hover {
+			background-color: var(--black);
+			color: var(--white);
+
+			.icon {
+				transform: translateX(4px);
+			}
+		}
+	}
 }

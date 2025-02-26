@@ -1,10 +1,14 @@
 .about {
+	max-width: 1270px;
+	margin-inline: auto;
+
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
+	justify-content: space-between;
+
 	padding-top: calc(72px + 32px);
 	padding-bottom: 32px;
+	padding-inline: 16px;
 	gap: 32px;
 
 	@media (--lg) {

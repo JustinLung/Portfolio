@@ -2,26 +2,6 @@
 	import Link from '$components/shared/Link/Link.svelte';
 	import { socials } from '$lib/util/links';
 	import './Footer.css';
-
-	// let timeZone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
-	// let currentTime: string = new Date().toLocaleTimeString('en-US', {
-	// 	timeZone,
-	// 	hour: '2-digit',
-	// 	minute: '2-digit',
-	// 	hour12: true
-	// });
-
-	// // Update time every second
-	// const updateTime = () => {
-	// 	currentTime = new Date().toLocaleTimeString('en-US', {
-	// 		timeZone,
-	// 		hour: '2-digit',
-	// 		minute: '2-digit',
-	// 		hour12: true
-	// 	});
-	// };
-
-	// setInterval(updateTime, 1000);
 </script>
 
 <footer class="footer">
@@ -33,7 +13,7 @@
 		</div>
 	</div>
 	<div class="footer__bottom container">
-		<p>© 2021 Justin-Lung. All rights reserved.</p>
+		<p>© {new Date().getFullYear()} Justin-Lung. All rights reserved.</p>
 		<ul class="footer__bottom-socials">
 			{#each socials as social}
 				<li>

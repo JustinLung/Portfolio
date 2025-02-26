@@ -37,7 +37,8 @@
 
 <section class="hero">
 	<span class="hero__subtitle">{description}</span>
-	<h1 class="hero__title">
+	<h1 class="hero__title" aria-hidden="true" role="presentation">
+		<span class="visually-hidden">{title}</span>
 		{#each title.split('') as letter}
 			<span class="letter">{letter}</span>
 		{/each}

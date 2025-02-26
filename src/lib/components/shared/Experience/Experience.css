@@ -1,0 +1,48 @@
+.experience {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 1270px;
+	margin-inline: auto;
+	margin-block: 64px;
+
+	h2 {
+		font-family: 'Tommaso', sans-serif;
+		font-size: min(4rem, 25vw);
+
+		@media (--md) {
+			font-size: min(6rem, 25vw);
+		}
+	}
+
+	.experience__item {
+		padding-block: 16px;
+		border-top: 1px solid var(--white);
+		color: var(--white);
+		text-decoration: none;
+		text-transform: lowercase;
+
+		@media (--lg) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid var(--white);
+		}
+
+		.experience__item-title {
+			font-family: 'Tommaso', sans-serif;
+			font-size: 3rem;
+			margin: 0;
+		}
+
+		.experience__item-details {
+			@media (--lg) {
+				max-width: 190px;
+				text-align: right;
+			}
+		}
+	}
+}

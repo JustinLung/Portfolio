@@ -7,9 +7,13 @@
 
 	interface CardStackProps {
 		title: string;
+		cardImages: {
+			url: string;
+			alt: string;
+		}[];
 	}
 
-	const { title = "Captured moments" }: CardStackProps = $props();
+	const { title = 'Captured moments', cardImages }: CardStackProps = $props();
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -90,10 +94,10 @@
 
 <section class="sticky-cards">
 	<h2 class="title">{title}</h2>
-	{#each Array(6) as _, index}
+	{#each cardImages as image, index}
 		<div class="card">
 			<div class="card-image">
-				<Image src="/images/me.jpg" alt="me" />
+				<Image src={image.url} alt={image.alt} />
 			</div>
 		</div>
 	{/each}

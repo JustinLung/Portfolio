@@ -1,55 +1,26 @@
 <script lang="ts">
 	import ArrowIcon from '$components/icons/ArrowIcon.svelte';
+	import { onMount } from 'svelte';
+	import Image from '../Image/Image.svelte';
+	import Link from '../Link/Link.svelte';
 	import './Carousel.css';
 	import EmblaCarousel, { type EmblaCarouselType } from 'embla-carousel';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+	gsap.registerPlugin(ScrollTrigger);
 
 	interface CarouselProps {
 		title: string;
 		items: Array<{
-			tag: string;
-			media: {
-				url: string;
-				mimeType: string;
-				alt?: string;
-				video?: { thumbnailUrl?: string };
-			};
+			title: string;
+			description: string;
+			src: string;
+			alt: string;
 		}>;
 	}
 
-	const title = 'Blog';
-	const items: CarouselProps['items'] = [
-		{
-			tag: 'image1',
-			media: {
-				url: 'https://via.placeholder.com/800x400?text=Image+1',
-				mimeType: 'image/jpeg',
-				alt: 'Placeholder image 1'
-			}
-		},
-		{
-			tag: 'image2',
-			media: {
-				url: 'https://via.placeholder.com/800x400?text=Image+2',
-				mimeType: 'image/jpeg',
-				alt: 'Placeholder image 2'
-			}
-		},
-		{
-			tag: 'video1',
-			media: {
-				url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4',
-				mimeType: 'video/mp4'
-			}
-		},
-		{
-			tag: 'image3',
-			media: {
-				url: 'https://via.placeholder.com/800x400?text=Image+3',
-				mimeType: 'image/jpeg',
-				alt: 'Placeholder image 3'
-			}
-		}
-	];
+	const { title, items }: CarouselProps = $props();
 
 	let embla: EmblaCarouselType;
 	let emblaNode: HTMLDivElement;
@@ -62,7 +33,6 @@
 	};
 
 	$effect(() => {
-		// Initialize EmblaCarousel
 		embla = EmblaCarousel(emblaNode, options);
 
 		const updateButtonStates = () => {
@@ -70,17 +40,14 @@
 			canNext = embla.canScrollNext();
 		};
 
-		// Bind event listeners
 		embla.on('select', updateButtonStates);
-		updateButtonStates(); // Initial state
+		updateButtonStates();
 
 		return () => {
-			// Cleanup
 			embla.destroy();
 		};
 	});
 
-	// Navigation functions
 	const prev = () => {
 		if (embla) embla.scrollPrev();
 	};
@@ -88,33 +55,65 @@
 	const next = () => {
 		if (embla) embla.scrollNext();
 	};
+
+	onMount(() => {
+		gsap.from('.carousel__header-title', {
+			opacity: 0,
+			y: 20,
+			duration: 1,
+			ease: 'expo.out',
+			scrollTrigger: {
+				trigger: '.carousel__header-title',
+				start: 'top 80%',
+				toggleActions: 'play none none none'
+			}
+		});
+
+		gsap.from('.embla__slide', {
+			opacity: 0,
+			y: 20,
+			stagger: 0.15,
+			duration: 0.8,
+			ease: 'expo.out',
+			delay: 0.1,
+			scrollTrigger: {
+				trigger: '.embla',
+				start: 'top 85%',
+				toggleActions: 'play none none none'
+			}
+		});
+	});
 </script>
 
-<section class="carousel">
-	<div class="carousel__header">
-		<h2 class="carousel__header-title">{title}</h2>
-		<div class="carousel__button-container">
-			<button on:click={prev} disabled={!canPrev} class="carousel__button"><ArrowIcon class="previous-icon"/></button>
-			<button on:click={next} disabled={!canNext} class="carousel__button"><ArrowIcon class="next-icon"/></button>
+{#if items.length === 0}{:else}
+	<section class="carousel container">
+		<div class="carousel__header">
+			<h2 class="carousel__header-title">{title}</h2>
+			<div class="carousel__button-container">
+				<button on:click={prev} disabled={!canPrev} class="carousel__button"
+					><ArrowIcon class="previous-icon" /></button
+				>
+				<button on:click={next} disabled={!canNext} class="carousel__button"
+					><ArrowIcon class="next-icon" /></button
+				>
+			</div>
 		</div>
-	</div>
 
-	<div class="embla" bind:this={emblaNode}>
-		<div class="embla__container">
-			{#each items as item (item.tag)}
-				<div class="embla__slide">
-					{#if item.media.mimeType.startsWith('image/')}
-						<img src={item.media.url} alt={item.media.alt || 'Carousel image'} />
-					{:else if item.media.mimeType === 'video/mp4'}
-						<video controls>
-							<source src={item.media.url} type="video/mp4" />
-							Your browser does not support the video tag.
-						</video>
-					{:else}
-						<div>Unsupported media type</div>
-					{/if}
-				</div>
-			{/each}
+		<div class="embla" bind:this={emblaNode}>
+			<div class="embla__container">
+				{#each items as item}
+					<article class="embla__slide">
+						<Image src={item.src} alt={item.alt} class="carousel__image" />
+						<div>
+							<h3>{item.title}</h3>
+							<p>
+								{item.description}
+							</p>
+							<Link href="/" class="link">Read more <ArrowIcon class="icon" /></Link>
+						</div>
+					</article>
+				{/each}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+{/if}

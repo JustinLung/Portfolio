@@ -2,42 +2,14 @@
 	import { onMount } from 'svelte';
 	import './Projects.css';
 	import { gsap } from 'gsap';
+	import { dummyProjects } from '$lib/util/projects';
 
 	interface ProjectsProps {
 		title: string;
+		projects: any[];
 	}
 
-	const { title = 'Projects' }: ProjectsProps = $props();
-
-	export const projects = [
-		{
-			title: 'Project Title 1',
-			tag: 'Web Development',
-			image: '/images/me.jpg'
-		},
-		{
-			title: 'Project Title 2',
-			tag: 'Mobile App',
-			image:
-				'https://images.unsplash.com/photo-1738363436637-ee6f4a910715?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-		},
-		{
-			title: 'Project Title 3',
-			tag: 'UI/UX Design',
-			image: '/images/me.jpg'
-		},
-		{
-			title: 'Project Title 4',
-			tag: 'Data Science',
-			image: '/images/me.jpg'
-		},
-		{
-			title: 'Project Title 5',
-			tag: 'Machine Learning',
-			image: '/images/me.jpg'
-		}
-	];
-
+	const { title = 'Projects', projects }: ProjectsProps = $props();
 	let imageRef: HTMLDivElement | null = null;
 
 	const handleMouseMove = (event: MouseEvent, imageSrc: string) => {
@@ -105,12 +77,19 @@
 		{#each projects as project}
 			<li
 				class="projects__list-item"
-				onmousemove={(e) => handleMouseMove(e, project.image)}
+				onmousemove={(e) => handleMouseMove(e, project.image.url)}
 				onmouseleave={handleMouseLeave}
 			>
 				<a href="" class="projects__list-link">
 					<span class="project__title">{project.title}</span>
-					<span class="project__tag">{project.tag}</span>
+					<div class="project__tags">
+						{#each project.tags as tag}
+							<span class="project__tag"> 
+								<span class="middle-dot">&#183;</span>
+								{tag.tag}
+							</span>
+						{/each}
+					</div>
 				</a>
 			</li>
 		{/each}

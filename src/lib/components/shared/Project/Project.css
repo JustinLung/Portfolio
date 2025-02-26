@@ -27,6 +27,7 @@
 
 	.project__tags {
 		margin-block: 8px;
+		text-transform: lowercase;
 	}
 
 	.project__name {
